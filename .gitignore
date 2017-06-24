@@ -1,11 +1,11 @@
 
 *.Rproj
 *.user
+*.tex
 .Rbuildignore
 .Rhistory
 .Rproj.user
 _Rbuildignore
 _Rhistory
 _Rprofile
-NAMESPACE
-DESCRIPTION
+inst/doc
