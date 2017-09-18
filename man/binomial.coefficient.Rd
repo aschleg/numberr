@@ -28,6 +28,12 @@ elements and is read as \eqn{n} choose \eqn{k}. The compact form of the
 binomial coefficient equation is defined as: \deqn{\binom{n}{k} =
 \frac{n!}{k!(n - k)!} \qquad 0 \leq k \leq n}
 }
+\examples{
+binomial.coefficient(4, 2)
+binomial.coefficient(10, 5)
+binomial.coefficient(10, 5, 'multiplicative')
+binomial.coefficient(10, 5, 'factorial')
+}
 \references{
 Press, W., Teukolsky, S., Vetterling, W., & Flannery, B. (2007).
   Numerical recipes (3rd ed.). Cambridge: Cambridge University Press.

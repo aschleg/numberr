@@ -24,4 +24,5 @@ replaced by division by repeated subtraction.
 \examples{
 gcd.subtraction(24, 30)
 gcd.subtraction(9, 5)
+gcd.subtraction(135614, 234562)
 }

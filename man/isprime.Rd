@@ -19,6 +19,7 @@ positive divisors other than 1 and itself.
 \examples{
 isprime(9)
 isprime(3)
+isprime(10927)
 }
 \references{
 Weisstein, Eric W. "Prime Number." From MathWorld--A Wolfram Web

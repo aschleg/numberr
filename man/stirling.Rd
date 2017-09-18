@@ -25,6 +25,7 @@ approximation to \eqn{n!} and also results in a very close approximation to
 \examples{
 stirling(0)
 stirling(9)
+stirling(25)
 }
 \references{
 Stirling's approximation. (2017, March 8). In Wikipedia, The Free

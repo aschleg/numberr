@@ -113,12 +113,12 @@ factor.fermat <- function(n) {
   a <- ceiling(sqrt(n))
   b <- a^2 - n
 
-  while (issquare(n)) {
+  while (issquare(b) == FALSE) {
     a <- a + 1
     b <- a^2 - n
   }
 
-  return(c(a, sqrt(b)))
+  return(c(a - sqrt(b), a + sqrt(b)))
 }
 
 
@@ -145,6 +145,7 @@ factor.pollardrho <- function(n) {
   while (d == 1) {
     x <- x^2 + 1 %% n
     y <- ((y^2 + 1)^2 + 1) %% n
+    d <- gcd.recursive(abs(x - y), n)
   }
 
   if (d == n) {

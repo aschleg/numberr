@@ -1,1 +1,4 @@
 exportPattern("^[[:alpha:]]+")
+
+useDynLib(numberr)
+importFrom(Rcpp, sourceCpp)

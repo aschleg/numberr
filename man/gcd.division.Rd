@@ -25,6 +25,7 @@ operations are required as that only returns the remainder.
 \examples{
 gcd.division(24, 30)
 gcd.division(9, 5)
+gcd.division(193752, 234574)
 }
 \references{
 Cormen, T., Leiserson, C., Rivest, R., & Stein, C. (2009).

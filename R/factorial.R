@@ -8,19 +8,15 @@
 #'
 #' @param n Value to calculate
 #' @return the factorial of the integer
-#' @examples
-#' factorial(10)
-#' factorial(20)
 #' @references Press, W., Teukolsky, S., Vetterling, W., & Flannery, B. (2007).
 #'   Numerical recipes (3rd ed.). Cambridge: Cambridge University Press.
 #'   Weisstein, Eric W. "Factorial." From MathWorld--A Wolfram Web Resource.
 #'   http://mathworld.wolfram.com/Factorial.html
 #' @export
-factorial <- function(n) {
-  f <- seq(2, n)
+.factorial <- function(n) {
   fac <- 1
 
-  for (i in rev(f)) {
+  for (i in rev(2:n)) {
     fac <- fac * i
   }
   return(fac)
@@ -158,12 +154,12 @@ rising.factorial <- function(x, n) {
     for (i in 2:abs(n)) {
       f <- paste(f, '*(', x, ' + ', as.character(i), ')', sep = '', collapse = '')
     }
-    
+
     if (n < 0) {
       f <- paste('1 /', f, sep = '', collapse = '')
     }
   }
-  
+
   else {
     if (x != floor(x)) {
       x = floor(x)
@@ -173,11 +169,11 @@ rising.factorial <- function(x, n) {
     for (i in 1:abs(n-1)) {
       f <- f * (x + i)
     }
-    
+
     if (n < 0) {
       f <- 1 / f
     }
-    
+
   }
 
   return(f)
@@ -185,10 +181,10 @@ rising.factorial <- function(x, n) {
 
 
 #' Computes the falling factorial
-#' 
+#'
 #' The falling factorial, denoted as \eqn{(x)_{n}} (or \eqn{x^{\underline{n}}})
 #' is defined as the following: \deqn{(x)_n = x(x - 1) \cdots (x - (n - 1))} The
-#' first few falling factorials are then: \deqn{(x)_0 = 1} \deqn{(x)_1 = x} 
+#' first few falling factorials are then: \deqn{(x)_0 = 1} \deqn{(x)_1 = x}
 #' \deqn{(x)_2 = x(x - 1)} \deqn{(x)_3 = x(x - 1)(x - 2)} \deqn{(x)_4 = x(x -
 #' 1)(x - 2)(x - 3)(x - 4)}
 #' @param x Integer. The value will be rounded down if the value is not an
@@ -197,7 +193,7 @@ rising.factorial <- function(x, n) {
 #'   integer.
 #' @return  If x is an integer, the falling factorial will be returned. If x is
 #'   a string, the symbolic representation of the falling factorial is returned.
-#' @examples 
+#' @examples
 #' falling.factorial(10, 5)
 #' falling.factorial(10, 2)
 #' falling.factorial('x', 2)
@@ -205,8 +201,8 @@ rising.factorial <- function(x, n) {
 #' @references Falling and rising factorials. (2017, June 8). In Wikipedia, The
 #'   Free Encyclopedia. From
 #'   https://en.wikipedia.org/w/index.php?title=Falling_and_rising_factorials&oldid=784512036
-#'   
-#'   
+#'
+#'
 #'   Weisstein, Eric W. "Falling Factorial." From MathWorld--A Wolfram Web
 #'   Resource. http://mathworld.wolfram.com/FallingFactorial.html
 #' @export
@@ -214,33 +210,33 @@ falling.factorial <- function(x, n) {
   if (n != floor(n)) {
     n <- floor(n)
   }
-  
+
   if (is.character(x)) {
     f <- x
-    
+
     for (i in 2:abs(n)) {
       f <- paste(f, '*(x - ', as.character(i), ')', sep = '', collapse = '')
     }
-    
+
     if (n < 0) {
       f <- paste('1 /', f, sep = '', collapse = '')
     }
   }
-  
+
   else {
     if (x != floor(x)) {
       x <- floor(x)
     }
-    
+
     f <- 1
     for (i in 1:abs(n)) {
       f <- f * (x - i)
     }
-    
+
     if (n < 0) {
       f <- 1 / f
     }
   }
-  
+
   return(f)
 }

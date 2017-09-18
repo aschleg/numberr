@@ -24,6 +24,7 @@ n! \approx n ln n - n + \frac{1}{6} ln(n(1 + 4n(1 + 2n))) + \frac{1}{2} ln
 \pi}
 }
 \examples{
+stirlingln(25)
 stirlingln(10)
 }
 \references{

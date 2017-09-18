@@ -3,7 +3,7 @@
 #' Computes the Fibonacci sequence up to given value of n.
 #'
 #' The Fibonacci sequence is defined by a recurrence relation where \eqn{f_n}
-#' denotes the series up to :math:`n` points. \deqn{f_n = f_{n-1} + f_{n-2}}
+#' denotes the series up to \eqn{n} points. \deqn{f_n = f_{n-1} + f_{n-2}}
 #' With initial coniditions: \deqn{f_1 = 1, \qquad f_2 = 2}
 #' @param n Integer designating the stopping point of the Fibonacci sequence
 #' @param output If 'last', the last integer in the Fibonacci sequence up to n
