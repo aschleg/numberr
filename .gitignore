@@ -4,6 +4,7 @@
 *.tex
 *.o
 *.so
+*.DS_Store
 .Rbuildignore
 .Rhistory
 .Rproj.user
