@@ -2,11 +2,11 @@
 
 #define _USE_MATH_DEFINES
 #include <math.h>
+#include <iostream>
 #include <string>
 #include "factorial.h"
 
 using namespace Rcpp;
-using namespace std;
 
 
 //' Function for calculating factorials using the standard approach as explained
@@ -78,7 +78,7 @@ double stirling(int n) {
 //' @references Stirling's approximation. (2017, March 8). In Wikipedia, The
 //'   Free Encyclopedia. From
 //'   https://en.wikipedia.org/w/index.php?title=Stirling%27s_approximation&oldid=769328178
-//'
+//' @export
 // [[Rcpp::export]]
 double stirlingln(int n) {
   double f = n * log(n) - n + (1.0 / 6.0) * log(n * (1.0 + 4.0 * n * (1.0 + 2.0 * n))) + 0.5 * log(M_PI);
@@ -105,6 +105,7 @@ double stirlingln(int n) {
 //' @references Mortici, Cristinel. On Gosper's Formula for the Gamma Function.
 //'   Valahia University of Targoviste, Department of Mathematics. Retrieved
 //'   from http://files.ele-math.com/articles/jmi-05-53.pdf
+//' @export
 // [[Rcpp::export]]
 double ramanujan(int n) {
   double f = sqrt(M_PI) * pow(n, n) * exp(-n) * pow((8.0 * pow(n, 3.0) + 4.0 * pow(n, 2) + n + 1.0 / 30.0), 1.0 / 6.0);
@@ -129,6 +130,7 @@ double ramanujan(int n) {
 //'   https://en.wikipedia.org/w/index.php?title=Falling_and_rising_factorials&oldid=784512036
 //'    Weisstein, Eric W. "Falling Factorial." From MathWorld--A Wolfram Web
 //'   Resource. http://mathworld.wolfram.com/FallingFactorial.html
+//' @export
 // [[Rcpp::export]]
 double fallingfactorial(int x, int n) {
   double f = 1.0;
@@ -149,14 +151,21 @@ double fallingfactorial(int x, int n) {
 }
 
 
-//string fallingfactorial_function(string x, int n) {
-//  string f = x;
-
-//  for (int i = 1; i <= n; i++) {
-//    f = f + '*(' + ' - ' + ')';
-//  }
-//  return f;
-//}
+// [[Rcpp::export]]
+std::string fallingfactorial_function(std::string x, int n) {
+  std::string f = x;
+  std::string parten1 = "*(";
+  std::string negsep = " - ";
+  std::string parten2 = ")";
+  
+  for (int i = 1; i <= n; i++) {
+    std::stringstream j;
+    j << i;
+    std::string jstr = j.str();
+    f = f + parten1 + x + negsep + jstr + parten2;
+  }
+  return f;
+}
 
 
 //' Computes the rising factorial. Also known as the Pochhammer symbol.
@@ -179,6 +188,7 @@ double fallingfactorial(int x, int n) {
 //'   https://en.wikipedia.org/w/index.php?title=Falling_and_rising_factorials&oldid=784512036
 //'    Weisstein, Eric W. "Rising Factorial." From MathWorld--A Wolfram Web
 //'   Resource. http://mathworld.wolfram.com/RisingFactorial.html
+//' @export
 // [[Rcpp::export]]
 double risingfactorial(int x, int n) {
   double f = 1.0;
@@ -195,5 +205,22 @@ double risingfactorial(int x, int n) {
     }
   }
 
+  return f;
+}
+
+
+// [[Rcpp::export]]
+std::string risingfactorial_function(std::string x, int n) {
+  std::string f = x;
+  std::string parten1 = "*(";
+  std::string negsep = " + ";
+  std::string parten2 = ")";
+  
+  for (int i = 1; i <= n; i++) {
+    std::stringstream j;
+    j << i;
+    std::string jstr = j.str();
+    f = f + parten1 + x + negsep + jstr + parten2;
+  }
   return f;
 }

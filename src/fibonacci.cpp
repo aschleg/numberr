@@ -18,6 +18,7 @@ using namespace Rcpp;
 //' @references Moler, C. (2011). Numerical computing with MATLAB (1st ed.).
 //' Philadelphia, Pa: Society for Industrial & Applied Mathematics.
 //' @export
+// [[Rcpp::interfaces(r, cpp)]]
 // [[Rcpp::export]]
 NumericVector fibonacci(int n) {
   NumericVector x(n + 2);

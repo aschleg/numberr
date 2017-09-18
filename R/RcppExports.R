@@ -169,7 +169,7 @@ stirling <- function(n) {
 #' @references Stirling's approximation. (2017, March 8). In Wikipedia, The
 #'   Free Encyclopedia. From
 #'   https://en.wikipedia.org/w/index.php?title=Stirling%27s_approximation&oldid=769328178
-#'
+#' @export
 stirlingln <- function(n) {
     .Call('numberr_stirlingln', PACKAGE = 'numberr', n)
 }
@@ -192,6 +192,7 @@ stirlingln <- function(n) {
 #' @references Mortici, Cristinel. On Gosper's Formula for the Gamma Function.
 #'   Valahia University of Targoviste, Department of Mathematics. Retrieved
 #'   from http://files.ele-math.com/articles/jmi-05-53.pdf
+#' @export
 ramanujan <- function(n) {
     .Call('numberr_ramanujan', PACKAGE = 'numberr', n)
 }
@@ -213,8 +214,13 @@ ramanujan <- function(n) {
 #'   https://en.wikipedia.org/w/index.php?title=Falling_and_rising_factorials&oldid=784512036
 #'    Weisstein, Eric W. "Falling Factorial." From MathWorld--A Wolfram Web
 #'   Resource. http://mathworld.wolfram.com/FallingFactorial.html
+#' @export
 fallingfactorial <- function(x, n) {
     .Call('numberr_fallingfactorial', PACKAGE = 'numberr', x, n)
+}
+
+fallingfactorial_function <- function(x, n) {
+    .Call('numberr_fallingfactorial_function', PACKAGE = 'numberr', x, n)
 }
 
 #' Computes the rising factorial. Also known as the Pochhammer symbol.
@@ -237,26 +243,15 @@ fallingfactorial <- function(x, n) {
 #'   https://en.wikipedia.org/w/index.php?title=Falling_and_rising_factorials&oldid=784512036
 #'    Weisstein, Eric W. "Rising Factorial." From MathWorld--A Wolfram Web
 #'   Resource. http://mathworld.wolfram.com/RisingFactorial.html
+#' @export
 risingfactorial <- function(x, n) {
     .Call('numberr_risingfactorial', PACKAGE = 'numberr', x, n)
 }
 
-#' Computes the Fibonacci sequence up to given value of n.
-#'
-#' The Fibonacci sequence is defined by a recurrence relation where \eqn{f_n}
-#' denotes the series up to \eqn{n} points. \deqn{f_n = f_{n-1} + f_{n-2}}
-#' With initial coniditions: \deqn{f_1 = 1, \qquad f_2 = 2}
-#' @param n Integer designating the stopping point of the Fibonacci sequence
-#' @param output If 'last', the last integer in the Fibonacci sequence up to n
-#'   is returned, if 'array', the entire sequence is returned. Defaults to
-#'   'last'.
-#' @return array of the Fibonacci sequence up to \eqn{n}.
-#' @examples
-#' fibonacci(10)
-#' fibonacci(10, 'array')
-#' @references Moler, C. (2011). Numerical computing with MATLAB (1st ed.).
-#' Philadelphia, Pa: Society for Industrial & Applied Mathematics.
-#' @export
+risingfactorial_function <- function(x, n) {
+    .Call('numberr_risingfactorial_function', PACKAGE = 'numberr', x, n)
+}
+
 fibonacci <- function(n) {
     .Call('numberr_fibonacci', PACKAGE = 'numberr', n)
 }
@@ -470,3 +465,7 @@ lucas_lehmer <- function(n) {
     .Call('numberr_lucas_lehmer', PACKAGE = 'numberr', n)
 }
 
+# Register entry points for exported C++ functions
+methods::setLoadAction(function(ns) {
+    .Call('numberr_RcppExport_registerCCallable', PACKAGE = 'numberr')
+})
