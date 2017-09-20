@@ -20,8 +20,9 @@ using namespace Rcpp;
 //'   The Free Encyclopedia. From
 //'   https://en.wikipedia.org/w/index.php?title=Euclidean_algorithm&oldid=780973502
 //' @export
+// [[Rcpp::interfaces(r, cpp)]]
 // [[Rcpp::export]]
-int gcd_recursive(int a, int b) {
+unsigned long int gcd_recursive(int a, int b) {
 
   return _gcd_recursive(a, b);
 }
@@ -50,8 +51,9 @@ int gcd_recursive(int a, int b) {
 //'   From
 //'   https://en.wikipedia.org/w/index.php?title=Euclidean_division&oldid=779699188
 //' @export
+// [[Rcpp::interfaces(r, cpp)]]
 // [[Rcpp::export]]
-int gcd_division(int a, int b) {
+unsigned long int gcd_division(int a, int b) {
   while (b != 0) {
     int x = b;
     b = a % b;
@@ -77,8 +79,9 @@ int gcd_division(int a, int b) {
 //' gcd_subtraction(9, 5)
 //' gcd_subtraction(135614, 234562)
 //' @export
+// [[Rcpp::interfaces(r, cpp)]]
 // [[Rcpp::export]]
-int gcd_subtraction(int a, int b) {
+unsigned long int gcd_subtraction(int a, int b) {
   while (a != b) {
     if (a > b) {
       a = a - b;
@@ -111,10 +114,11 @@ int gcd_subtraction(int a, int b) {
 //' Cormen, T., Leiserson, C., Rivest, R., & Stein, C. (2009). Introduction to
 //' algorithms (3rd ed., pp. 937-938). Cambridge (Inglaterra): Mit Press.
 //' @export
+// [[Rcpp::interfaces(r, cpp)]]
 // [[Rcpp::export]]
 NumericVector gcd_extended(int a, int b) {
   double d; double x; double y;
-  
+
   if (b == 0) {
     NumericVector xx = NumericVector::create(a, 1, 0);
     return xx;
@@ -124,14 +128,14 @@ NumericVector gcd_extended(int a, int b) {
     d = g[0];
     x = g[1];
     y = g[2];
-    
+
     NumericVector h = NumericVector::create(d, y, x - (a / b) * y);
-    
+
     d = h[0];
     x = h[1];
     y = h[2];
   }
-  
+
   NumericVector gcd = NumericVector::create(d, x, y);
   return gcd;
 }

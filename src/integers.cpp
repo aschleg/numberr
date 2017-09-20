@@ -19,6 +19,7 @@ using namespace Rcpp;
 //' @references Weisstein, Eric W. "Composite Number." From MathWorld--A Wolfram
 //' Web Resource. http://mathworld.wolfram.com/CompositeNumber.html
 //' @export
+// [[Rcpp::interfaces(r, cpp)]]
 // [[Rcpp::export]]
 bool iscomposite(int n) {
   return _iscomposite(n);
@@ -41,6 +42,7 @@ bool iscomposite(int n) {
 //' Press. Weisstein, Eric W. "Relatively Prime." From MathWorld--A Wolfram Web
 //' Resource. http://mathworld.wolfram.com/RelativelyPrime.html
 //' @export
+// [[Rcpp::interfaces(r, cpp)]]
 // [[Rcpp::export]]
 bool iscoprime(int a, int b) {
   return _iscoprime(a, b);
@@ -62,6 +64,7 @@ bool iscoprime(int a, int b) {
 //' @references Weisstein, Eric W. "Even Number." From MathWorld--A Wolfram Web
 //' Resource. http://mathworld.wolfram.com/EvenNumber.html
 //' @export
+// [[Rcpp::interfaces(r, cpp)]]
 // [[Rcpp::export]]
 bool iseven(int n) {
   return _iseven(n);
@@ -83,6 +86,7 @@ bool iseven(int n) {
 //' @references Weisstein, Eric W. "Odd Number." From MathWorld--A Wolfram Web
 //'   Resource. http://mathworld.wolfram.com/OddNumber.html
 //' @export
+// [[Rcpp::interfaces(r, cpp)]]
 // [[Rcpp::export]]
 bool isodd(int n) {
   return _isodd(n);
@@ -102,6 +106,7 @@ bool isodd(int n) {
 //' @references Barnes, C. (2004). Integer Factorization Algorithms (1st ed.).
 //' Corvallis, OR: Department of Physics, Oregon State University.
 //' @export
+// [[Rcpp::interfaces(r, cpp)]]
 // [[Rcpp::export]]
 bool issquare(int n) {
   return _issquare(n);

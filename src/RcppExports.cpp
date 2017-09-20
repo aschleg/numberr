@@ -10,160 +10,802 @@ using namespace Rcpp;
 
 // binomial_recursive
 int binomial_recursive(int n, int k);
-RcppExport SEXP numberr_binomial_recursive(SEXP nSEXP, SEXP kSEXP) {
+static SEXP numberr_binomial_recursive_try(SEXP nSEXP, SEXP kSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
-    Rcpp::RNGScope rcpp_rngScope_gen;
     Rcpp::traits::input_parameter< int >::type n(nSEXP);
     Rcpp::traits::input_parameter< int >::type k(kSEXP);
     rcpp_result_gen = Rcpp::wrap(binomial_recursive(n, k));
     return rcpp_result_gen;
-END_RCPP
+END_RCPP_RETURN_ERROR
+}
+RcppExport SEXP numberr_binomial_recursive(SEXP nSEXP, SEXP kSEXP) {
+    SEXP rcpp_result_gen;
+    {
+        Rcpp::RNGScope rcpp_rngScope_gen;
+        rcpp_result_gen = PROTECT(numberr_binomial_recursive_try(nSEXP, kSEXP));
+    }
+    Rboolean rcpp_isInterrupt_gen = Rf_inherits(rcpp_result_gen, "interrupted-error");
+    if (rcpp_isInterrupt_gen) {
+        UNPROTECT(1);
+        Rf_onintr();
+    }
+    Rboolean rcpp_isError_gen = Rf_inherits(rcpp_result_gen, "try-error");
+    if (rcpp_isError_gen) {
+        SEXP rcpp_msgSEXP_gen = Rf_asChar(rcpp_result_gen);
+        UNPROTECT(1);
+        Rf_error(CHAR(rcpp_msgSEXP_gen));
+    }
+    UNPROTECT(1);
+    return rcpp_result_gen;
 }
 // binomial_multiplicative
 int binomial_multiplicative(int n, int k);
-RcppExport SEXP numberr_binomial_multiplicative(SEXP nSEXP, SEXP kSEXP) {
+static SEXP numberr_binomial_multiplicative_try(SEXP nSEXP, SEXP kSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
-    Rcpp::RNGScope rcpp_rngScope_gen;
     Rcpp::traits::input_parameter< int >::type n(nSEXP);
     Rcpp::traits::input_parameter< int >::type k(kSEXP);
     rcpp_result_gen = Rcpp::wrap(binomial_multiplicative(n, k));
     return rcpp_result_gen;
-END_RCPP
+END_RCPP_RETURN_ERROR
+}
+RcppExport SEXP numberr_binomial_multiplicative(SEXP nSEXP, SEXP kSEXP) {
+    SEXP rcpp_result_gen;
+    {
+        Rcpp::RNGScope rcpp_rngScope_gen;
+        rcpp_result_gen = PROTECT(numberr_binomial_multiplicative_try(nSEXP, kSEXP));
+    }
+    Rboolean rcpp_isInterrupt_gen = Rf_inherits(rcpp_result_gen, "interrupted-error");
+    if (rcpp_isInterrupt_gen) {
+        UNPROTECT(1);
+        Rf_onintr();
+    }
+    Rboolean rcpp_isError_gen = Rf_inherits(rcpp_result_gen, "try-error");
+    if (rcpp_isError_gen) {
+        SEXP rcpp_msgSEXP_gen = Rf_asChar(rcpp_result_gen);
+        UNPROTECT(1);
+        Rf_error(CHAR(rcpp_msgSEXP_gen));
+    }
+    UNPROTECT(1);
+    return rcpp_result_gen;
 }
 // binomial_factorial
 int binomial_factorial(int n, int k);
-RcppExport SEXP numberr_binomial_factorial(SEXP nSEXP, SEXP kSEXP) {
+static SEXP numberr_binomial_factorial_try(SEXP nSEXP, SEXP kSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
-    Rcpp::RNGScope rcpp_rngScope_gen;
     Rcpp::traits::input_parameter< int >::type n(nSEXP);
     Rcpp::traits::input_parameter< int >::type k(kSEXP);
     rcpp_result_gen = Rcpp::wrap(binomial_factorial(n, k));
     return rcpp_result_gen;
-END_RCPP
+END_RCPP_RETURN_ERROR
+}
+RcppExport SEXP numberr_binomial_factorial(SEXP nSEXP, SEXP kSEXP) {
+    SEXP rcpp_result_gen;
+    {
+        Rcpp::RNGScope rcpp_rngScope_gen;
+        rcpp_result_gen = PROTECT(numberr_binomial_factorial_try(nSEXP, kSEXP));
+    }
+    Rboolean rcpp_isInterrupt_gen = Rf_inherits(rcpp_result_gen, "interrupted-error");
+    if (rcpp_isInterrupt_gen) {
+        UNPROTECT(1);
+        Rf_onintr();
+    }
+    Rboolean rcpp_isError_gen = Rf_inherits(rcpp_result_gen, "try-error");
+    if (rcpp_isError_gen) {
+        SEXP rcpp_msgSEXP_gen = Rf_asChar(rcpp_result_gen);
+        UNPROTECT(1);
+        Rf_error(CHAR(rcpp_msgSEXP_gen));
+    }
+    UNPROTECT(1);
+    return rcpp_result_gen;
+}
+// factor_trial
+NumericVector factor_trial(unsigned int n);
+static SEXP numberr_factor_trial_try(SEXP nSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::traits::input_parameter< unsigned int >::type n(nSEXP);
+    rcpp_result_gen = Rcpp::wrap(factor_trial(n));
+    return rcpp_result_gen;
+END_RCPP_RETURN_ERROR
+}
+RcppExport SEXP numberr_factor_trial(SEXP nSEXP) {
+    SEXP rcpp_result_gen;
+    {
+        Rcpp::RNGScope rcpp_rngScope_gen;
+        rcpp_result_gen = PROTECT(numberr_factor_trial_try(nSEXP));
+    }
+    Rboolean rcpp_isInterrupt_gen = Rf_inherits(rcpp_result_gen, "interrupted-error");
+    if (rcpp_isInterrupt_gen) {
+        UNPROTECT(1);
+        Rf_onintr();
+    }
+    Rboolean rcpp_isError_gen = Rf_inherits(rcpp_result_gen, "try-error");
+    if (rcpp_isError_gen) {
+        SEXP rcpp_msgSEXP_gen = Rf_asChar(rcpp_result_gen);
+        UNPROTECT(1);
+        Rf_error(CHAR(rcpp_msgSEXP_gen));
+    }
+    UNPROTECT(1);
+    return rcpp_result_gen;
 }
 // fermat
-NumericVector fermat(int n);
-RcppExport SEXP numberr_fermat(SEXP nSEXP) {
+NumericVector fermat(unsigned int n);
+static SEXP numberr_fermat_try(SEXP nSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
-    Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< int >::type n(nSEXP);
+    Rcpp::traits::input_parameter< unsigned int >::type n(nSEXP);
     rcpp_result_gen = Rcpp::wrap(fermat(n));
     return rcpp_result_gen;
-END_RCPP
+END_RCPP_RETURN_ERROR
+}
+RcppExport SEXP numberr_fermat(SEXP nSEXP) {
+    SEXP rcpp_result_gen;
+    {
+        Rcpp::RNGScope rcpp_rngScope_gen;
+        rcpp_result_gen = PROTECT(numberr_fermat_try(nSEXP));
+    }
+    Rboolean rcpp_isInterrupt_gen = Rf_inherits(rcpp_result_gen, "interrupted-error");
+    if (rcpp_isInterrupt_gen) {
+        UNPROTECT(1);
+        Rf_onintr();
+    }
+    Rboolean rcpp_isError_gen = Rf_inherits(rcpp_result_gen, "try-error");
+    if (rcpp_isError_gen) {
+        SEXP rcpp_msgSEXP_gen = Rf_asChar(rcpp_result_gen);
+        UNPROTECT(1);
+        Rf_error(CHAR(rcpp_msgSEXP_gen));
+    }
+    UNPROTECT(1);
+    return rcpp_result_gen;
 }
 // pollardrho
-NumericVector pollardrho(int n);
-RcppExport SEXP numberr_pollardrho(SEXP nSEXP) {
+NumericVector pollardrho(unsigned long int n);
+static SEXP numberr_pollardrho_try(SEXP nSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
-    Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< int >::type n(nSEXP);
+    Rcpp::traits::input_parameter< unsigned long int >::type n(nSEXP);
     rcpp_result_gen = Rcpp::wrap(pollardrho(n));
     return rcpp_result_gen;
-END_RCPP
+END_RCPP_RETURN_ERROR
+}
+RcppExport SEXP numberr_pollardrho(SEXP nSEXP) {
+    SEXP rcpp_result_gen;
+    {
+        Rcpp::RNGScope rcpp_rngScope_gen;
+        rcpp_result_gen = PROTECT(numberr_pollardrho_try(nSEXP));
+    }
+    Rboolean rcpp_isInterrupt_gen = Rf_inherits(rcpp_result_gen, "interrupted-error");
+    if (rcpp_isInterrupt_gen) {
+        UNPROTECT(1);
+        Rf_onintr();
+    }
+    Rboolean rcpp_isError_gen = Rf_inherits(rcpp_result_gen, "try-error");
+    if (rcpp_isError_gen) {
+        SEXP rcpp_msgSEXP_gen = Rf_asChar(rcpp_result_gen);
+        UNPROTECT(1);
+        Rf_error(CHAR(rcpp_msgSEXP_gen));
+    }
+    UNPROTECT(1);
+    return rcpp_result_gen;
 }
 // factorial
 double factorial(int n);
-RcppExport SEXP numberr_factorial(SEXP nSEXP) {
+static SEXP numberr_factorial_try(SEXP nSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
-    Rcpp::RNGScope rcpp_rngScope_gen;
     Rcpp::traits::input_parameter< int >::type n(nSEXP);
     rcpp_result_gen = Rcpp::wrap(factorial(n));
     return rcpp_result_gen;
-END_RCPP
+END_RCPP_RETURN_ERROR
+}
+RcppExport SEXP numberr_factorial(SEXP nSEXP) {
+    SEXP rcpp_result_gen;
+    {
+        Rcpp::RNGScope rcpp_rngScope_gen;
+        rcpp_result_gen = PROTECT(numberr_factorial_try(nSEXP));
+    }
+    Rboolean rcpp_isInterrupt_gen = Rf_inherits(rcpp_result_gen, "interrupted-error");
+    if (rcpp_isInterrupt_gen) {
+        UNPROTECT(1);
+        Rf_onintr();
+    }
+    Rboolean rcpp_isError_gen = Rf_inherits(rcpp_result_gen, "try-error");
+    if (rcpp_isError_gen) {
+        SEXP rcpp_msgSEXP_gen = Rf_asChar(rcpp_result_gen);
+        UNPROTECT(1);
+        Rf_error(CHAR(rcpp_msgSEXP_gen));
+    }
+    UNPROTECT(1);
+    return rcpp_result_gen;
 }
 // stirling
 double stirling(int n);
-RcppExport SEXP numberr_stirling(SEXP nSEXP) {
+static SEXP numberr_stirling_try(SEXP nSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
-    Rcpp::RNGScope rcpp_rngScope_gen;
     Rcpp::traits::input_parameter< int >::type n(nSEXP);
     rcpp_result_gen = Rcpp::wrap(stirling(n));
     return rcpp_result_gen;
-END_RCPP
+END_RCPP_RETURN_ERROR
+}
+RcppExport SEXP numberr_stirling(SEXP nSEXP) {
+    SEXP rcpp_result_gen;
+    {
+        Rcpp::RNGScope rcpp_rngScope_gen;
+        rcpp_result_gen = PROTECT(numberr_stirling_try(nSEXP));
+    }
+    Rboolean rcpp_isInterrupt_gen = Rf_inherits(rcpp_result_gen, "interrupted-error");
+    if (rcpp_isInterrupt_gen) {
+        UNPROTECT(1);
+        Rf_onintr();
+    }
+    Rboolean rcpp_isError_gen = Rf_inherits(rcpp_result_gen, "try-error");
+    if (rcpp_isError_gen) {
+        SEXP rcpp_msgSEXP_gen = Rf_asChar(rcpp_result_gen);
+        UNPROTECT(1);
+        Rf_error(CHAR(rcpp_msgSEXP_gen));
+    }
+    UNPROTECT(1);
+    return rcpp_result_gen;
 }
 // stirlingln
 double stirlingln(int n);
-RcppExport SEXP numberr_stirlingln(SEXP nSEXP) {
+static SEXP numberr_stirlingln_try(SEXP nSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
-    Rcpp::RNGScope rcpp_rngScope_gen;
     Rcpp::traits::input_parameter< int >::type n(nSEXP);
     rcpp_result_gen = Rcpp::wrap(stirlingln(n));
     return rcpp_result_gen;
-END_RCPP
+END_RCPP_RETURN_ERROR
+}
+RcppExport SEXP numberr_stirlingln(SEXP nSEXP) {
+    SEXP rcpp_result_gen;
+    {
+        Rcpp::RNGScope rcpp_rngScope_gen;
+        rcpp_result_gen = PROTECT(numberr_stirlingln_try(nSEXP));
+    }
+    Rboolean rcpp_isInterrupt_gen = Rf_inherits(rcpp_result_gen, "interrupted-error");
+    if (rcpp_isInterrupt_gen) {
+        UNPROTECT(1);
+        Rf_onintr();
+    }
+    Rboolean rcpp_isError_gen = Rf_inherits(rcpp_result_gen, "try-error");
+    if (rcpp_isError_gen) {
+        SEXP rcpp_msgSEXP_gen = Rf_asChar(rcpp_result_gen);
+        UNPROTECT(1);
+        Rf_error(CHAR(rcpp_msgSEXP_gen));
+    }
+    UNPROTECT(1);
+    return rcpp_result_gen;
 }
 // ramanujan
 double ramanujan(int n);
-RcppExport SEXP numberr_ramanujan(SEXP nSEXP) {
+static SEXP numberr_ramanujan_try(SEXP nSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
-    Rcpp::RNGScope rcpp_rngScope_gen;
     Rcpp::traits::input_parameter< int >::type n(nSEXP);
     rcpp_result_gen = Rcpp::wrap(ramanujan(n));
     return rcpp_result_gen;
-END_RCPP
+END_RCPP_RETURN_ERROR
+}
+RcppExport SEXP numberr_ramanujan(SEXP nSEXP) {
+    SEXP rcpp_result_gen;
+    {
+        Rcpp::RNGScope rcpp_rngScope_gen;
+        rcpp_result_gen = PROTECT(numberr_ramanujan_try(nSEXP));
+    }
+    Rboolean rcpp_isInterrupt_gen = Rf_inherits(rcpp_result_gen, "interrupted-error");
+    if (rcpp_isInterrupt_gen) {
+        UNPROTECT(1);
+        Rf_onintr();
+    }
+    Rboolean rcpp_isError_gen = Rf_inherits(rcpp_result_gen, "try-error");
+    if (rcpp_isError_gen) {
+        SEXP rcpp_msgSEXP_gen = Rf_asChar(rcpp_result_gen);
+        UNPROTECT(1);
+        Rf_error(CHAR(rcpp_msgSEXP_gen));
+    }
+    UNPROTECT(1);
+    return rcpp_result_gen;
 }
 // fallingfactorial
 double fallingfactorial(int x, int n);
-RcppExport SEXP numberr_fallingfactorial(SEXP xSEXP, SEXP nSEXP) {
+static SEXP numberr_fallingfactorial_try(SEXP xSEXP, SEXP nSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
-    Rcpp::RNGScope rcpp_rngScope_gen;
     Rcpp::traits::input_parameter< int >::type x(xSEXP);
     Rcpp::traits::input_parameter< int >::type n(nSEXP);
     rcpp_result_gen = Rcpp::wrap(fallingfactorial(x, n));
     return rcpp_result_gen;
-END_RCPP
+END_RCPP_RETURN_ERROR
+}
+RcppExport SEXP numberr_fallingfactorial(SEXP xSEXP, SEXP nSEXP) {
+    SEXP rcpp_result_gen;
+    {
+        Rcpp::RNGScope rcpp_rngScope_gen;
+        rcpp_result_gen = PROTECT(numberr_fallingfactorial_try(xSEXP, nSEXP));
+    }
+    Rboolean rcpp_isInterrupt_gen = Rf_inherits(rcpp_result_gen, "interrupted-error");
+    if (rcpp_isInterrupt_gen) {
+        UNPROTECT(1);
+        Rf_onintr();
+    }
+    Rboolean rcpp_isError_gen = Rf_inherits(rcpp_result_gen, "try-error");
+    if (rcpp_isError_gen) {
+        SEXP rcpp_msgSEXP_gen = Rf_asChar(rcpp_result_gen);
+        UNPROTECT(1);
+        Rf_error(CHAR(rcpp_msgSEXP_gen));
+    }
+    UNPROTECT(1);
+    return rcpp_result_gen;
 }
 // fallingfactorial_function
 std::string fallingfactorial_function(std::string x, int n);
-RcppExport SEXP numberr_fallingfactorial_function(SEXP xSEXP, SEXP nSEXP) {
+static SEXP numberr_fallingfactorial_function_try(SEXP xSEXP, SEXP nSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
-    Rcpp::RNGScope rcpp_rngScope_gen;
     Rcpp::traits::input_parameter< std::string >::type x(xSEXP);
     Rcpp::traits::input_parameter< int >::type n(nSEXP);
     rcpp_result_gen = Rcpp::wrap(fallingfactorial_function(x, n));
     return rcpp_result_gen;
-END_RCPP
+END_RCPP_RETURN_ERROR
+}
+RcppExport SEXP numberr_fallingfactorial_function(SEXP xSEXP, SEXP nSEXP) {
+    SEXP rcpp_result_gen;
+    {
+        Rcpp::RNGScope rcpp_rngScope_gen;
+        rcpp_result_gen = PROTECT(numberr_fallingfactorial_function_try(xSEXP, nSEXP));
+    }
+    Rboolean rcpp_isInterrupt_gen = Rf_inherits(rcpp_result_gen, "interrupted-error");
+    if (rcpp_isInterrupt_gen) {
+        UNPROTECT(1);
+        Rf_onintr();
+    }
+    Rboolean rcpp_isError_gen = Rf_inherits(rcpp_result_gen, "try-error");
+    if (rcpp_isError_gen) {
+        SEXP rcpp_msgSEXP_gen = Rf_asChar(rcpp_result_gen);
+        UNPROTECT(1);
+        Rf_error(CHAR(rcpp_msgSEXP_gen));
+    }
+    UNPROTECT(1);
+    return rcpp_result_gen;
 }
 // risingfactorial
 double risingfactorial(int x, int n);
-RcppExport SEXP numberr_risingfactorial(SEXP xSEXP, SEXP nSEXP) {
+static SEXP numberr_risingfactorial_try(SEXP xSEXP, SEXP nSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
-    Rcpp::RNGScope rcpp_rngScope_gen;
     Rcpp::traits::input_parameter< int >::type x(xSEXP);
     Rcpp::traits::input_parameter< int >::type n(nSEXP);
     rcpp_result_gen = Rcpp::wrap(risingfactorial(x, n));
     return rcpp_result_gen;
-END_RCPP
+END_RCPP_RETURN_ERROR
+}
+RcppExport SEXP numberr_risingfactorial(SEXP xSEXP, SEXP nSEXP) {
+    SEXP rcpp_result_gen;
+    {
+        Rcpp::RNGScope rcpp_rngScope_gen;
+        rcpp_result_gen = PROTECT(numberr_risingfactorial_try(xSEXP, nSEXP));
+    }
+    Rboolean rcpp_isInterrupt_gen = Rf_inherits(rcpp_result_gen, "interrupted-error");
+    if (rcpp_isInterrupt_gen) {
+        UNPROTECT(1);
+        Rf_onintr();
+    }
+    Rboolean rcpp_isError_gen = Rf_inherits(rcpp_result_gen, "try-error");
+    if (rcpp_isError_gen) {
+        SEXP rcpp_msgSEXP_gen = Rf_asChar(rcpp_result_gen);
+        UNPROTECT(1);
+        Rf_error(CHAR(rcpp_msgSEXP_gen));
+    }
+    UNPROTECT(1);
+    return rcpp_result_gen;
 }
 // risingfactorial_function
 std::string risingfactorial_function(std::string x, int n);
-RcppExport SEXP numberr_risingfactorial_function(SEXP xSEXP, SEXP nSEXP) {
+static SEXP numberr_risingfactorial_function_try(SEXP xSEXP, SEXP nSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
-    Rcpp::RNGScope rcpp_rngScope_gen;
     Rcpp::traits::input_parameter< std::string >::type x(xSEXP);
     Rcpp::traits::input_parameter< int >::type n(nSEXP);
     rcpp_result_gen = Rcpp::wrap(risingfactorial_function(x, n));
     return rcpp_result_gen;
-END_RCPP
+END_RCPP_RETURN_ERROR
 }
-// fibonacci
-NumericVector fibonacci(int n);
-static SEXP numberr_fibonacci_try(SEXP nSEXP) {
+RcppExport SEXP numberr_risingfactorial_function(SEXP xSEXP, SEXP nSEXP) {
+    SEXP rcpp_result_gen;
+    {
+        Rcpp::RNGScope rcpp_rngScope_gen;
+        rcpp_result_gen = PROTECT(numberr_risingfactorial_function_try(xSEXP, nSEXP));
+    }
+    Rboolean rcpp_isInterrupt_gen = Rf_inherits(rcpp_result_gen, "interrupted-error");
+    if (rcpp_isInterrupt_gen) {
+        UNPROTECT(1);
+        Rf_onintr();
+    }
+    Rboolean rcpp_isError_gen = Rf_inherits(rcpp_result_gen, "try-error");
+    if (rcpp_isError_gen) {
+        SEXP rcpp_msgSEXP_gen = Rf_asChar(rcpp_result_gen);
+        UNPROTECT(1);
+        Rf_error(CHAR(rcpp_msgSEXP_gen));
+    }
+    UNPROTECT(1);
+    return rcpp_result_gen;
+}
+// gcd_recursive
+unsigned long int gcd_recursive(int a, int b);
+static SEXP numberr_gcd_recursive_try(SEXP aSEXP, SEXP bSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::traits::input_parameter< int >::type a(aSEXP);
+    Rcpp::traits::input_parameter< int >::type b(bSEXP);
+    rcpp_result_gen = Rcpp::wrap(gcd_recursive(a, b));
+    return rcpp_result_gen;
+END_RCPP_RETURN_ERROR
+}
+RcppExport SEXP numberr_gcd_recursive(SEXP aSEXP, SEXP bSEXP) {
+    SEXP rcpp_result_gen;
+    {
+        Rcpp::RNGScope rcpp_rngScope_gen;
+        rcpp_result_gen = PROTECT(numberr_gcd_recursive_try(aSEXP, bSEXP));
+    }
+    Rboolean rcpp_isInterrupt_gen = Rf_inherits(rcpp_result_gen, "interrupted-error");
+    if (rcpp_isInterrupt_gen) {
+        UNPROTECT(1);
+        Rf_onintr();
+    }
+    Rboolean rcpp_isError_gen = Rf_inherits(rcpp_result_gen, "try-error");
+    if (rcpp_isError_gen) {
+        SEXP rcpp_msgSEXP_gen = Rf_asChar(rcpp_result_gen);
+        UNPROTECT(1);
+        Rf_error(CHAR(rcpp_msgSEXP_gen));
+    }
+    UNPROTECT(1);
+    return rcpp_result_gen;
+}
+// gcd_division
+unsigned long int gcd_division(int a, int b);
+static SEXP numberr_gcd_division_try(SEXP aSEXP, SEXP bSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::traits::input_parameter< int >::type a(aSEXP);
+    Rcpp::traits::input_parameter< int >::type b(bSEXP);
+    rcpp_result_gen = Rcpp::wrap(gcd_division(a, b));
+    return rcpp_result_gen;
+END_RCPP_RETURN_ERROR
+}
+RcppExport SEXP numberr_gcd_division(SEXP aSEXP, SEXP bSEXP) {
+    SEXP rcpp_result_gen;
+    {
+        Rcpp::RNGScope rcpp_rngScope_gen;
+        rcpp_result_gen = PROTECT(numberr_gcd_division_try(aSEXP, bSEXP));
+    }
+    Rboolean rcpp_isInterrupt_gen = Rf_inherits(rcpp_result_gen, "interrupted-error");
+    if (rcpp_isInterrupt_gen) {
+        UNPROTECT(1);
+        Rf_onintr();
+    }
+    Rboolean rcpp_isError_gen = Rf_inherits(rcpp_result_gen, "try-error");
+    if (rcpp_isError_gen) {
+        SEXP rcpp_msgSEXP_gen = Rf_asChar(rcpp_result_gen);
+        UNPROTECT(1);
+        Rf_error(CHAR(rcpp_msgSEXP_gen));
+    }
+    UNPROTECT(1);
+    return rcpp_result_gen;
+}
+// gcd_subtraction
+unsigned long int gcd_subtraction(int a, int b);
+static SEXP numberr_gcd_subtraction_try(SEXP aSEXP, SEXP bSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::traits::input_parameter< int >::type a(aSEXP);
+    Rcpp::traits::input_parameter< int >::type b(bSEXP);
+    rcpp_result_gen = Rcpp::wrap(gcd_subtraction(a, b));
+    return rcpp_result_gen;
+END_RCPP_RETURN_ERROR
+}
+RcppExport SEXP numberr_gcd_subtraction(SEXP aSEXP, SEXP bSEXP) {
+    SEXP rcpp_result_gen;
+    {
+        Rcpp::RNGScope rcpp_rngScope_gen;
+        rcpp_result_gen = PROTECT(numberr_gcd_subtraction_try(aSEXP, bSEXP));
+    }
+    Rboolean rcpp_isInterrupt_gen = Rf_inherits(rcpp_result_gen, "interrupted-error");
+    if (rcpp_isInterrupt_gen) {
+        UNPROTECT(1);
+        Rf_onintr();
+    }
+    Rboolean rcpp_isError_gen = Rf_inherits(rcpp_result_gen, "try-error");
+    if (rcpp_isError_gen) {
+        SEXP rcpp_msgSEXP_gen = Rf_asChar(rcpp_result_gen);
+        UNPROTECT(1);
+        Rf_error(CHAR(rcpp_msgSEXP_gen));
+    }
+    UNPROTECT(1);
+    return rcpp_result_gen;
+}
+// gcd_extended
+NumericVector gcd_extended(int a, int b);
+static SEXP numberr_gcd_extended_try(SEXP aSEXP, SEXP bSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::traits::input_parameter< int >::type a(aSEXP);
+    Rcpp::traits::input_parameter< int >::type b(bSEXP);
+    rcpp_result_gen = Rcpp::wrap(gcd_extended(a, b));
+    return rcpp_result_gen;
+END_RCPP_RETURN_ERROR
+}
+RcppExport SEXP numberr_gcd_extended(SEXP aSEXP, SEXP bSEXP) {
+    SEXP rcpp_result_gen;
+    {
+        Rcpp::RNGScope rcpp_rngScope_gen;
+        rcpp_result_gen = PROTECT(numberr_gcd_extended_try(aSEXP, bSEXP));
+    }
+    Rboolean rcpp_isInterrupt_gen = Rf_inherits(rcpp_result_gen, "interrupted-error");
+    if (rcpp_isInterrupt_gen) {
+        UNPROTECT(1);
+        Rf_onintr();
+    }
+    Rboolean rcpp_isError_gen = Rf_inherits(rcpp_result_gen, "try-error");
+    if (rcpp_isError_gen) {
+        SEXP rcpp_msgSEXP_gen = Rf_asChar(rcpp_result_gen);
+        UNPROTECT(1);
+        Rf_error(CHAR(rcpp_msgSEXP_gen));
+    }
+    UNPROTECT(1);
+    return rcpp_result_gen;
+}
+// iscomposite
+bool iscomposite(int n);
+static SEXP numberr_iscomposite_try(SEXP nSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::traits::input_parameter< int >::type n(nSEXP);
+    rcpp_result_gen = Rcpp::wrap(iscomposite(n));
+    return rcpp_result_gen;
+END_RCPP_RETURN_ERROR
+}
+RcppExport SEXP numberr_iscomposite(SEXP nSEXP) {
+    SEXP rcpp_result_gen;
+    {
+        Rcpp::RNGScope rcpp_rngScope_gen;
+        rcpp_result_gen = PROTECT(numberr_iscomposite_try(nSEXP));
+    }
+    Rboolean rcpp_isInterrupt_gen = Rf_inherits(rcpp_result_gen, "interrupted-error");
+    if (rcpp_isInterrupt_gen) {
+        UNPROTECT(1);
+        Rf_onintr();
+    }
+    Rboolean rcpp_isError_gen = Rf_inherits(rcpp_result_gen, "try-error");
+    if (rcpp_isError_gen) {
+        SEXP rcpp_msgSEXP_gen = Rf_asChar(rcpp_result_gen);
+        UNPROTECT(1);
+        Rf_error(CHAR(rcpp_msgSEXP_gen));
+    }
+    UNPROTECT(1);
+    return rcpp_result_gen;
+}
+// iscoprime
+bool iscoprime(int a, int b);
+static SEXP numberr_iscoprime_try(SEXP aSEXP, SEXP bSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::traits::input_parameter< int >::type a(aSEXP);
+    Rcpp::traits::input_parameter< int >::type b(bSEXP);
+    rcpp_result_gen = Rcpp::wrap(iscoprime(a, b));
+    return rcpp_result_gen;
+END_RCPP_RETURN_ERROR
+}
+RcppExport SEXP numberr_iscoprime(SEXP aSEXP, SEXP bSEXP) {
+    SEXP rcpp_result_gen;
+    {
+        Rcpp::RNGScope rcpp_rngScope_gen;
+        rcpp_result_gen = PROTECT(numberr_iscoprime_try(aSEXP, bSEXP));
+    }
+    Rboolean rcpp_isInterrupt_gen = Rf_inherits(rcpp_result_gen, "interrupted-error");
+    if (rcpp_isInterrupt_gen) {
+        UNPROTECT(1);
+        Rf_onintr();
+    }
+    Rboolean rcpp_isError_gen = Rf_inherits(rcpp_result_gen, "try-error");
+    if (rcpp_isError_gen) {
+        SEXP rcpp_msgSEXP_gen = Rf_asChar(rcpp_result_gen);
+        UNPROTECT(1);
+        Rf_error(CHAR(rcpp_msgSEXP_gen));
+    }
+    UNPROTECT(1);
+    return rcpp_result_gen;
+}
+// iseven
+bool iseven(int n);
+static SEXP numberr_iseven_try(SEXP nSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::traits::input_parameter< int >::type n(nSEXP);
+    rcpp_result_gen = Rcpp::wrap(iseven(n));
+    return rcpp_result_gen;
+END_RCPP_RETURN_ERROR
+}
+RcppExport SEXP numberr_iseven(SEXP nSEXP) {
+    SEXP rcpp_result_gen;
+    {
+        Rcpp::RNGScope rcpp_rngScope_gen;
+        rcpp_result_gen = PROTECT(numberr_iseven_try(nSEXP));
+    }
+    Rboolean rcpp_isInterrupt_gen = Rf_inherits(rcpp_result_gen, "interrupted-error");
+    if (rcpp_isInterrupt_gen) {
+        UNPROTECT(1);
+        Rf_onintr();
+    }
+    Rboolean rcpp_isError_gen = Rf_inherits(rcpp_result_gen, "try-error");
+    if (rcpp_isError_gen) {
+        SEXP rcpp_msgSEXP_gen = Rf_asChar(rcpp_result_gen);
+        UNPROTECT(1);
+        Rf_error(CHAR(rcpp_msgSEXP_gen));
+    }
+    UNPROTECT(1);
+    return rcpp_result_gen;
+}
+// isodd
+bool isodd(int n);
+static SEXP numberr_isodd_try(SEXP nSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::traits::input_parameter< int >::type n(nSEXP);
+    rcpp_result_gen = Rcpp::wrap(isodd(n));
+    return rcpp_result_gen;
+END_RCPP_RETURN_ERROR
+}
+RcppExport SEXP numberr_isodd(SEXP nSEXP) {
+    SEXP rcpp_result_gen;
+    {
+        Rcpp::RNGScope rcpp_rngScope_gen;
+        rcpp_result_gen = PROTECT(numberr_isodd_try(nSEXP));
+    }
+    Rboolean rcpp_isInterrupt_gen = Rf_inherits(rcpp_result_gen, "interrupted-error");
+    if (rcpp_isInterrupt_gen) {
+        UNPROTECT(1);
+        Rf_onintr();
+    }
+    Rboolean rcpp_isError_gen = Rf_inherits(rcpp_result_gen, "try-error");
+    if (rcpp_isError_gen) {
+        SEXP rcpp_msgSEXP_gen = Rf_asChar(rcpp_result_gen);
+        UNPROTECT(1);
+        Rf_error(CHAR(rcpp_msgSEXP_gen));
+    }
+    UNPROTECT(1);
+    return rcpp_result_gen;
+}
+// issquare
+bool issquare(int n);
+static SEXP numberr_issquare_try(SEXP nSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::traits::input_parameter< int >::type n(nSEXP);
+    rcpp_result_gen = Rcpp::wrap(issquare(n));
+    return rcpp_result_gen;
+END_RCPP_RETURN_ERROR
+}
+RcppExport SEXP numberr_issquare(SEXP nSEXP) {
+    SEXP rcpp_result_gen;
+    {
+        Rcpp::RNGScope rcpp_rngScope_gen;
+        rcpp_result_gen = PROTECT(numberr_issquare_try(nSEXP));
+    }
+    Rboolean rcpp_isInterrupt_gen = Rf_inherits(rcpp_result_gen, "interrupted-error");
+    if (rcpp_isInterrupt_gen) {
+        UNPROTECT(1);
+        Rf_onintr();
+    }
+    Rboolean rcpp_isError_gen = Rf_inherits(rcpp_result_gen, "try-error");
+    if (rcpp_isError_gen) {
+        SEXP rcpp_msgSEXP_gen = Rf_asChar(rcpp_result_gen);
+        UNPROTECT(1);
+        Rf_error(CHAR(rcpp_msgSEXP_gen));
+    }
+    UNPROTECT(1);
+    return rcpp_result_gen;
+}
+// isprime
+bool isprime(unsigned long int n);
+static SEXP numberr_isprime_try(SEXP nSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::traits::input_parameter< unsigned long int >::type n(nSEXP);
+    rcpp_result_gen = Rcpp::wrap(isprime(n));
+    return rcpp_result_gen;
+END_RCPP_RETURN_ERROR
+}
+RcppExport SEXP numberr_isprime(SEXP nSEXP) {
+    SEXP rcpp_result_gen;
+    {
+        Rcpp::RNGScope rcpp_rngScope_gen;
+        rcpp_result_gen = PROTECT(numberr_isprime_try(nSEXP));
+    }
+    Rboolean rcpp_isInterrupt_gen = Rf_inherits(rcpp_result_gen, "interrupted-error");
+    if (rcpp_isInterrupt_gen) {
+        UNPROTECT(1);
+        Rf_onintr();
+    }
+    Rboolean rcpp_isError_gen = Rf_inherits(rcpp_result_gen, "try-error");
+    if (rcpp_isError_gen) {
+        SEXP rcpp_msgSEXP_gen = Rf_asChar(rcpp_result_gen);
+        UNPROTECT(1);
+        Rf_error(CHAR(rcpp_msgSEXP_gen));
+    }
+    UNPROTECT(1);
+    return rcpp_result_gen;
+}
+// lucas_lehmer
+bool lucas_lehmer(unsigned long int n);
+static SEXP numberr_lucas_lehmer_try(SEXP nSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::traits::input_parameter< unsigned long int >::type n(nSEXP);
+    rcpp_result_gen = Rcpp::wrap(lucas_lehmer(n));
+    return rcpp_result_gen;
+END_RCPP_RETURN_ERROR
+}
+RcppExport SEXP numberr_lucas_lehmer(SEXP nSEXP) {
+    SEXP rcpp_result_gen;
+    {
+        Rcpp::RNGScope rcpp_rngScope_gen;
+        rcpp_result_gen = PROTECT(numberr_lucas_lehmer_try(nSEXP));
+    }
+    Rboolean rcpp_isInterrupt_gen = Rf_inherits(rcpp_result_gen, "interrupted-error");
+    if (rcpp_isInterrupt_gen) {
+        UNPROTECT(1);
+        Rf_onintr();
+    }
+    Rboolean rcpp_isError_gen = Rf_inherits(rcpp_result_gen, "try-error");
+    if (rcpp_isError_gen) {
+        SEXP rcpp_msgSEXP_gen = Rf_asChar(rcpp_result_gen);
+        UNPROTECT(1);
+        Rf_error(CHAR(rcpp_msgSEXP_gen));
+    }
+    UNPROTECT(1);
+    return rcpp_result_gen;
+}
+// catalan
+NumericVector catalan(unsigned int n);
+static SEXP numberr_catalan_try(SEXP nSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::traits::input_parameter< unsigned int >::type n(nSEXP);
+    rcpp_result_gen = Rcpp::wrap(catalan(n));
+    return rcpp_result_gen;
+END_RCPP_RETURN_ERROR
+}
+RcppExport SEXP numberr_catalan(SEXP nSEXP) {
+    SEXP rcpp_result_gen;
+    {
+        Rcpp::RNGScope rcpp_rngScope_gen;
+        rcpp_result_gen = PROTECT(numberr_catalan_try(nSEXP));
+    }
+    Rboolean rcpp_isInterrupt_gen = Rf_inherits(rcpp_result_gen, "interrupted-error");
+    if (rcpp_isInterrupt_gen) {
+        UNPROTECT(1);
+        Rf_onintr();
+    }
+    Rboolean rcpp_isError_gen = Rf_inherits(rcpp_result_gen, "try-error");
+    if (rcpp_isError_gen) {
+        SEXP rcpp_msgSEXP_gen = Rf_asChar(rcpp_result_gen);
+        UNPROTECT(1);
+        Rf_error(CHAR(rcpp_msgSEXP_gen));
+    }
+    UNPROTECT(1);
+    return rcpp_result_gen;
+}
+// fibonacci
+NumericVector fibonacci(unsigned long int n);
+static SEXP numberr_fibonacci_try(SEXP nSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::traits::input_parameter< unsigned long int >::type n(nSEXP);
     rcpp_result_gen = Rcpp::wrap(fibonacci(n));
     return rcpp_result_gen;
 END_RCPP_RETURN_ERROR
@@ -188,145 +830,103 @@ RcppExport SEXP numberr_fibonacci(SEXP nSEXP) {
     UNPROTECT(1);
     return rcpp_result_gen;
 }
-// gcd_recursive
-int gcd_recursive(int a, int b);
-RcppExport SEXP numberr_gcd_recursive(SEXP aSEXP, SEXP bSEXP) {
+// three_n_one
+NumericVector three_n_one(unsigned long int n);
+static SEXP numberr_three_n_one_try(SEXP nSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
-    Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< int >::type a(aSEXP);
-    Rcpp::traits::input_parameter< int >::type b(bSEXP);
-    rcpp_result_gen = Rcpp::wrap(gcd_recursive(a, b));
+    Rcpp::traits::input_parameter< unsigned long int >::type n(nSEXP);
+    rcpp_result_gen = Rcpp::wrap(three_n_one(n));
     return rcpp_result_gen;
-END_RCPP
+END_RCPP_RETURN_ERROR
 }
-// gcd_division
-int gcd_division(int a, int b);
-RcppExport SEXP numberr_gcd_division(SEXP aSEXP, SEXP bSEXP) {
-BEGIN_RCPP
-    Rcpp::RObject rcpp_result_gen;
-    Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< int >::type a(aSEXP);
-    Rcpp::traits::input_parameter< int >::type b(bSEXP);
-    rcpp_result_gen = Rcpp::wrap(gcd_division(a, b));
+RcppExport SEXP numberr_three_n_one(SEXP nSEXP) {
+    SEXP rcpp_result_gen;
+    {
+        Rcpp::RNGScope rcpp_rngScope_gen;
+        rcpp_result_gen = PROTECT(numberr_three_n_one_try(nSEXP));
+    }
+    Rboolean rcpp_isInterrupt_gen = Rf_inherits(rcpp_result_gen, "interrupted-error");
+    if (rcpp_isInterrupt_gen) {
+        UNPROTECT(1);
+        Rf_onintr();
+    }
+    Rboolean rcpp_isError_gen = Rf_inherits(rcpp_result_gen, "try-error");
+    if (rcpp_isError_gen) {
+        SEXP rcpp_msgSEXP_gen = Rf_asChar(rcpp_result_gen);
+        UNPROTECT(1);
+        Rf_error(CHAR(rcpp_msgSEXP_gen));
+    }
+    UNPROTECT(1);
     return rcpp_result_gen;
-END_RCPP
-}
-// gcd_subtraction
-int gcd_subtraction(int a, int b);
-RcppExport SEXP numberr_gcd_subtraction(SEXP aSEXP, SEXP bSEXP) {
-BEGIN_RCPP
-    Rcpp::RObject rcpp_result_gen;
-    Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< int >::type a(aSEXP);
-    Rcpp::traits::input_parameter< int >::type b(bSEXP);
-    rcpp_result_gen = Rcpp::wrap(gcd_subtraction(a, b));
-    return rcpp_result_gen;
-END_RCPP
-}
-// gcd_extended
-NumericVector gcd_extended(int a, int b);
-RcppExport SEXP numberr_gcd_extended(SEXP aSEXP, SEXP bSEXP) {
-BEGIN_RCPP
-    Rcpp::RObject rcpp_result_gen;
-    Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< int >::type a(aSEXP);
-    Rcpp::traits::input_parameter< int >::type b(bSEXP);
-    rcpp_result_gen = Rcpp::wrap(gcd_extended(a, b));
-    return rcpp_result_gen;
-END_RCPP
-}
-// iscomposite
-bool iscomposite(int n);
-RcppExport SEXP numberr_iscomposite(SEXP nSEXP) {
-BEGIN_RCPP
-    Rcpp::RObject rcpp_result_gen;
-    Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< int >::type n(nSEXP);
-    rcpp_result_gen = Rcpp::wrap(iscomposite(n));
-    return rcpp_result_gen;
-END_RCPP
-}
-// iscoprime
-bool iscoprime(int a, int b);
-RcppExport SEXP numberr_iscoprime(SEXP aSEXP, SEXP bSEXP) {
-BEGIN_RCPP
-    Rcpp::RObject rcpp_result_gen;
-    Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< int >::type a(aSEXP);
-    Rcpp::traits::input_parameter< int >::type b(bSEXP);
-    rcpp_result_gen = Rcpp::wrap(iscoprime(a, b));
-    return rcpp_result_gen;
-END_RCPP
-}
-// iseven
-bool iseven(int n);
-RcppExport SEXP numberr_iseven(SEXP nSEXP) {
-BEGIN_RCPP
-    Rcpp::RObject rcpp_result_gen;
-    Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< int >::type n(nSEXP);
-    rcpp_result_gen = Rcpp::wrap(iseven(n));
-    return rcpp_result_gen;
-END_RCPP
-}
-// isodd
-bool isodd(int n);
-RcppExport SEXP numberr_isodd(SEXP nSEXP) {
-BEGIN_RCPP
-    Rcpp::RObject rcpp_result_gen;
-    Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< int >::type n(nSEXP);
-    rcpp_result_gen = Rcpp::wrap(isodd(n));
-    return rcpp_result_gen;
-END_RCPP
-}
-// issquare
-bool issquare(int n);
-RcppExport SEXP numberr_issquare(SEXP nSEXP) {
-BEGIN_RCPP
-    Rcpp::RObject rcpp_result_gen;
-    Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< int >::type n(nSEXP);
-    rcpp_result_gen = Rcpp::wrap(issquare(n));
-    return rcpp_result_gen;
-END_RCPP
-}
-// isprime
-bool isprime(int n);
-RcppExport SEXP numberr_isprime(SEXP nSEXP) {
-BEGIN_RCPP
-    Rcpp::RObject rcpp_result_gen;
-    Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< int >::type n(nSEXP);
-    rcpp_result_gen = Rcpp::wrap(isprime(n));
-    return rcpp_result_gen;
-END_RCPP
-}
-// lucas_lehmer
-bool lucas_lehmer(int n);
-RcppExport SEXP numberr_lucas_lehmer(SEXP nSEXP) {
-BEGIN_RCPP
-    Rcpp::RObject rcpp_result_gen;
-    Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< int >::type n(nSEXP);
-    rcpp_result_gen = Rcpp::wrap(lucas_lehmer(n));
-    return rcpp_result_gen;
-END_RCPP
 }
 
 // validate (ensure exported C++ functions exist before calling them)
 static int numberr_RcppExport_validate(const char* sig) { 
     static std::set<std::string> signatures;
     if (signatures.empty()) {
-        signatures.insert("NumericVector(*fibonacci)(int)");
+        signatures.insert("int(*binomial_recursive)(int,int)");
+        signatures.insert("int(*binomial_multiplicative)(int,int)");
+        signatures.insert("int(*binomial_factorial)(int,int)");
+        signatures.insert("NumericVector(*factor_trial)(unsigned int)");
+        signatures.insert("NumericVector(*fermat)(unsigned int)");
+        signatures.insert("NumericVector(*pollardrho)(unsigned long int)");
+        signatures.insert("double(*factorial)(int)");
+        signatures.insert("double(*stirling)(int)");
+        signatures.insert("double(*stirlingln)(int)");
+        signatures.insert("double(*ramanujan)(int)");
+        signatures.insert("double(*fallingfactorial)(int,int)");
+        signatures.insert("std::string(*fallingfactorial_function)(std::string,int)");
+        signatures.insert("double(*risingfactorial)(int,int)");
+        signatures.insert("std::string(*risingfactorial_function)(std::string,int)");
+        signatures.insert("unsigned long int(*gcd_recursive)(int,int)");
+        signatures.insert("unsigned long int(*gcd_division)(int,int)");
+        signatures.insert("unsigned long int(*gcd_subtraction)(int,int)");
+        signatures.insert("NumericVector(*gcd_extended)(int,int)");
+        signatures.insert("bool(*iscomposite)(int)");
+        signatures.insert("bool(*iscoprime)(int,int)");
+        signatures.insert("bool(*iseven)(int)");
+        signatures.insert("bool(*isodd)(int)");
+        signatures.insert("bool(*issquare)(int)");
+        signatures.insert("bool(*isprime)(unsigned long int)");
+        signatures.insert("bool(*lucas_lehmer)(unsigned long int)");
+        signatures.insert("NumericVector(*catalan)(unsigned int)");
+        signatures.insert("NumericVector(*fibonacci)(unsigned long int)");
+        signatures.insert("NumericVector(*three_n_one)(unsigned long int)");
     }
     return signatures.find(sig) != signatures.end();
 }
 
 // registerCCallable (register entry points for exported C++ functions)
 RcppExport SEXP numberr_RcppExport_registerCCallable() { 
+    R_RegisterCCallable("numberr", "numberr_binomial_recursive", (DL_FUNC)numberr_binomial_recursive_try);
+    R_RegisterCCallable("numberr", "numberr_binomial_multiplicative", (DL_FUNC)numberr_binomial_multiplicative_try);
+    R_RegisterCCallable("numberr", "numberr_binomial_factorial", (DL_FUNC)numberr_binomial_factorial_try);
+    R_RegisterCCallable("numberr", "numberr_factor_trial", (DL_FUNC)numberr_factor_trial_try);
+    R_RegisterCCallable("numberr", "numberr_fermat", (DL_FUNC)numberr_fermat_try);
+    R_RegisterCCallable("numberr", "numberr_pollardrho", (DL_FUNC)numberr_pollardrho_try);
+    R_RegisterCCallable("numberr", "numberr_factorial", (DL_FUNC)numberr_factorial_try);
+    R_RegisterCCallable("numberr", "numberr_stirling", (DL_FUNC)numberr_stirling_try);
+    R_RegisterCCallable("numberr", "numberr_stirlingln", (DL_FUNC)numberr_stirlingln_try);
+    R_RegisterCCallable("numberr", "numberr_ramanujan", (DL_FUNC)numberr_ramanujan_try);
+    R_RegisterCCallable("numberr", "numberr_fallingfactorial", (DL_FUNC)numberr_fallingfactorial_try);
+    R_RegisterCCallable("numberr", "numberr_fallingfactorial_function", (DL_FUNC)numberr_fallingfactorial_function_try);
+    R_RegisterCCallable("numberr", "numberr_risingfactorial", (DL_FUNC)numberr_risingfactorial_try);
+    R_RegisterCCallable("numberr", "numberr_risingfactorial_function", (DL_FUNC)numberr_risingfactorial_function_try);
+    R_RegisterCCallable("numberr", "numberr_gcd_recursive", (DL_FUNC)numberr_gcd_recursive_try);
+    R_RegisterCCallable("numberr", "numberr_gcd_division", (DL_FUNC)numberr_gcd_division_try);
+    R_RegisterCCallable("numberr", "numberr_gcd_subtraction", (DL_FUNC)numberr_gcd_subtraction_try);
+    R_RegisterCCallable("numberr", "numberr_gcd_extended", (DL_FUNC)numberr_gcd_extended_try);
+    R_RegisterCCallable("numberr", "numberr_iscomposite", (DL_FUNC)numberr_iscomposite_try);
+    R_RegisterCCallable("numberr", "numberr_iscoprime", (DL_FUNC)numberr_iscoprime_try);
+    R_RegisterCCallable("numberr", "numberr_iseven", (DL_FUNC)numberr_iseven_try);
+    R_RegisterCCallable("numberr", "numberr_isodd", (DL_FUNC)numberr_isodd_try);
+    R_RegisterCCallable("numberr", "numberr_issquare", (DL_FUNC)numberr_issquare_try);
+    R_RegisterCCallable("numberr", "numberr_isprime", (DL_FUNC)numberr_isprime_try);
+    R_RegisterCCallable("numberr", "numberr_lucas_lehmer", (DL_FUNC)numberr_lucas_lehmer_try);
+    R_RegisterCCallable("numberr", "numberr_catalan", (DL_FUNC)numberr_catalan_try);
     R_RegisterCCallable("numberr", "numberr_fibonacci", (DL_FUNC)numberr_fibonacci_try);
+    R_RegisterCCallable("numberr", "numberr_three_n_one", (DL_FUNC)numberr_three_n_one_try);
     R_RegisterCCallable("numberr", "numberr_RcppExport_validate", (DL_FUNC)numberr_RcppExport_validate);
     return R_NilValue;
 }

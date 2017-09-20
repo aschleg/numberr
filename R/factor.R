@@ -83,7 +83,7 @@ factor.trial <- function(n) {
     factors <- append(factors, n)
   }
 
-  return(factor)
+  return(factors)
 }
 
 

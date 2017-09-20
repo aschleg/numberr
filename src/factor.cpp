@@ -1,10 +1,79 @@
 #include <Rcpp.h>
 #include <cmath>
-#include "isprime.h"
+#include <vector>
 #include "integers.h"
 #include "gcd.h"
 
 using namespace Rcpp;
+
+
+//' Computes the factors of an integer, should they exist, using the trial
+//' division method.
+//'
+//' Integer factorization by trial division is the most inefficient algorithm for
+//' decomposing a composite number. Trial division is the method of testing if
+//' \eqn{n} is divisible by a smaller number, beginning with 2 and proceeding
+//' upwards. This order is used to eliminate the need to test for multiples of 2
+//' and 3. Also, the trial factors never need to go further than the square root
+//' of \eqn{n}, \eqn{\sqrt{n}}, due to the fact that if \eqn{n} has a factor,
+//' there exists a factor \eqn{f \leq \sqrt{n}}.
+//'
+//' @param n Integer to be factored into product of smaller integers.
+//' @return Vector containing the factors of \eqn{n} should they exist. If
+//'   \eqn{n} is prime, the returned list will only contain \eqn{n}.
+//' @examples
+//' factor_trial(9)
+//' factor_trial(19742)
+//' factor_trial(13)
+//' @references Trial division. (2017, April 30). In Wikipedia, The Free
+//'   Encyclopedia. From
+//'   https://en.wikipedia.org/w/index.php?title=Trial_division&oldid=778023614
+//' @export
+// [[Rcpp::interfaces(r, cpp)]]
+// [[Rcpp::export]]
+NumericVector factor_trial(unsigned int n) {
+  std::vector<unsigned int> x(ceil(sqrt(n)));
+  
+  if (n < 2 || _isprime(n) == true) {
+    x.resize(2);
+    x[0] = 1; x[1] = n;
+    NumericVector x1 = Rcpp::wrap(x);
+    return x1;
+  }
+
+  unsigned long div = 2.0;
+  unsigned int i = 0;
+  
+  if (n % div == 0) {
+    x[i] = div;
+    n = n / div;
+    i = i + 1;
+  }
+
+  div += 1;
+
+  do {
+    if (n % div == 0) {
+      x[i] = div;
+      n = n / div;
+      i = i + 1;
+    }
+    else {
+      div += 2;
+    }
+  } while (n > 1 && div <= sqrt(n));
+
+  if (n > 1) {
+    x[i] = n;
+  }
+
+  if (x.size() >= i) {
+    x.resize(i + 1);
+  }
+
+  NumericVector x1 = Rcpp::wrap(x);
+  return x1;
+}
 
 
 //' Computes the factorization of an integer \eqn{n} by Fermat's factorization
@@ -25,20 +94,23 @@ using namespace Rcpp;
 //'   Encyclopedia. From
 //'   https://en.wikipedia.org/w/index.php?title=Fermat%27s_factorization_method&oldid=763010603
 //' @export
+// [[Rcpp::interfaces(r, cpp)]]
 // [[Rcpp::export]]
-NumericVector fermat(int n) {
+NumericVector fermat(unsigned int n) {
   if (_isprime(n) == true) {
-    return n;
+    NumericVector fac(2);
+    fac[0] = 1; fac[1] = n;
+    return fac;
   }
-  
-  int a = ceil(sqrt(n));
-  int b = pow(a, 2) - n;
-  
+
+  unsigned long int a = ceil(sqrt(n));
+  unsigned long int b = pow(a, 2) - n;
+
   while(_issquare(b) == false) {
     a = a + 1;
     b = pow(a, 2) - n;
   }
-  
+
   NumericVector fac = NumericVector::create(a - sqrt(b), a + sqrt(b));
   return fac;
 }
@@ -59,16 +131,17 @@ NumericVector fermat(int n) {
 //'   Encyclopedia. From
 //'   https://en.wikipedia.org/w/index.php?title=Fermat%27s_factorization_method&oldid=763010603
 //' @export
+// [[Rcpp::interfaces(r, cpp)]]
 // [[Rcpp::export]]
-NumericVector pollardrho(int n) {
-  int x = 2; int y = 2; int d = 1;
-  
+NumericVector pollardrho(unsigned long int n) {
+  unsigned long int x = 2; unsigned long int y = 2; unsigned long int d = 1;
+
   while (d == 1) {
     x = pow(x, 2) + 1 % n;
     y = fmod(pow(pow(y, 2) + 1, 2), n);
-    d = _gcd_recursive(abs(x - y), n);
+    d = _gcd_recursive(x - y, n);
   }
-  
+
   if (d == n) {
     return 0;
   }

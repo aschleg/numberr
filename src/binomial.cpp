@@ -1,6 +1,6 @@
 #include <Rcpp.h>
 #include <algorithm>
-#include "factorial.h"
+#include "combinatorics.h"
 
 using namespace Rcpp;
 
@@ -21,14 +21,10 @@ using namespace Rcpp;
 //'    Weisstein, Eric W. "Binomial Coefficient." From MathWorld--A Wolfram Web
 //'   Resource. http://mathworld.wolfram.com/BinomialCoefficient.html
 //' @export
+// [[Rcpp::interfaces(r, cpp)]]
 // [[Rcpp::export]]
 int binomial_recursive(int n, int k) {
-  if (k == n || k == 0) {
-    return 1;
-  }
-  else {
-    return binomial_recursive(n - 1, k - 1) + binomial_recursive(n - 1, k);
-  }
+  return _binomial_recursive(n, k);
 }
 
 
@@ -53,19 +49,10 @@ int binomial_recursive(int n, int k) {
 //'    Weisstein, Eric W. "Binomial Coefficient." From MathWorld--A Wolfram Web
 //'   Resource. http://mathworld.wolfram.com/BinomialCoefficient.html
 //' @export
+// [[Rcpp::interfaces(r, cpp)]]
 // [[Rcpp::export]]
 int binomial_multiplicative(int n, int k) {
-
-  int bico = 1;
-  int nk = std::min(n, n - k);
-  int j = 1;
-
-  for(int c = 1; c <= nk; c++) {
-    bico = bico * (n + 1 - j) / j;
-    j += 1;
-  }
-
-  return bico;
+  return _binomial_multiplicative(n, k);
 }
 
 
@@ -84,10 +71,9 @@ int binomial_multiplicative(int n, int k) {
 //'    Weisstein, Eric W. "Binomial Coefficient." From MathWorld--A Wolfram Web
 //'   Resource. http://mathworld.wolfram.com/BinomialCoefficient.html
 //' @export
+// [[Rcpp::interfaces(r, cpp)]]
 // [[Rcpp::export]]
 int binomial_factorial(int n, int k) {
-  int nk = std::min(n, n - k);
-  int bico = _factorial(n) / (_factorial(k) * _factorial(nk));
 
-  return bico;
+  return _binomial_factorial(n, k);
 }

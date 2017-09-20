@@ -1,8 +1,8 @@
 
 
-## Numberr
+## About Numberr
 
-Numberr is an R package featuring many number-theoretic algorithms and functions related to number theory. 
+The numberr package contains many algorithms and functions related to number theory. Most functions are written in `C++` using [Rcpp](https://cran.r-project.org/web/packages/Rcpp/index.html).
 
 ## Installation
 
@@ -14,14 +14,26 @@ library(devtools)
 install_github("aaron/numberr")
 ~~~~
 
-## Available Number-Theoretic Algorithms and Functions
+## Available Algorithms and Functions
 
-* Prime and Composite Numbers
-* Factorial calculation and approximation
-* Binomial Coefficient Algorithms
-* Greatest Common Divisor
 * Integer Factorization
-* Number Sequences
+  - Trial factorization
+  - Fermat
+  - Pollard's rho
+* Binomial Coefficient
+  - Recursive, multiplicative and factorial methods
+* Factorials
+  - Stirling's Approximation
+  - Gosper's natural log Approximation
+  - Ramanujan's factorial approximation
+* Greatest Common Divisor
+  - Recursive, division, and subtraction (Euclid) methods
+* Primes and Composite Numbers
+  - Coprime integers
+  - squares, composites
+* Primality Tests
+  - Naive method
+  - Lucas-Lehmer
 
 ### License
 

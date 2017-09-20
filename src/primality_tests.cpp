@@ -1,6 +1,6 @@
 #include <Rcpp.h>
 #include <math.h>
-#include "isprime.h"
+#include "integers.h"
 
 using namespace Rcpp;
 
@@ -19,18 +19,20 @@ using namespace Rcpp;
 //' @references Weisstein, Eric W. "Prime Number." From MathWorld--A Wolfram Web
 //' Resource. http://mathworld.wolfram.com/PrimeNumber.html
 //' @export
+// [[Rcpp::interfaces(r, cpp)]]
 // [[Rcpp::export]]
-bool isprime(int n) {
+bool isprime(double n) {
   return _isprime(n);
 }
 
 
+// [[Rcpp::interfaces(r, cpp)]]
 // [[Rcpp::export]]
-bool lucas_lehmer(int n) {
+bool lucas_lehmer(unsigned int n) {
   int s = 4;
   int m = pow(2, n) - 1;
 
-  for (int i = 1; i <= n - 2; ++i) {
+  for (unsigned int i = 1; i <= n - 2; ++i) {
     s = fmod(s * s - 2, m);
   }
 

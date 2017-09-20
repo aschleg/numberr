@@ -1,19 +1,5 @@
 #include <math.h>
-#include "isprime.h"
 #include "gcd.h"
-
-
-#ifndef __ISCOMPOSITE__
-#define __ISCOMPOSITE__
-
-inline bool _iscomposite(int n) {
-  if (_isprime(n) == true) {
-    return false;
-  }
-  return true;
-}
-
-#endif
 
 
 #ifndef __ISCOPRIME__
@@ -58,6 +44,52 @@ inline bool _iseven(int n) {
     return false;
   }
   
+  return true;
+}
+
+#endif
+
+
+#ifndef __ISPRIME__
+#define __ISPRIME__
+
+inline bool _isprime(unsigned int n) {
+  
+  if (_iseven(n) == true) {
+    return false;
+  }
+  
+  if (n != round(n) || n == 1) {
+    return false;
+  }
+  
+  else if (n == 2 || n == 3) {
+    return true;
+  }
+  
+  if (n % 2 == 0 || n % 3 == 0 || n % 5 == 0) {
+    return false;
+  }
+  
+  for (unsigned int i = 7; i < floor(sqrt(n)); i += 2) {
+    if (n % i == 0 || n % (i + 1) == 0) {
+      return false;
+    }
+  }
+  
+  return true;
+}
+
+#endif
+
+
+#ifndef __ISCOMPOSITE__
+#define __ISCOMPOSITE__
+
+inline bool _iscomposite(int n) {
+  if (_isprime(n) == true) {
+    return false;
+  }
   return true;
 }
 

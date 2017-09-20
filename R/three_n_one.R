@@ -41,5 +41,3 @@ three.n.one <- function(n) {
 
   return(tno.seq)
 }
-
-three.n.one(9)

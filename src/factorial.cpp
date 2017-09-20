@@ -4,7 +4,7 @@
 #include <math.h>
 #include <iostream>
 #include <string>
-#include "factorial.h"
+#include "combinatorics.h"
 
 using namespace Rcpp;
 
@@ -24,6 +24,8 @@ using namespace Rcpp;
 //'   Numerical recipes (3rd ed.). Cambridge: Cambridge University Press.
 //'   Weisstein, Eric W. "Factorial." From MathWorld--A Wolfram Web Resource.
 //'   http://mathworld.wolfram.com/Factorial.html
+//'   @export
+// [[Rcpp::interfaces(r, cpp)]]
 // [[Rcpp::export]]
 double factorial(int n) {
   return _factorial(n);
@@ -51,6 +53,8 @@ double factorial(int n) {
 //'   https://en.wikipedia.org/w/index.php?title=Stirling%27s_approximation&oldid=769328178
 //'    Weisstein, Eric W. "Stirling's Approximation." From MathWorld--A Wolfram
 //'   Web Resource. http://mathworld.wolfram.com/StirlingsApproximation.html
+//'   @export
+// [[Rcpp::interfaces(r, cpp)]]
 // [[Rcpp::export]]
 double stirling(int n) {
 
@@ -79,6 +83,7 @@ double stirling(int n) {
 //'   Free Encyclopedia. From
 //'   https://en.wikipedia.org/w/index.php?title=Stirling%27s_approximation&oldid=769328178
 //' @export
+// [[Rcpp::interfaces(r, cpp)]]
 // [[Rcpp::export]]
 double stirlingln(int n) {
   double f = n * log(n) - n + (1.0 / 6.0) * log(n * (1.0 + 4.0 * n * (1.0 + 2.0 * n))) + 0.5 * log(M_PI);
@@ -106,6 +111,7 @@ double stirlingln(int n) {
 //'   Valahia University of Targoviste, Department of Mathematics. Retrieved
 //'   from http://files.ele-math.com/articles/jmi-05-53.pdf
 //' @export
+// [[Rcpp::interfaces(r, cpp)]]
 // [[Rcpp::export]]
 double ramanujan(int n) {
   double f = sqrt(M_PI) * pow(n, n) * exp(-n) * pow((8.0 * pow(n, 3.0) + 4.0 * pow(n, 2) + n + 1.0 / 30.0), 1.0 / 6.0);
@@ -131,6 +137,7 @@ double ramanujan(int n) {
 //'    Weisstein, Eric W. "Falling Factorial." From MathWorld--A Wolfram Web
 //'   Resource. http://mathworld.wolfram.com/FallingFactorial.html
 //' @export
+// [[Rcpp::interfaces(r, cpp)]]
 // [[Rcpp::export]]
 double fallingfactorial(int x, int n) {
   double f = 1.0;
@@ -151,13 +158,14 @@ double fallingfactorial(int x, int n) {
 }
 
 
+// [[Rcpp::interfaces(r, cpp)]]
 // [[Rcpp::export]]
 std::string fallingfactorial_function(std::string x, int n) {
   std::string f = x;
   std::string parten1 = "*(";
   std::string negsep = " - ";
   std::string parten2 = ")";
-  
+
   for (int i = 1; i <= n; i++) {
     std::stringstream j;
     j << i;
@@ -189,6 +197,7 @@ std::string fallingfactorial_function(std::string x, int n) {
 //'    Weisstein, Eric W. "Rising Factorial." From MathWorld--A Wolfram Web
 //'   Resource. http://mathworld.wolfram.com/RisingFactorial.html
 //' @export
+// [[Rcpp::interfaces(r, cpp)]]
 // [[Rcpp::export]]
 double risingfactorial(int x, int n) {
   double f = 1.0;
@@ -209,13 +218,14 @@ double risingfactorial(int x, int n) {
 }
 
 
+// [[Rcpp::interfaces(r, cpp)]]
 // [[Rcpp::export]]
 std::string risingfactorial_function(std::string x, int n) {
   std::string f = x;
   std::string parten1 = "*(";
   std::string negsep = " + ";
   std::string parten2 = ")";
-  
+
   for (int i = 1; i <= n; i++) {
     std::stringstream j;
     j << i;
