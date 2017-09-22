@@ -1,8 +1,8 @@
 #ifndef __GCD__
 #define __GCD__
 
-inline int _gcd_recursive(int a, int b) {
-  
+inline int _gcd_recursive(unsigned int a, unsigned int b) {
+
   if (b == 0) {
     return a;
   }

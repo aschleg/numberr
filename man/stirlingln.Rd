@@ -2,19 +2,15 @@
 % Please edit documentation in R/factorial.R
 \name{stirlingln}
 \alias{stirlingln}
-\title{Approximates the factorial of n using the approximation given by Ramanujan in
-his lost notebook (Ramanujan 1988, as cited in Wikipedia).}
+\title{Approximates the factorial of n using the approximation given by Ramanujan
+in his lost notebook (Ramanujan 1988, as cited in Wikipedia). Computing the
+factorial in logarithmic form is useful as it helps avoid overflow when n is
+large. As values of n increase, the approximation given becomes more exact.}
 \usage{
-stirlingln(n, keep.log = FALSE)
+stirlingln(n)
 }
 \arguments{
-\item{n}{Value to calculate}
-
-\item{keep.log}{Optional. If FALSE, return the factorial in exponent form,
-otherwise keep in logarithmic form.}
-}
-\value{
-Factorial as given by Stirling's log factorial approximation.
+\item{n}{desired integer to approximate factorial}
 }
 \description{
 It is often useful to compute the logarithmic form of the factorial and
@@ -24,11 +20,11 @@ n! \approx n ln n - n + \frac{1}{6} ln(n(1 + 4n(1 + 2n))) + \frac{1}{2} ln
 \pi}
 }
 \examples{
-stirlingln(25)
+stirlingln(50)
 stirlingln(10)
 }
 \references{
-Stirling's approximation. (2017, March 8). In Wikipedia, The Free
-  Encyclopedia. From
-  https://en.wikipedia.org/w/index.php?title=Stirling%27s_approximation&oldid=769328178
+Stirling's approximation. (2017, March 8). In Wikipedia, The
+  Free Encyclopedia. From
+  https:#en.wikipedia.org/w/index.php?title=Stirling%27s_approximation&oldid=769328178
 }

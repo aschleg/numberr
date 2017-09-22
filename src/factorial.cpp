@@ -24,7 +24,7 @@ using namespace Rcpp;
 //'   Numerical recipes (3rd ed.). Cambridge: Cambridge University Press.
 //'   Weisstein, Eric W. "Factorial." From MathWorld--A Wolfram Web Resource.
 //'   http://mathworld.wolfram.com/Factorial.html
-//'   @export
+//' @export
 // [[Rcpp::interfaces(r, cpp)]]
 // [[Rcpp::export]]
 double factorial(int n) {
@@ -53,14 +53,12 @@ double factorial(int n) {
 //'   https://en.wikipedia.org/w/index.php?title=Stirling%27s_approximation&oldid=769328178
 //'    Weisstein, Eric W. "Stirling's Approximation." From MathWorld--A Wolfram
 //'   Web Resource. http://mathworld.wolfram.com/StirlingsApproximation.html
-//'   @export
+//' @export
 // [[Rcpp::interfaces(r, cpp)]]
 // [[Rcpp::export]]
 double stirling(int n) {
 
-  double f = sqrt((2.0 * n + 1.0 / 3.0) * M_PI) * pow(n, n) * exp(-n);
-
-  return f;
+  return _stirling(n);
 }
 
 
@@ -86,9 +84,8 @@ double stirling(int n) {
 // [[Rcpp::interfaces(r, cpp)]]
 // [[Rcpp::export]]
 double stirlingln(int n) {
-  double f = n * log(n) - n + (1.0 / 6.0) * log(n * (1.0 + 4.0 * n * (1.0 + 2.0 * n))) + 0.5 * log(M_PI);
 
-  return exp(f);
+  return _stirlingln(n);
 }
 
 
@@ -114,12 +111,13 @@ double stirlingln(int n) {
 // [[Rcpp::interfaces(r, cpp)]]
 // [[Rcpp::export]]
 double ramanujan(int n) {
-  double f = sqrt(M_PI) * pow(n, n) * exp(-n) * pow((8.0 * pow(n, 3.0) + 4.0 * pow(n, 2) + n + 1.0 / 30.0), 1.0 / 6.0);
 
-  return f;
+  return _ramanujan(n);
 }
 
-//' Computes the falling factorial The falling factorial, denoted as
+//' Computes the falling factorial.
+//'
+//' The falling factorial, denoted as
 //' \eqn{(x)_{n}} (or \eqn{x^{\underline{n}}}) is defined as the following:
 //' \deqn{(x)_n = x(x - 1) \cdots (x - (n - 1))} The first few falling
 //' factorials are then: \deqn{(x)_0 = 1} \deqn{(x)_1 = x} \deqn{(x)_2 = x(x -
@@ -185,8 +183,8 @@ std::string fallingfactorial_function(std::string x, int n) {
 //' where \eqn{x^(0) = 1}. The rising factorial is related to the falling
 //' factorial by: \deqn{x^{(n)} = (-x)_n (-1)^n}
 //'
-//' @param x
-//' @param n
+//' @param x integer or character
+//' @param n integer
 //' @examples
 //' risingfactorial(10, 6)
 //' risingfactorial(5, 3)

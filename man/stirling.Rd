@@ -9,10 +9,7 @@ developed by Gosper.}
 stirling(n)
 }
 \arguments{
-\item{n}{Value to approximate factorial}
-}
-\value{
-Approximation of factorial
+\item{n}{desired integer to approximate factorial}
 }
 \description{
 Stirling's approximation is a method of approximating a factorial \eqn{n!}.
@@ -24,13 +21,13 @@ approximation to \eqn{n!} and also results in a very close approximation to
 }
 \examples{
 stirling(0)
-stirling(9)
-stirling(25)
+stirling(5)
+stirling(50)
 }
 \references{
-Stirling's approximation. (2017, March 8). In Wikipedia, The Free
-Encyclopedia. From
-https://en.wikipedia.org/w/index.php?title=Stirling%27s_approximation&oldid=769328178
-Weisstein, Eric W. "Stirling's Approximation." From MathWorld--A Wolfram Web
-Resource. http://mathworld.wolfram.com/StirlingsApproximation.html
+Stirling's approximation. (2017, March 8). In Wikipedia, The
+  Free Encyclopedia. From
+  https:#en.wikipedia.org/w/index.php?title=Stirling%27s_approximation&oldid=769328178
+   Weisstein, Eric W. "Stirling's Approximation." From MathWorld--A Wolfram
+  Web Resource. http:#mathworld.wolfram.com/StirlingsApproximation.html
 }

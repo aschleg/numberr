@@ -5,21 +5,35 @@
 
 using namespace Rcpp;
 
+
 // [[Rcpp::interfaces(r, cpp)]]
 // [[Rcpp::export]]
-NumericVector catalan(unsigned int n) {
+NumericVector catalan(unsigned long int n) {
   NumericVector x(n);
+  x[0] = 1;
 
-  for (int i = 0; i <= x.size(); i++) {
-    unsigned long int fn = _factorial(2 * i);
-    unsigned long int fd1 = _factorial(i + 1);
-    unsigned long int fd2 = _factorial(i);
-    unsigned long int fint = fn / fd1;
-    x[i] = fint * 1 / fd2;
+  for (unsigned long int i = 1; i <= x.size(); i++) {
+    x[i] = (2.0 * (2.0 * i + 1.0)) / (i + 2.0) * x[i-1];
   }
 
   return x;
 }
+
+
+// [[Rcpp::interfaces(r, cpp)]]
+// [[Rcpp::export]]
+NumericVector supercatalan(long int n) {
+  NumericVector x(n);
+  x[0] = 1; x[1] = 1;
+
+  for (long int i = 2; i <= x.size(); i++) {
+    //x[i] = (3.0 * (2.0 * i - 3.0) * x[i-1] - (i - 3.0) * x[i-2]) / i;
+    x[i] = ((6.0 * i - 9.0) * x[i-1] - (i - 3.0) * x[i-2]) / i;
+  }
+
+  return x;
+}
+
 
 //' Computes the Fibonacci sequence up to given value of n.
 //'

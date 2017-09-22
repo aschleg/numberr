@@ -1,26 +1,18 @@
 Package: numberr
 Type: Package
-Title: Number-theoretic algorithms and functions related to number theory.
+Title: Number-theoretic Algorithms
 Version: 0.1.0
 Author: Aaron Schlegel
 Maintainer: Aaron Schlegel <aaron@aaronschlegel.com>
-Description: Functions related to number theory and number-theoretic 
-    algorithms.
-License: What license is it under?
+Description: Number-theoretic algorithms
 Encoding: UTF-8
 LazyData: true
-RoxygenNote: 6.0.1
+Imports: 
+    Rcpp (>= 0.12.12),
+    knitr,
+    markdown
 LinkingTo: Rcpp
-Imports:
-    Rcpp,
-    rSymPy,
-    knitr,
-    rmarkdown
-Suggests:
-    Rcpp,
-    rSymPy,
-    knitr,
-    rmarkdown
-License: MIT + file LICENSE
+RoxygenNote: 6.0.1
+License: LICENSE
 URL: https://github.com/aschleg/numberr
 VignetteBuilder: knitr

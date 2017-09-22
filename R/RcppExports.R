@@ -2,118 +2,122 @@
 # Generator token: 10BE3573-1514-4C36-9D1C-5A225CD40393
 
 binomial_recursive <- function(n, k) {
-    .Call('numberr_binomial_recursive', PACKAGE = 'numberr', n, k)
+    .Call('_numberr_binomial_recursive', PACKAGE = 'numberr', n, k)
 }
 
 binomial_multiplicative <- function(n, k) {
-    .Call('numberr_binomial_multiplicative', PACKAGE = 'numberr', n, k)
+    .Call('_numberr_binomial_multiplicative', PACKAGE = 'numberr', n, k)
 }
 
 binomial_factorial <- function(n, k) {
-    .Call('numberr_binomial_factorial', PACKAGE = 'numberr', n, k)
+    .Call('_numberr_binomial_factorial', PACKAGE = 'numberr', n, k)
 }
 
 factor_trial <- function(n) {
-    .Call('numberr_factor_trial', PACKAGE = 'numberr', n)
+    .Call('_numberr_factor_trial', PACKAGE = 'numberr', n)
 }
 
 fermat <- function(n) {
-    .Call('numberr_fermat', PACKAGE = 'numberr', n)
+    .Call('_numberr_fermat', PACKAGE = 'numberr', n)
 }
 
 pollardrho <- function(n) {
-    .Call('numberr_pollardrho', PACKAGE = 'numberr', n)
+    .Call('_numberr_pollardrho', PACKAGE = 'numberr', n)
 }
 
 factorial <- function(n) {
-    .Call('numberr_factorial', PACKAGE = 'numberr', n)
+    .Call('_numberr_factorial', PACKAGE = 'numberr', n)
 }
 
 stirling <- function(n) {
-    .Call('numberr_stirling', PACKAGE = 'numberr', n)
+    .Call('_numberr_stirling', PACKAGE = 'numberr', n)
 }
 
 stirlingln <- function(n) {
-    .Call('numberr_stirlingln', PACKAGE = 'numberr', n)
+    .Call('_numberr_stirlingln', PACKAGE = 'numberr', n)
 }
 
 ramanujan <- function(n) {
-    .Call('numberr_ramanujan', PACKAGE = 'numberr', n)
+    .Call('_numberr_ramanujan', PACKAGE = 'numberr', n)
 }
 
 fallingfactorial <- function(x, n) {
-    .Call('numberr_fallingfactorial', PACKAGE = 'numberr', x, n)
+    .Call('_numberr_fallingfactorial', PACKAGE = 'numberr', x, n)
 }
 
 fallingfactorial_function <- function(x, n) {
-    .Call('numberr_fallingfactorial_function', PACKAGE = 'numberr', x, n)
+    .Call('_numberr_fallingfactorial_function', PACKAGE = 'numberr', x, n)
 }
 
 risingfactorial <- function(x, n) {
-    .Call('numberr_risingfactorial', PACKAGE = 'numberr', x, n)
+    .Call('_numberr_risingfactorial', PACKAGE = 'numberr', x, n)
 }
 
 risingfactorial_function <- function(x, n) {
-    .Call('numberr_risingfactorial_function', PACKAGE = 'numberr', x, n)
+    .Call('_numberr_risingfactorial_function', PACKAGE = 'numberr', x, n)
 }
 
 gcd_recursive <- function(a, b) {
-    .Call('numberr_gcd_recursive', PACKAGE = 'numberr', a, b)
+    .Call('_numberr_gcd_recursive', PACKAGE = 'numberr', a, b)
 }
 
 gcd_division <- function(a, b) {
-    .Call('numberr_gcd_division', PACKAGE = 'numberr', a, b)
+    .Call('_numberr_gcd_division', PACKAGE = 'numberr', a, b)
 }
 
 gcd_subtraction <- function(a, b) {
-    .Call('numberr_gcd_subtraction', PACKAGE = 'numberr', a, b)
+    .Call('_numberr_gcd_subtraction', PACKAGE = 'numberr', a, b)
 }
 
 gcd_extended <- function(a, b) {
-    .Call('numberr_gcd_extended', PACKAGE = 'numberr', a, b)
+    .Call('_numberr_gcd_extended', PACKAGE = 'numberr', a, b)
 }
 
 iscomposite <- function(n) {
-    .Call('numberr_iscomposite', PACKAGE = 'numberr', n)
+    .Call('_numberr_iscomposite', PACKAGE = 'numberr', n)
 }
 
 iscoprime <- function(a, b) {
-    .Call('numberr_iscoprime', PACKAGE = 'numberr', a, b)
+    .Call('_numberr_iscoprime', PACKAGE = 'numberr', a, b)
 }
 
 iseven <- function(n) {
-    .Call('numberr_iseven', PACKAGE = 'numberr', n)
+    .Call('_numberr_iseven', PACKAGE = 'numberr', n)
 }
 
 isodd <- function(n) {
-    .Call('numberr_isodd', PACKAGE = 'numberr', n)
+    .Call('_numberr_isodd', PACKAGE = 'numberr', n)
 }
 
 issquare <- function(n) {
-    .Call('numberr_issquare', PACKAGE = 'numberr', n)
+    .Call('_numberr_issquare', PACKAGE = 'numberr', n)
 }
 
 isprime <- function(n) {
-    .Call('numberr_isprime', PACKAGE = 'numberr', n)
+    .Call('_numberr_isprime', PACKAGE = 'numberr', n)
 }
 
 lucas_lehmer <- function(n) {
-    .Call('numberr_lucas_lehmer', PACKAGE = 'numberr', n)
+    .Call('_numberr_lucas_lehmer', PACKAGE = 'numberr', n)
 }
 
 catalan <- function(n) {
-    .Call('numberr_catalan', PACKAGE = 'numberr', n)
+    .Call('_numberr_catalan', PACKAGE = 'numberr', n)
+}
+
+supercatalan <- function(n) {
+    .Call('_numberr_supercatalan', PACKAGE = 'numberr', n)
 }
 
 fibonacci <- function(n) {
-    .Call('numberr_fibonacci', PACKAGE = 'numberr', n)
+    .Call('_numberr_fibonacci', PACKAGE = 'numberr', n)
 }
 
 three_n_one <- function(n) {
-    .Call('numberr_three_n_one', PACKAGE = 'numberr', n)
+    .Call('_numberr_three_n_one', PACKAGE = 'numberr', n)
 }
 
 # Register entry points for exported C++ functions
 methods::setLoadAction(function(ns) {
-    .Call('numberr_RcppExport_registerCCallable', PACKAGE = 'numberr')
+    .Call('_numberr_RcppExport_registerCCallable', PACKAGE = 'numberr')
 })
