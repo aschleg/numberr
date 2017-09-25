@@ -45,8 +45,8 @@ factortrial <- function(n) {
 #'   Encyclopedia. From
 #'   https:#en.wikipedia.org/w/index.php?title=Fermat%27s_factorization_method&oldid=763010603
 #' @export
-fermat <- function(n) {
-  .Call('_numberr_fermat', PACKAGE = 'numberr', n)
+fermat_factor <- function(n) {
+  .Call('_numberr_fermat_factor', PACKAGE = 'numberr', n)
 }
 
 

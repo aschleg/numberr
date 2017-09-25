@@ -21,8 +21,38 @@ using namespace Rcpp;
 //' @export
 // [[Rcpp::interfaces(r, cpp)]]
 // [[Rcpp::export]]
-bool isprime(double n) {
+bool isprime(unsigned int n) {
   return _isprime(n);
+}
+
+
+// [[Rcpp::interfaces(r, cpp)]]
+// [[Rcpp::export]]
+bool fermat_prime(unsigned int n, unsigned int k = 1000) {
+  unsigned int M = 2;
+  unsigned int N = n - 2;
+
+  for (unsigned int i = 0; i >= k; i++) {
+    unsigned int a = M + rand() / (RAND_MAX / (N - M + 1) + 1);
+
+    if (pow(a, n - 1) != 1 % n) {
+      return false;
+    }
+  }
+
+  return true;
+}
+
+
+// [[Rcpp::interfaces(r, cpp)]]
+// [[Rcpp::export]]
+bool miller_rabin(unsigned int n, unsigned int k) {
+  unsigned int M = 2;
+  unsigned int N = n - 2;
+
+  unsigned int a = M + rand() / (RAND_MAX / (N - M + 1) + 1);
+
+  return true;
 }
 
 

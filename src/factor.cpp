@@ -33,7 +33,7 @@ using namespace Rcpp;
 // [[Rcpp::export]]
 NumericVector factor_trial(unsigned int n) {
   std::vector<unsigned int> x(ceil(sqrt(n)));
-  
+
   if (n < 2 || _isprime(n) == true) {
     x.resize(2);
     x[0] = 1; x[1] = n;
@@ -43,7 +43,7 @@ NumericVector factor_trial(unsigned int n) {
 
   unsigned long div = 2.0;
   unsigned int i = 0;
-  
+
   if (n % div == 0) {
     x[i] = div;
     n = n / div;
@@ -96,7 +96,7 @@ NumericVector factor_trial(unsigned int n) {
 //' @export
 // [[Rcpp::interfaces(r, cpp)]]
 // [[Rcpp::export]]
-NumericVector fermat(unsigned int n) {
+NumericVector fermat_factor(unsigned int n) {
   if (_isprime(n) == true) {
     NumericVector fac(2);
     fac[0] = 1; fac[1] = n;

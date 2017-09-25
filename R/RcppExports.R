@@ -17,8 +17,8 @@ factor_trial <- function(n) {
     .Call('_numberr_factor_trial', PACKAGE = 'numberr', n)
 }
 
-fermat <- function(n) {
-    .Call('_numberr_fermat', PACKAGE = 'numberr', n)
+fermat_factor <- function(n) {
+    .Call('_numberr_fermat_factor', PACKAGE = 'numberr', n)
 }
 
 pollardrho <- function(n) {
@@ -97,12 +97,24 @@ isprime <- function(n) {
     .Call('_numberr_isprime', PACKAGE = 'numberr', n)
 }
 
+fermat_prime <- function(n, k = 1000L) {
+    .Call('_numberr_fermat_prime', PACKAGE = 'numberr', n, k)
+}
+
+miller_rabin <- function(n, k) {
+    .Call('_numberr_miller_rabin', PACKAGE = 'numberr', n, k)
+}
+
 lucas_lehmer <- function(n) {
     .Call('_numberr_lucas_lehmer', PACKAGE = 'numberr', n)
 }
 
 catalan <- function(n) {
     .Call('_numberr_catalan', PACKAGE = 'numberr', n)
+}
+
+cullen <- function(n) {
+    .Call('_numberr_cullen', PACKAGE = 'numberr', n)
 }
 
 supercatalan <- function(n) {

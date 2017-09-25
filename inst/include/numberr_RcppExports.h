@@ -100,17 +100,17 @@ namespace numberr {
         return Rcpp::as<NumericVector >(rcpp_result_gen);
     }
 
-    inline NumericVector fermat(unsigned int n) {
-        typedef SEXP(*Ptr_fermat)(SEXP);
-        static Ptr_fermat p_fermat = NULL;
-        if (p_fermat == NULL) {
-            validateSignature("NumericVector(*fermat)(unsigned int)");
-            p_fermat = (Ptr_fermat)R_GetCCallable("numberr", "_numberr_fermat");
+    inline NumericVector fermat_factor(unsigned int n) {
+        typedef SEXP(*Ptr_fermat_factor)(SEXP);
+        static Ptr_fermat_factor p_fermat_factor = NULL;
+        if (p_fermat_factor == NULL) {
+            validateSignature("NumericVector(*fermat_factor)(unsigned int)");
+            p_fermat_factor = (Ptr_fermat_factor)R_GetCCallable("numberr", "_numberr_fermat_factor");
         }
         RObject rcpp_result_gen;
         {
             RNGScope RCPP_rngScope_gen;
-            rcpp_result_gen = p_fermat(Shield<SEXP>(Rcpp::wrap(n)));
+            rcpp_result_gen = p_fermat_factor(Shield<SEXP>(Rcpp::wrap(n)));
         }
         if (rcpp_result_gen.inherits("interrupted-error"))
             throw Rcpp::internal::InterruptedException();
@@ -461,17 +461,55 @@ namespace numberr {
         return Rcpp::as<bool >(rcpp_result_gen);
     }
 
-    inline bool isprime(double n) {
+    inline bool isprime(unsigned int n) {
         typedef SEXP(*Ptr_isprime)(SEXP);
         static Ptr_isprime p_isprime = NULL;
         if (p_isprime == NULL) {
-            validateSignature("bool(*isprime)(double)");
+            validateSignature("bool(*isprime)(unsigned int)");
             p_isprime = (Ptr_isprime)R_GetCCallable("numberr", "_numberr_isprime");
         }
         RObject rcpp_result_gen;
         {
             RNGScope RCPP_rngScope_gen;
             rcpp_result_gen = p_isprime(Shield<SEXP>(Rcpp::wrap(n)));
+        }
+        if (rcpp_result_gen.inherits("interrupted-error"))
+            throw Rcpp::internal::InterruptedException();
+        if (rcpp_result_gen.inherits("try-error"))
+            throw Rcpp::exception(as<std::string>(rcpp_result_gen).c_str());
+        return Rcpp::as<bool >(rcpp_result_gen);
+    }
+
+    inline bool fermat_prime(unsigned int n, unsigned int k = 1000) {
+        typedef SEXP(*Ptr_fermat_prime)(SEXP,SEXP);
+        static Ptr_fermat_prime p_fermat_prime = NULL;
+        if (p_fermat_prime == NULL) {
+            validateSignature("bool(*fermat_prime)(unsigned int,unsigned int)");
+            p_fermat_prime = (Ptr_fermat_prime)R_GetCCallable("numberr", "_numberr_fermat_prime");
+        }
+        RObject rcpp_result_gen;
+        {
+            RNGScope RCPP_rngScope_gen;
+            rcpp_result_gen = p_fermat_prime(Shield<SEXP>(Rcpp::wrap(n)), Shield<SEXP>(Rcpp::wrap(k)));
+        }
+        if (rcpp_result_gen.inherits("interrupted-error"))
+            throw Rcpp::internal::InterruptedException();
+        if (rcpp_result_gen.inherits("try-error"))
+            throw Rcpp::exception(as<std::string>(rcpp_result_gen).c_str());
+        return Rcpp::as<bool >(rcpp_result_gen);
+    }
+
+    inline bool miller_rabin(unsigned int n, unsigned int k) {
+        typedef SEXP(*Ptr_miller_rabin)(SEXP,SEXP);
+        static Ptr_miller_rabin p_miller_rabin = NULL;
+        if (p_miller_rabin == NULL) {
+            validateSignature("bool(*miller_rabin)(unsigned int,unsigned int)");
+            p_miller_rabin = (Ptr_miller_rabin)R_GetCCallable("numberr", "_numberr_miller_rabin");
+        }
+        RObject rcpp_result_gen;
+        {
+            RNGScope RCPP_rngScope_gen;
+            rcpp_result_gen = p_miller_rabin(Shield<SEXP>(Rcpp::wrap(n)), Shield<SEXP>(Rcpp::wrap(k)));
         }
         if (rcpp_result_gen.inherits("interrupted-error"))
             throw Rcpp::internal::InterruptedException();
@@ -499,11 +537,11 @@ namespace numberr {
         return Rcpp::as<bool >(rcpp_result_gen);
     }
 
-    inline NumericVector catalan(unsigned long int n) {
+    inline NumericVector catalan(unsigned int n) {
         typedef SEXP(*Ptr_catalan)(SEXP);
         static Ptr_catalan p_catalan = NULL;
         if (p_catalan == NULL) {
-            validateSignature("NumericVector(*catalan)(unsigned long int)");
+            validateSignature("NumericVector(*catalan)(unsigned int)");
             p_catalan = (Ptr_catalan)R_GetCCallable("numberr", "_numberr_catalan");
         }
         RObject rcpp_result_gen;
@@ -518,11 +556,30 @@ namespace numberr {
         return Rcpp::as<NumericVector >(rcpp_result_gen);
     }
 
-    inline NumericVector supercatalan(long int n) {
+    inline NumericVector cullen(unsigned int n) {
+        typedef SEXP(*Ptr_cullen)(SEXP);
+        static Ptr_cullen p_cullen = NULL;
+        if (p_cullen == NULL) {
+            validateSignature("NumericVector(*cullen)(unsigned int)");
+            p_cullen = (Ptr_cullen)R_GetCCallable("numberr", "_numberr_cullen");
+        }
+        RObject rcpp_result_gen;
+        {
+            RNGScope RCPP_rngScope_gen;
+            rcpp_result_gen = p_cullen(Shield<SEXP>(Rcpp::wrap(n)));
+        }
+        if (rcpp_result_gen.inherits("interrupted-error"))
+            throw Rcpp::internal::InterruptedException();
+        if (rcpp_result_gen.inherits("try-error"))
+            throw Rcpp::exception(as<std::string>(rcpp_result_gen).c_str());
+        return Rcpp::as<NumericVector >(rcpp_result_gen);
+    }
+
+    inline NumericVector supercatalan(unsigned int n) {
         typedef SEXP(*Ptr_supercatalan)(SEXP);
         static Ptr_supercatalan p_supercatalan = NULL;
         if (p_supercatalan == NULL) {
-            validateSignature("NumericVector(*supercatalan)(long int)");
+            validateSignature("NumericVector(*supercatalan)(unsigned int)");
             p_supercatalan = (Ptr_supercatalan)R_GetCCallable("numberr", "_numberr_supercatalan");
         }
         RObject rcpp_result_gen;
@@ -556,11 +613,11 @@ namespace numberr {
         return Rcpp::as<NumericVector >(rcpp_result_gen);
     }
 
-    inline NumericVector three_n_one(unsigned long int n) {
+    inline NumericVector three_n_one(unsigned int n) {
         typedef SEXP(*Ptr_three_n_one)(SEXP);
         static Ptr_three_n_one p_three_n_one = NULL;
         if (p_three_n_one == NULL) {
-            validateSignature("NumericVector(*three_n_one)(unsigned long int)");
+            validateSignature("NumericVector(*three_n_one)(unsigned int)");
             p_three_n_one = (Ptr_three_n_one)R_GetCCallable("numberr", "_numberr_three_n_one");
         }
         RObject rcpp_result_gen;
