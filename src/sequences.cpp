@@ -1,6 +1,7 @@
 #include <Rcpp.h>
 #include <vector>
-#include "combinatorics.h"
+#include "factorial.h"
+#include "binomial.h"
 #include "integers.h"
 
 using namespace Rcpp;
@@ -36,7 +37,6 @@ NumericVector cullen(unsigned int n) {
   NumericVector x1 = Rcpp::wrap(x);
   return x1[x1 > 0];
 }
-
 
 
 // [[Rcpp::interfaces(r, cpp)]]

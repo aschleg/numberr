@@ -4,7 +4,7 @@
 using namespace Rcpp;
 
 //' Calculates the Greatest Common Divisor of two integers using the recursive
-//' Euclidean algorithm
+//' Euclidean algorithm.
 //'
 //' The recursive implementation of the greatest common divisor algorithm was
 //' described in the Elements of Euclid but may even predate that.
@@ -56,7 +56,7 @@ unsigned long int gcd_recursive(unsigned int a, unsigned int b) {
 unsigned long int gcd_division(unsigned int a, unsigned int b) {
   while (b != 0) {
     int x = b;
-    b = a % b;
+    b = fmod(a, b);
     a = x;
   }
   return a;

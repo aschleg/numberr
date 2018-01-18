@@ -16,9 +16,9 @@ difference of squares: \deqn{n = a^2 - b^2} Which can also be written as:
 \deqn{n = (a + b)(a - b)}
 }
 \examples{
-fermat(9)
-fermat(13742)
-fermat(17)
+fermat_factor(9)
+fermat_factor(13742)
+fermat_factor(17)
 }
 \references{
 Barnes, C. (2004). Integer Factorization Algorithms (1st ed.).

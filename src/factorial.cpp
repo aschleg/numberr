@@ -4,7 +4,7 @@
 #include <math.h>
 #include <iostream>
 #include <string>
-#include "combinatorics.h"
+#include "factorial.h"
 
 using namespace Rcpp;
 
