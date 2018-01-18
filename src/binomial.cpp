@@ -30,8 +30,8 @@ using namespace Rcpp;
 //'   the other two choices.
 //' @return The binomial coefficient
 //' @examples
-//' binomialcoefficient(10, 5)
-//' binomialcoefficient(5, 3, 'factorial')
+//' binomial_coefficient(10, 5)
+//' binomial_coefficient(5, 3, 'factorial')
 //' @references Binomial coefficient. (2017, April 17). In Wikipedia, The Free
 //'   Encyclopedia. From
 //'   https:#en.wikipedia.org/w/index.php?title=Binomial_coefficient&oldid=775905810

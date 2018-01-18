@@ -1,5 +1,6 @@
 #include <Rcpp.h>
 #include <vector>
+#include <algorithm>
 #include "factorial.h"
 #include "binomial.h"
 #include "integers.h"
