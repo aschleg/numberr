@@ -29,9 +29,6 @@ using namespace Rcpp;
 //'   factorial methods. Please note the recursive method can be much slower than
 //'   the other two choices.
 //' @return The binomial coefficient
-//' @examples
-//' binomial_coefficient(10, 5)
-//' binomial_coefficient(5, 3, 'factorial')
 //' @references Binomial coefficient. (2017, April 17). In Wikipedia, The Free
 //'   Encyclopedia. From
 //'   https:#en.wikipedia.org/w/index.php?title=Binomial_coefficient&oldid=775905810
@@ -93,9 +90,6 @@ int binomial_recursive(int n, int k) {
 //' @param n Number of possibilities
 //' @param k number of unordered outcomes
 //' @return The binomial coefficient
-//' @examples
-//' binomial.coefficient.multiplicative(10, 5)
-//' binomial.coefficient.multiplicative(20, 10)
 //' @references Binomial coefficient. (2017, April 17). In Wikipedia, The Free
 //'   Encyclopedia. From
 //'   https://en.wikipedia.org/w/index.php?title=Binomial_coefficient&oldid=775905810

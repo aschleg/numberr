@@ -1,6 +1,10 @@
 #include <Rcpp.h>
 #include <math.h>
+#include <ctime>
+#include <cstdlib>
+#include <algorithm>
 #include "integers.h"
+#include "seed.h"
 
 using namespace Rcpp;
 
@@ -62,8 +66,10 @@ bool fermat_prime(unsigned int n, unsigned int k = 1000) {
   unsigned int M = 2;
   unsigned int N = n - 2;
 
+  seedgen();
+
   for (unsigned int i = 0; i >= k; i++) {
-    unsigned int a = M + rand() / (RAND_MAX / (N - M + 1) + 1);
+    unsigned int a = M + std::rand() / (RAND_MAX / (N - M + 1) + 1);
 
     if (pow(a, n - 1) != 1 % n) {
       return false;
@@ -80,7 +86,9 @@ bool miller_rabin(unsigned int n, unsigned int k) {
   unsigned int M = 2;
   unsigned int N = n - 2;
 
-  unsigned int a = M + rand() / (RAND_MAX / (N - M + 1) + 1);
+  seedgen();
+
+  unsigned int a = M + std::rand() / (RAND_MAX / (N - M + 1) + 1);
 
   return true;
 }

@@ -1,4 +1,4 @@
-## Numberr
+# numberr
 
 [![Travis-CI Build Status](https://travis-ci.org/aschleg/numberr.svg?branch=master)](https://travis-ci.org/aschleg/numberr)
 [![AppVeyor Build Status](https://ci.appveyor.com/api/projects/status/github/aschleg/numberr?branch=master&svg=true)](https://ci.appveyor.com/project/aschleg/numberr)
