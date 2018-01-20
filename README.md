@@ -1,7 +1,6 @@
 # numberr
 
 [![Travis-CI Build Status](https://travis-ci.org/aschleg/numberr.svg?branch=master)](https://travis-ci.org/aschleg/numberr)
-[![AppVeyor Build Status](https://ci.appveyor.com/api/projects/status/github/aschleg/numberr?branch=master&svg=true)](https://ci.appveyor.com/project/aschleg/numberr)
 
 The numberr package contains many algorithms and functions related to number theory. Most functions are written in `C++` using [Rcpp](https://cran.r-project.org/web/packages/Rcpp/index.html).
 
