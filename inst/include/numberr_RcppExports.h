@@ -157,11 +157,11 @@ namespace numberr {
         return Rcpp::as<NumericVector >(rcpp_result_gen);
     }
 
-    inline double factorial(unsigned int n) {
+    inline unsigned long int factorial(unsigned int n) {
         typedef SEXP(*Ptr_factorial)(SEXP);
         static Ptr_factorial p_factorial = NULL;
         if (p_factorial == NULL) {
-            validateSignature("double(*factorial)(unsigned int)");
+            validateSignature("unsigned long int(*factorial)(unsigned int)");
             p_factorial = (Ptr_factorial)R_GetCCallable("numberr", "_numberr_factorial");
         }
         RObject rcpp_result_gen;
@@ -173,14 +173,14 @@ namespace numberr {
             throw Rcpp::internal::InterruptedException();
         if (rcpp_result_gen.inherits("try-error"))
             throw Rcpp::exception(as<std::string>(rcpp_result_gen).c_str());
-        return Rcpp::as<double >(rcpp_result_gen);
+        return Rcpp::as<unsigned long int >(rcpp_result_gen);
     }
 
-    inline double stirling(unsigned int n) {
+    inline double long stirling(unsigned int n) {
         typedef SEXP(*Ptr_stirling)(SEXP);
         static Ptr_stirling p_stirling = NULL;
         if (p_stirling == NULL) {
-            validateSignature("double(*stirling)(unsigned int)");
+            validateSignature("double long(*stirling)(unsigned int)");
             p_stirling = (Ptr_stirling)R_GetCCallable("numberr", "_numberr_stirling");
         }
         RObject rcpp_result_gen;
@@ -192,7 +192,7 @@ namespace numberr {
             throw Rcpp::internal::InterruptedException();
         if (rcpp_result_gen.inherits("try-error"))
             throw Rcpp::exception(as<std::string>(rcpp_result_gen).c_str());
-        return Rcpp::as<double >(rcpp_result_gen);
+        return Rcpp::as<double long >(rcpp_result_gen);
     }
 
     inline double stirlingln(unsigned int n) {
@@ -214,11 +214,11 @@ namespace numberr {
         return Rcpp::as<double >(rcpp_result_gen);
     }
 
-    inline double ramanujan(unsigned int n) {
+    inline double long ramanujan(unsigned int n) {
         typedef SEXP(*Ptr_ramanujan)(SEXP);
         static Ptr_ramanujan p_ramanujan = NULL;
         if (p_ramanujan == NULL) {
-            validateSignature("double(*ramanujan)(unsigned int)");
+            validateSignature("double long(*ramanujan)(unsigned int)");
             p_ramanujan = (Ptr_ramanujan)R_GetCCallable("numberr", "_numberr_ramanujan");
         }
         RObject rcpp_result_gen;
@@ -230,7 +230,7 @@ namespace numberr {
             throw Rcpp::internal::InterruptedException();
         if (rcpp_result_gen.inherits("try-error"))
             throw Rcpp::exception(as<std::string>(rcpp_result_gen).c_str());
-        return Rcpp::as<double >(rcpp_result_gen);
+        return Rcpp::as<double long >(rcpp_result_gen);
     }
 
     inline double fallingfactorial(int x, int n) {

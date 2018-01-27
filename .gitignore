@@ -5,6 +5,7 @@ $ cat .gitignore
 *.tex
 *.o
 *.so
+*.dll
 *.DS_Store
 .Rbuildignore
 .Rhistory
