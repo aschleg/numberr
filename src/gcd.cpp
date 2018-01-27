@@ -3,6 +3,7 @@
 
 using namespace Rcpp;
 
+
 //' Calculates the Greatest Common Divisor of two integers using the recursive
 //' Euclidean algorithm.
 //'

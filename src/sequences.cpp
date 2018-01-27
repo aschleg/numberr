@@ -7,7 +7,31 @@
 
 using namespace Rcpp;
 
-
+//' Returns the Catalan numbers up to n.
+//'
+//' The Catalan numbers are a sequence of natural numbers, typically denoted
+//' \eqn{C_n} where \eqn{n} is the \eqn{n^{th}} Catalan number. The solution to
+//' Euler's Polygon Division Problem, which is the problem of finding the number
+//' of triangles that can be divided from a polygon of \eqn{n} segments, where
+//' the number of triangles is \eqn{E_n}, is the Catalan number \eqn{C_{n-2}}.
+//' The first few Catalan numbers are 1, 1, 2, 5, 14, 42, 132, 429, ... The
+//' function is implemented using the recurrence relation of \eqn{C_n}:
+//' \deqn{C_{n+1} = \frac{2(2n + 1)}{n + 2} C_n}
+//'
+//' @param n Specify the length of the returned Catalan number sequence.
+//' @return vector of n length
+//' @examples
+//' catalan(5)
+//' catalan(10)
+//' @references Catalan number. (2018, January 18). In Wikipedia, The Free
+//'   Encyclopedia. Retrieved 14:03, January 27, 2018, from
+//'   https://en.wikipedia.org/w/index.php?title=Catalan_number&oldid=821121794
+//'   Weisstein, Eric W. "Euler's Polygon Division Problem." From MathWorld--A
+//'   Wolfram Web Resource.
+//'   http://mathworld.wolfram.com/EulersPolygonDivisionProblem.html Stanley,
+//'   Richard and Weisstein, Eric W. "Catalan Number." From MathWorld--A Wolfram
+//'   Web Resource. http://mathworld.wolfram.com/CatalanNumber.html
+//' @export
 // [[Rcpp::interfaces(r, cpp)]]
 // [[Rcpp::export]]
 NumericVector catalan(unsigned int n) {
@@ -26,6 +50,23 @@ NumericVector catalan(unsigned int n) {
 }
 
 
+//' Returns the Cullen number integer sequence up to a given value of n.
+//'
+//' Cullen numbers are a special case of Proth numbers that have the form:
+//' \deqn{C_n = 2^n n + 1} The first few Cullen numbers are 3, 9, 25, 65, 161,
+//' ...
+//'
+//' @param n Specifies the length of the Cullen number sequence to return
+//' @return vector of length n
+//' @examples
+//' cullen(5)
+//' cullen(10)
+//' @references Cullen number. (2018, January 22). In Wikipedia, The Free
+//'   Encyclopedia. Retrieved 14:17, January 27, 2018, from
+//'   https://en.wikipedia.org/w/index.php?title=Cullen_number&oldid=821774732
+//'   Weisstein, Eric W. "Cullen Number." From MathWorld--A Wolfram Web
+//'   Resource. http://mathworld.wolfram.com/CullenNumber.html
+//' @export
 // [[Rcpp::interfaces(r, cpp)]]
 // [[Rcpp::export]]
 NumericVector cullen(unsigned int n) {
@@ -45,6 +86,27 @@ NumericVector cullen(unsigned int n) {
 }
 
 
+//' Returns the super-Catalan number sequence up to the given value of n.
+//'
+//' The super-Catalan numbers, also known as the Schroeder-Hipparchus numbers,
+//' or little Schroeder numbers, count the number of lattice paths (path
+//' composed of a connected horizontal and vertical line segment) with diagonal
+//' steps from \eqn{n, n} to \eqn{0, 0} without crossing the diagonal line. The 
+//' super-Catalan numbers are given by the recurrence relation:
+//' \deqn{S(n) = \frac{3(2n - 3) \space S(n-1) - (n-3) \space S(n-2)}{n}}
+//'
+//' @param n Specifies the length of the returned super-Catalan number sequence
+//' @return vector of length n
+//' @examples
+//' supercatalan(3)
+//' supercatalan(8)
+//' @references Schröder–Hipparchus number. (2016, December 2). In Wikipedia,
+//'   The Free Encyclopedia. Retrieved 14:24, January 27, 2018, from
+//'   https://en.wikipedia.org/w/index.php?title=Schr%C3%B6der%E2%80%93Hipparchus_number&oldid=752625057
+//'    Weisstein, Eric W. "Lattice Path." From MathWorld--A Wolfram Web
+//'   Resource. http://mathworld.wolfram.com/LatticePath.html Weisstein, Eric W.
+//'   "Super Catalan Number." From MathWorld--A Wolfram Web Resource.
+//'   http://mathworld.wolfram.com/SuperCatalanNumber.html
 // [[Rcpp::interfaces(r, cpp)]]
 // [[Rcpp::export]]
 NumericVector supercatalan(unsigned int n) {
@@ -54,7 +116,7 @@ NumericVector supercatalan(unsigned int n) {
   double j = 3.0;
   for (unsigned int i = 2; i <= x.size(); i++) {
     x[i] = (3.0 * (2.0 * j - 3.0) * x[j - 2.0] - (j - 3.0) * x[j - 3.0]) / j;
-    //x[i] = (1.0 / j) * ((6.0 * j - 9.0) * x[j - 1.0] - (j - 3.0) * x[j - 2]);
+
     j++;
   }
 

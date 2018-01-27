@@ -224,7 +224,7 @@ RcppExport SEXP _numberr_pollardrho(SEXP nSEXP) {
     return rcpp_result_gen;
 }
 // factorial
-double factorial(unsigned int n);
+unsigned long int factorial(unsigned int n);
 static SEXP _numberr_factorial_try(SEXP nSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
@@ -254,7 +254,7 @@ RcppExport SEXP _numberr_factorial(SEXP nSEXP) {
     return rcpp_result_gen;
 }
 // stirling
-double stirling(unsigned int n);
+double long stirling(unsigned int n);
 static SEXP _numberr_stirling_try(SEXP nSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
@@ -314,7 +314,7 @@ RcppExport SEXP _numberr_stirlingln(SEXP nSEXP) {
     return rcpp_result_gen;
 }
 // ramanujan
-double ramanujan(unsigned int n);
+double long ramanujan(unsigned int n);
 static SEXP _numberr_ramanujan_try(SEXP nSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
@@ -1026,10 +1026,10 @@ static int _numberr_RcppExport_validate(const char* sig) {
         signatures.insert("NumericVector(*factor_trial)(unsigned int)");
         signatures.insert("NumericVector(*fermat_factor)(unsigned int)");
         signatures.insert("NumericVector(*pollardrho)(unsigned int)");
-        signatures.insert("double(*factorial)(unsigned int)");
-        signatures.insert("double(*stirling)(unsigned int)");
+        signatures.insert("unsigned long int(*factorial)(unsigned int)");
+        signatures.insert("double long(*stirling)(unsigned int)");
         signatures.insert("double(*stirlingln)(unsigned int)");
-        signatures.insert("double(*ramanujan)(unsigned int)");
+        signatures.insert("double long(*ramanujan)(unsigned int)");
         signatures.insert("double(*fallingfactorial)(int,int)");
         signatures.insert("std::string(*fallingfactorial_function)(std::string,unsigned int)");
         signatures.insert("double(*risingfactorial)(int,int)");

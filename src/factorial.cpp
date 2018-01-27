@@ -27,7 +27,7 @@ using namespace Rcpp;
 //' @export
 // [[Rcpp::interfaces(r, cpp)]]
 // [[Rcpp::export]]
-double factorial(unsigned int n) {
+unsigned long int factorial(unsigned int n) {
   return _factorial(n);
 }
 
@@ -56,7 +56,7 @@ double factorial(unsigned int n) {
 //' @export
 // [[Rcpp::interfaces(r, cpp)]]
 // [[Rcpp::export]]
-double stirling(unsigned int n) {
+double long stirling(unsigned int n) {
 
   return _stirling(n);
 }
@@ -110,7 +110,7 @@ double stirlingln(unsigned int n) {
 //' @export
 // [[Rcpp::interfaces(r, cpp)]]
 // [[Rcpp::export]]
-double ramanujan(unsigned int n) {
+double long ramanujan(unsigned int n) {
 
   return _ramanujan(n);
 }
@@ -156,6 +156,27 @@ double fallingfactorial(int x, int n) {
 }
 
 
+//' Computes the falling factorial function as a string.
+//'
+//' The falling factorial, denoted as
+//' \eqn{(x)_{n}} (or \eqn{x^{\underline{n}}}) is defined as the following:
+//' \deqn{(x)_n = x(x - 1) \cdots (x - (n - 1))} The first few falling
+//' factorials are then: \deqn{(x)_0 = 1} \deqn{(x)_1 = x} \deqn{(x)_2 = x(x -
+//' 1)} \deqn{(x)_3 = x(x - 1)(x - 2)} \deqn{(x)_4 = x(x - 1)(x - 2)(x - 3)}
+//'
+//' @param x integer
+//' @param n integer
+//' @return string representation of falling factorial function.
+//' @examples
+//' fallingfactorial(10, 5)
+//' fallingfactorial(10, 6)
+//' fallingfactorial(5, 3)
+//' @references Falling and rising factorials. (2017, June 8). In Wikipedia, The
+//'   Free Encyclopedia. From
+//'   https://en.wikipedia.org/w/index.php?title=Falling_and_rising_factorials&oldid=784512036
+//'    Weisstein, Eric W. "Falling Factorial." From MathWorld--A Wolfram Web
+//'   Resource. http://mathworld.wolfram.com/FallingFactorial.html
+//' @export
 // [[Rcpp::interfaces(r, cpp)]]
 // [[Rcpp::export]]
 std::string fallingfactorial_function(std::string x, unsigned int n) {
@@ -185,10 +206,10 @@ std::string fallingfactorial_function(std::string x, unsigned int n) {
 //'
 //' @param x integer or character
 //' @param n integer
+//' @return string representation of rising factorial function.
 //' @examples
-//' risingfactorial(10, 6)
 //' risingfactorial(5, 3)
-//' risingfactorial(15, 10)
+//' risingfactorial(6, 2)
 //' @references Falling and rising factorials. (2017, June 8). In Wikipedia, The
 //'   Free Encyclopedia. From
 //'   https://en.wikipedia.org/w/index.php?title=Falling_and_rising_factorials&oldid=784512036
@@ -215,7 +236,27 @@ double risingfactorial(int x, int n) {
   return f;
 }
 
-
+//' Computes the rising factorial, also known as the Pochhammer symbol as a function string.
+//' 
+//' The rising factorial, \eqn{x^{(n)}} (sometimes denoted \eqn{\langle x
+//' \rangle_n}) is also known as the Pochhammer symbol in other areas of
+//' mathematics. The rising factorial is related to the gamma function
+//' \eqn{\Gamma (z)}. \deqn{x^{(n)} \equiv \frac{\Gamma (x + n)}{\Gamma (n)}}
+//' where \eqn{x^(0) = 1}. The rising factorial is related to the falling
+//' factorial by: \deqn{x^{(n)} = (-x)_n (-1)^n}
+//'
+//' @param x integer or character
+//' @param n integer
+//' @return Computed rising factorial
+//' @examples
+//' risingfactorial(6, 2)
+//' risingfactorial(5, 3)
+//' @references Falling and rising factorials. (2017, June 8). In Wikipedia, The
+//'   Free Encyclopedia. From
+//'   https://en.wikipedia.org/w/index.php?title=Falling_and_rising_factorials&oldid=784512036
+//'    Weisstein, Eric W. "Rising Factorial." From MathWorld--A Wolfram Web
+//'   Resource. http://mathworld.wolfram.com/RisingFactorial.html
+//' @export
 // [[Rcpp::interfaces(r, cpp)]]
 // [[Rcpp::export]]
 std::string risingfactorial_function(std::string x, unsigned int n) {
