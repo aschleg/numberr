@@ -22,7 +22,7 @@ using namespace Rcpp;
 //' @export
 // [[Rcpp::interfaces(r, cpp)]]
 // [[Rcpp::export]]
-unsigned long int gcd_recursive(unsigned int a, unsigned int b) {
+unsigned long long int gcd_recursive(unsigned int a, unsigned int b) {
 
   return _gcd_recursive(a, b);
 }
@@ -53,7 +53,7 @@ unsigned long int gcd_recursive(unsigned int a, unsigned int b) {
 //' @export
 // [[Rcpp::interfaces(r, cpp)]]
 // [[Rcpp::export]]
-unsigned long int gcd_division(unsigned int a, unsigned int b) {
+unsigned long long int gcd_division(unsigned int a, unsigned int b) {
   while (b != 0) {
     int x = b;
     b = fmod(a, b);
@@ -81,7 +81,7 @@ unsigned long int gcd_division(unsigned int a, unsigned int b) {
 //' @export
 // [[Rcpp::interfaces(r, cpp)]]
 // [[Rcpp::export]]
-unsigned long int gcd_subtraction(unsigned int a, unsigned int b) {
+unsigned long long int gcd_subtraction(unsigned int a, unsigned int b) {
   while (a != b) {
     if (a > b) {
       a = a - b;

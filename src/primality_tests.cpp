@@ -79,7 +79,6 @@ bool fermat_prime(unsigned int n, unsigned int k = 1000) {
   return true;
 }
 
-
 // [[Rcpp::interfaces(r, cpp)]]
 // [[Rcpp::export]]
 bool miller_rabin(unsigned int n, unsigned int k) {

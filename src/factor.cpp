@@ -94,8 +94,10 @@ NumericVector fermat_factor(unsigned int n) {
 //' @export
 // [[Rcpp::interfaces(r, cpp)]]
 // [[Rcpp::export]]
-NumericVector pollardrho(unsigned long int n) {
-  unsigned long int x = 2; unsigned long int y = 2; unsigned long int d = 1;
+NumericVector pollardrho(unsigned int n) {
+  unsigned long long int x = 2; 
+  unsigned long long int y = 2; 
+  unsigned long long int d = 1;
 
   while (d == 1) {
     x = pow(x, 2) + 1 % n;

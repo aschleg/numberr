@@ -11,12 +11,14 @@ using namespace Rcpp;
 // [[Rcpp::interfaces(r, cpp)]]
 // [[Rcpp::export]]
 NumericVector catalan(unsigned int n) {
-  std::vector<unsigned long int> x(n);
+  std::vector<unsigned long long int> x(n);
 
   x[0] = 1;
 
+  double j = 1.0;
   for (unsigned int i = 1; i <= x.size(); i++) {
-    x[i] = (2.0 * (2.0 * i + 1.0)) / (i + 2.0) * x[i-1];
+    x[i] = (2.0 * (2.0 * j + 1.0)) / (j + 2.0) * x[j - 1.0];
+    j++;
   }
 
   NumericVector x1 = Rcpp::wrap(x);
@@ -27,12 +29,15 @@ NumericVector catalan(unsigned int n) {
 // [[Rcpp::interfaces(r, cpp)]]
 // [[Rcpp::export]]
 NumericVector cullen(unsigned int n) {
-  std::vector<unsigned long int> x(n);
+  std::vector<unsigned long long int> x(n);
 
   x[0] = 0;
 
+  double j = 1.0;
+
   for (unsigned int i = 1; i <= x.size(); i++) {
-    x[i] = pow(2, i) * i + 1;
+    x[i] = pow(2, j) * j + 1;
+    j++;
   }
 
   NumericVector x1 = Rcpp::wrap(x);
@@ -43,12 +48,14 @@ NumericVector cullen(unsigned int n) {
 // [[Rcpp::interfaces(r, cpp)]]
 // [[Rcpp::export]]
 NumericVector supercatalan(unsigned int n) {
-  std::vector<unsigned long int> x(n + 1);
-  x[0] = 0.0; x[1] = 1.0; x[2] = 1.0;
+  std::vector<unsigned long long int> x(n + 1);
+  x[0] = 1; x[1] = 1;
 
-  for (int i = 3; i <= x.size(); i++) {
-    //x[i] = (3.0 * (2.0 * i - 3.0) * x[i-1] - (i - 3.0) * x[i-2]) / i;
-    x[i] = (1.0 / i) * ((6.0 * i - 9.0) * x[i-1] - (i - 3.0) * x[i-2]);
+  double j = 3.0;
+  for (int i = 2; i <= x.size(); i++) {
+    x[i] = (3.0 * (2.0 * j - 3.0) * x[j - 2.0] - (j - 3.0) * x[j - 3.0]) / j;
+    //x[i] = (1.0 / j) * ((6.0 * j - 9.0) * x[j - 1.0] - (j - 3.0) * x[j - 2]);
+    j++;
   }
 
   NumericVector x1 = Rcpp::wrap(x);
@@ -75,7 +82,7 @@ NumericVector supercatalan(unsigned int n) {
 // [[Rcpp::interfaces(r, cpp)]]
 // [[Rcpp::export]]
 NumericVector fibonacci(unsigned long int n) {
-  std::vector<unsigned long int> x(n);
+  std::vector<unsigned long long int> x(n);
 
   x[0] = 1;
   x[1] = 1;
@@ -114,7 +121,7 @@ NumericVector fibonacci(unsigned long int n) {
 // [[Rcpp::interfaces(r, cpp)]]
 // [[Rcpp::export]]
 NumericVector three_n_one(unsigned int n) {
-  std::vector<unsigned long int> x(n);
+  std::vector<unsigned long long int> x(n);
 
   if (n == 1) {
     x.resize(1);

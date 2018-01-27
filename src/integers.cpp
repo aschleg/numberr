@@ -21,7 +21,7 @@ using namespace Rcpp;
 //' @export
 // [[Rcpp::interfaces(r, cpp)]]
 // [[Rcpp::export]]
-bool iscomposite(int n) {
+bool iscomposite(unsigned int n) {
   return _iscomposite(n);
 }
 
@@ -44,7 +44,7 @@ bool iscomposite(int n) {
 //' @export
 // [[Rcpp::interfaces(r, cpp)]]
 // [[Rcpp::export]]
-bool iscoprime(int a, int b) {
+bool iscoprime(unsigned int a, unsigned int b) {
   return _iscoprime(a, b);
 }
 
@@ -66,7 +66,7 @@ bool iscoprime(int a, int b) {
 //' @export
 // [[Rcpp::interfaces(r, cpp)]]
 // [[Rcpp::export]]
-bool iseven(int n) {
+bool iseven(unsigned int n) {
   return _iseven(n);
 }
 
@@ -88,7 +88,7 @@ bool iseven(int n) {
 //' @export
 // [[Rcpp::interfaces(r, cpp)]]
 // [[Rcpp::export]]
-bool isodd(int n) {
+bool isodd(unsigned int n) {
   return _isodd(n);
 }
 
@@ -108,6 +108,6 @@ bool isodd(int n) {
 //' @export
 // [[Rcpp::interfaces(r, cpp)]]
 // [[Rcpp::export]]
-bool issquare(int n) {
+bool issquare(unsigned int n) {
   return _issquare(n);
 }

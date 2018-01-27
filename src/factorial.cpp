@@ -27,7 +27,7 @@ using namespace Rcpp;
 //' @export
 // [[Rcpp::interfaces(r, cpp)]]
 // [[Rcpp::export]]
-double factorial(int n) {
+double factorial(unsigned int n) {
   return _factorial(n);
 }
 
@@ -56,7 +56,7 @@ double factorial(int n) {
 //' @export
 // [[Rcpp::interfaces(r, cpp)]]
 // [[Rcpp::export]]
-double stirling(int n) {
+double stirling(unsigned int n) {
 
   return _stirling(n);
 }
@@ -83,7 +83,7 @@ double stirling(int n) {
 //' @export
 // [[Rcpp::interfaces(r, cpp)]]
 // [[Rcpp::export]]
-double stirlingln(int n) {
+double stirlingln(unsigned int n) {
 
   return _stirlingln(n);
 }
@@ -110,7 +110,7 @@ double stirlingln(int n) {
 //' @export
 // [[Rcpp::interfaces(r, cpp)]]
 // [[Rcpp::export]]
-double ramanujan(int n) {
+double ramanujan(unsigned int n) {
 
   return _ramanujan(n);
 }
@@ -137,17 +137,17 @@ double ramanujan(int n) {
 //' @export
 // [[Rcpp::interfaces(r, cpp)]]
 // [[Rcpp::export]]
-double fallingfactorial(int x, int n) {
+double fallingfactorial(unsigned int x, int n) {
   double f = 1.0;
 
   if (n < 0) {
-    for (int i = 0; i >= n; i--) {
+    for (unsigned int i = 0; i >= n; i--) {
       f = f * (x - i);
     }
     f = 1.0 / f;
   }
   else {
-    for (int i = 0; i <= abs(n) - 1; i++) {
+    for (unsigned int i = 0; i <= abs(n) - 1; i++) {
       f = f * (x - i);
     }
   }
@@ -158,13 +158,13 @@ double fallingfactorial(int x, int n) {
 
 // [[Rcpp::interfaces(r, cpp)]]
 // [[Rcpp::export]]
-std::string fallingfactorial_function(std::string x, int n) {
+std::string fallingfactorial_function(std::string x, unsigned int n) {
   std::string f = x;
   std::string parten1 = "*(";
   std::string negsep = " - ";
   std::string parten2 = ")";
 
-  for (int i = 1; i <= n; i++) {
+  for (unsigned int i = 1; i <= n; i++) {
     std::stringstream j;
     j << i;
     std::string jstr = j.str();
@@ -197,17 +197,17 @@ std::string fallingfactorial_function(std::string x, int n) {
 //' @export
 // [[Rcpp::interfaces(r, cpp)]]
 // [[Rcpp::export]]
-double risingfactorial(int x, int n) {
+double risingfactorial(unsigned int x, int n) {
   double f = 1.0;
 
   if (n < 0) {
-    for (int i = 0; i >= n; i--) {
+    for (unsigned int i = 0; i >= n; i--) {
       f = f * (x + i);
     }
     f = 1.0 / f;
   }
   else {
-    for (int i = 0; i <= abs(n) - 1; i++) {
+    for (unsigned int i = 0; i <= abs(n) - 1; i++) {
       f = f * (x + i);
     }
   }
@@ -218,13 +218,13 @@ double risingfactorial(int x, int n) {
 
 // [[Rcpp::interfaces(r, cpp)]]
 // [[Rcpp::export]]
-std::string risingfactorial_function(std::string x, int n) {
+std::string risingfactorial_function(std::string x, unsigned int n) {
   std::string f = x;
   std::string parten1 = "*(";
   std::string negsep = " + ";
   std::string parten2 = ")";
 
-  for (int i = 1; i <= n; i++) {
+  for (unsigned int i = 1; i <= n; i++) {
     std::stringstream j;
     j << i;
     std::string jstr = j.str();

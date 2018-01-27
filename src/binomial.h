@@ -5,7 +5,7 @@
 #ifndef __BINOMIALFACTORIAL__
 #define __BINOMIALFACTORIAL__
 
-inline int _binomial_factorial(int n, int k) {
+inline long long int _binomial_factorial(unsigned int n, unsigned int k) {
   int nk = std::min(n, n - k);
   int bico = _factorial(n) / (_factorial(k) * _factorial(nk));
 
@@ -18,13 +18,13 @@ inline int _binomial_factorial(int n, int k) {
 #ifndef __BINOMIALMULTIPLICATIVE__
 #define __BINOMIALMULTIPLICATIVE__
 
-inline int _binomial_multiplicative(int n, int k) {
+inline long long int _binomial_multiplicative(unsigned int n, unsigned int k) {
 
-  int bico = 1;
-  int nk = std::min(n, n - k);
-  int j = 1;
+  unsigned int bico = 1;
+  unsigned int nk = std::min(n, n - k);
+  unsigned int j = 1;
 
-  for(int c = 1; c <= nk; c++) {
+  for(unsigned int c = 1; c <= nk; c++) {
     bico = bico * (n + 1 - j) / j;
     j += 1;
   }
@@ -38,7 +38,7 @@ inline int _binomial_multiplicative(int n, int k) {
 #ifndef __BINOMIALRECURSIVE__
 #define __BINOMIALRECURSIVE__
 
-inline int _binomial_recursive(int n, int k) {
+inline long long int _binomial_recursive(unsigned int n, unsigned int k) {
   if (k == n || k == 0) {
     return 1;
   }
