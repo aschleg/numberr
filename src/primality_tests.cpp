@@ -87,7 +87,7 @@ bool miller_rabin(unsigned int n, unsigned int k) {
 
   seedgen();
 
-  unsigned int a = M + std::rand() / (RAND_MAX / (N - M + 1) + 1);
+  int a = M + std::rand() / (RAND_MAX / (N - M + 1) + 1);
 
   return true;
 }

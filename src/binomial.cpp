@@ -39,7 +39,7 @@ using namespace Rcpp;
 //' @export
 // [[Rcpp::interfaces(r, cpp)]]
 // [[Rcpp::export]]
-unsigned long long int binomial_coefficient(unsigned int n, unsigned int k, std::string method = "multiplicative") {
+unsigned long int binomial_coefficient(unsigned int n, unsigned int k, std::string method = "multiplicative") {
 
   long int bc;
 
@@ -75,7 +75,7 @@ unsigned long long int binomial_coefficient(unsigned int n, unsigned int k, std:
 //' @export
 // [[Rcpp::interfaces(r, cpp)]]
 // [[Rcpp::export]]
-unsigned long long int binomial_recursive(unsigned int n, unsigned int k) {
+unsigned long int binomial_recursive(unsigned int n, unsigned int k) {
   return _binomial_recursive(n, k);
 }
 
@@ -100,7 +100,7 @@ unsigned long long int binomial_recursive(unsigned int n, unsigned int k) {
 //' @export
 // [[Rcpp::interfaces(r, cpp)]]
 // [[Rcpp::export]]
-unsigned long long int binomial_multiplicative(unsigned int n, unsigned int k) {
+unsigned long int binomial_multiplicative(unsigned int n, unsigned int k) {
   return _binomial_multiplicative(n, k);
 }
 
@@ -122,7 +122,7 @@ unsigned long long int binomial_multiplicative(unsigned int n, unsigned int k) {
 //' @export
 // [[Rcpp::interfaces(r, cpp)]]
 // [[Rcpp::export]]
-unsigned long long int binomial_factorial(unsigned int n, unsigned int k) {
+unsigned long int binomial_factorial(unsigned int n, unsigned int k) {
 
   return _binomial_factorial(n, k);
 }

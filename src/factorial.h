@@ -40,7 +40,7 @@ inline double _stirlingln(unsigned int n) {
 #ifndef __FACTORIAL__
 #define __FACTORIAL__
 
-inline unsigned long long int _factorial(unsigned int n) {
+inline long int _factorial(unsigned int n) {
   short int fac = 1;
 
   for(unsigned int i = n; i >= 1; i--) {

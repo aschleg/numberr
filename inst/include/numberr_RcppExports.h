@@ -24,11 +24,11 @@ namespace numberr {
         }
     }
 
-    inline long int binomial_coefficient(int n, int k, std::string method = "multiplicative") {
+    inline unsigned long int binomial_coefficient(unsigned int n, unsigned int k, std::string method = "multiplicative") {
         typedef SEXP(*Ptr_binomial_coefficient)(SEXP,SEXP,SEXP);
         static Ptr_binomial_coefficient p_binomial_coefficient = NULL;
         if (p_binomial_coefficient == NULL) {
-            validateSignature("long int(*binomial_coefficient)(int,int,std::string)");
+            validateSignature("unsigned long int(*binomial_coefficient)(unsigned int,unsigned int,std::string)");
             p_binomial_coefficient = (Ptr_binomial_coefficient)R_GetCCallable("numberr", "_numberr_binomial_coefficient");
         }
         RObject rcpp_result_gen;
@@ -40,14 +40,14 @@ namespace numberr {
             throw Rcpp::internal::InterruptedException();
         if (rcpp_result_gen.inherits("try-error"))
             throw Rcpp::exception(as<std::string>(rcpp_result_gen).c_str());
-        return Rcpp::as<long int >(rcpp_result_gen);
+        return Rcpp::as<unsigned long int >(rcpp_result_gen);
     }
 
-    inline int binomial_recursive(int n, int k) {
+    inline unsigned long int binomial_recursive(unsigned int n, unsigned int k) {
         typedef SEXP(*Ptr_binomial_recursive)(SEXP,SEXP);
         static Ptr_binomial_recursive p_binomial_recursive = NULL;
         if (p_binomial_recursive == NULL) {
-            validateSignature("int(*binomial_recursive)(int,int)");
+            validateSignature("unsigned long int(*binomial_recursive)(unsigned int,unsigned int)");
             p_binomial_recursive = (Ptr_binomial_recursive)R_GetCCallable("numberr", "_numberr_binomial_recursive");
         }
         RObject rcpp_result_gen;
@@ -59,14 +59,14 @@ namespace numberr {
             throw Rcpp::internal::InterruptedException();
         if (rcpp_result_gen.inherits("try-error"))
             throw Rcpp::exception(as<std::string>(rcpp_result_gen).c_str());
-        return Rcpp::as<int >(rcpp_result_gen);
+        return Rcpp::as<unsigned long int >(rcpp_result_gen);
     }
 
-    inline int binomial_multiplicative(int n, int k) {
+    inline unsigned long int binomial_multiplicative(unsigned int n, unsigned int k) {
         typedef SEXP(*Ptr_binomial_multiplicative)(SEXP,SEXP);
         static Ptr_binomial_multiplicative p_binomial_multiplicative = NULL;
         if (p_binomial_multiplicative == NULL) {
-            validateSignature("int(*binomial_multiplicative)(int,int)");
+            validateSignature("unsigned long int(*binomial_multiplicative)(unsigned int,unsigned int)");
             p_binomial_multiplicative = (Ptr_binomial_multiplicative)R_GetCCallable("numberr", "_numberr_binomial_multiplicative");
         }
         RObject rcpp_result_gen;
@@ -78,14 +78,14 @@ namespace numberr {
             throw Rcpp::internal::InterruptedException();
         if (rcpp_result_gen.inherits("try-error"))
             throw Rcpp::exception(as<std::string>(rcpp_result_gen).c_str());
-        return Rcpp::as<int >(rcpp_result_gen);
+        return Rcpp::as<unsigned long int >(rcpp_result_gen);
     }
 
-    inline int binomial_factorial(int n, int k) {
+    inline unsigned long int binomial_factorial(unsigned int n, unsigned int k) {
         typedef SEXP(*Ptr_binomial_factorial)(SEXP,SEXP);
         static Ptr_binomial_factorial p_binomial_factorial = NULL;
         if (p_binomial_factorial == NULL) {
-            validateSignature("int(*binomial_factorial)(int,int)");
+            validateSignature("unsigned long int(*binomial_factorial)(unsigned int,unsigned int)");
             p_binomial_factorial = (Ptr_binomial_factorial)R_GetCCallable("numberr", "_numberr_binomial_factorial");
         }
         RObject rcpp_result_gen;
@@ -97,7 +97,7 @@ namespace numberr {
             throw Rcpp::internal::InterruptedException();
         if (rcpp_result_gen.inherits("try-error"))
             throw Rcpp::exception(as<std::string>(rcpp_result_gen).c_str());
-        return Rcpp::as<int >(rcpp_result_gen);
+        return Rcpp::as<unsigned long int >(rcpp_result_gen);
     }
 
     inline NumericVector factor_trial(unsigned int n) {
@@ -138,11 +138,11 @@ namespace numberr {
         return Rcpp::as<NumericVector >(rcpp_result_gen);
     }
 
-    inline NumericVector pollardrho(unsigned long int n) {
+    inline NumericVector pollardrho(unsigned int n) {
         typedef SEXP(*Ptr_pollardrho)(SEXP);
         static Ptr_pollardrho p_pollardrho = NULL;
         if (p_pollardrho == NULL) {
-            validateSignature("NumericVector(*pollardrho)(unsigned long int)");
+            validateSignature("NumericVector(*pollardrho)(unsigned int)");
             p_pollardrho = (Ptr_pollardrho)R_GetCCallable("numberr", "_numberr_pollardrho");
         }
         RObject rcpp_result_gen;
@@ -157,11 +157,11 @@ namespace numberr {
         return Rcpp::as<NumericVector >(rcpp_result_gen);
     }
 
-    inline double factorial(int n) {
+    inline double factorial(unsigned int n) {
         typedef SEXP(*Ptr_factorial)(SEXP);
         static Ptr_factorial p_factorial = NULL;
         if (p_factorial == NULL) {
-            validateSignature("double(*factorial)(int)");
+            validateSignature("double(*factorial)(unsigned int)");
             p_factorial = (Ptr_factorial)R_GetCCallable("numberr", "_numberr_factorial");
         }
         RObject rcpp_result_gen;
@@ -176,11 +176,11 @@ namespace numberr {
         return Rcpp::as<double >(rcpp_result_gen);
     }
 
-    inline double stirling(int n) {
+    inline double stirling(unsigned int n) {
         typedef SEXP(*Ptr_stirling)(SEXP);
         static Ptr_stirling p_stirling = NULL;
         if (p_stirling == NULL) {
-            validateSignature("double(*stirling)(int)");
+            validateSignature("double(*stirling)(unsigned int)");
             p_stirling = (Ptr_stirling)R_GetCCallable("numberr", "_numberr_stirling");
         }
         RObject rcpp_result_gen;
@@ -195,11 +195,11 @@ namespace numberr {
         return Rcpp::as<double >(rcpp_result_gen);
     }
 
-    inline double stirlingln(int n) {
+    inline double stirlingln(unsigned int n) {
         typedef SEXP(*Ptr_stirlingln)(SEXP);
         static Ptr_stirlingln p_stirlingln = NULL;
         if (p_stirlingln == NULL) {
-            validateSignature("double(*stirlingln)(int)");
+            validateSignature("double(*stirlingln)(unsigned int)");
             p_stirlingln = (Ptr_stirlingln)R_GetCCallable("numberr", "_numberr_stirlingln");
         }
         RObject rcpp_result_gen;
@@ -214,11 +214,11 @@ namespace numberr {
         return Rcpp::as<double >(rcpp_result_gen);
     }
 
-    inline double ramanujan(int n) {
+    inline double ramanujan(unsigned int n) {
         typedef SEXP(*Ptr_ramanujan)(SEXP);
         static Ptr_ramanujan p_ramanujan = NULL;
         if (p_ramanujan == NULL) {
-            validateSignature("double(*ramanujan)(int)");
+            validateSignature("double(*ramanujan)(unsigned int)");
             p_ramanujan = (Ptr_ramanujan)R_GetCCallable("numberr", "_numberr_ramanujan");
         }
         RObject rcpp_result_gen;
@@ -252,11 +252,11 @@ namespace numberr {
         return Rcpp::as<double >(rcpp_result_gen);
     }
 
-    inline std::string fallingfactorial_function(std::string x, int n) {
+    inline std::string fallingfactorial_function(std::string x, unsigned int n) {
         typedef SEXP(*Ptr_fallingfactorial_function)(SEXP,SEXP);
         static Ptr_fallingfactorial_function p_fallingfactorial_function = NULL;
         if (p_fallingfactorial_function == NULL) {
-            validateSignature("std::string(*fallingfactorial_function)(std::string,int)");
+            validateSignature("std::string(*fallingfactorial_function)(std::string,unsigned int)");
             p_fallingfactorial_function = (Ptr_fallingfactorial_function)R_GetCCallable("numberr", "_numberr_fallingfactorial_function");
         }
         RObject rcpp_result_gen;
@@ -290,11 +290,11 @@ namespace numberr {
         return Rcpp::as<double >(rcpp_result_gen);
     }
 
-    inline std::string risingfactorial_function(std::string x, int n) {
+    inline std::string risingfactorial_function(std::string x, unsigned int n) {
         typedef SEXP(*Ptr_risingfactorial_function)(SEXP,SEXP);
         static Ptr_risingfactorial_function p_risingfactorial_function = NULL;
         if (p_risingfactorial_function == NULL) {
-            validateSignature("std::string(*risingfactorial_function)(std::string,int)");
+            validateSignature("std::string(*risingfactorial_function)(std::string,unsigned int)");
             p_risingfactorial_function = (Ptr_risingfactorial_function)R_GetCCallable("numberr", "_numberr_risingfactorial_function");
         }
         RObject rcpp_result_gen;
@@ -385,11 +385,11 @@ namespace numberr {
         return Rcpp::as<NumericVector >(rcpp_result_gen);
     }
 
-    inline bool iscomposite(int n) {
+    inline bool iscomposite(unsigned int n) {
         typedef SEXP(*Ptr_iscomposite)(SEXP);
         static Ptr_iscomposite p_iscomposite = NULL;
         if (p_iscomposite == NULL) {
-            validateSignature("bool(*iscomposite)(int)");
+            validateSignature("bool(*iscomposite)(unsigned int)");
             p_iscomposite = (Ptr_iscomposite)R_GetCCallable("numberr", "_numberr_iscomposite");
         }
         RObject rcpp_result_gen;
@@ -404,11 +404,11 @@ namespace numberr {
         return Rcpp::as<bool >(rcpp_result_gen);
     }
 
-    inline bool iscoprime(int a, int b) {
+    inline bool iscoprime(unsigned int a, unsigned int b) {
         typedef SEXP(*Ptr_iscoprime)(SEXP,SEXP);
         static Ptr_iscoprime p_iscoprime = NULL;
         if (p_iscoprime == NULL) {
-            validateSignature("bool(*iscoprime)(int,int)");
+            validateSignature("bool(*iscoprime)(unsigned int,unsigned int)");
             p_iscoprime = (Ptr_iscoprime)R_GetCCallable("numberr", "_numberr_iscoprime");
         }
         RObject rcpp_result_gen;
@@ -423,11 +423,11 @@ namespace numberr {
         return Rcpp::as<bool >(rcpp_result_gen);
     }
 
-    inline bool iseven(int n) {
+    inline bool iseven(unsigned int n) {
         typedef SEXP(*Ptr_iseven)(SEXP);
         static Ptr_iseven p_iseven = NULL;
         if (p_iseven == NULL) {
-            validateSignature("bool(*iseven)(int)");
+            validateSignature("bool(*iseven)(unsigned int)");
             p_iseven = (Ptr_iseven)R_GetCCallable("numberr", "_numberr_iseven");
         }
         RObject rcpp_result_gen;
@@ -442,11 +442,11 @@ namespace numberr {
         return Rcpp::as<bool >(rcpp_result_gen);
     }
 
-    inline bool isodd(int n) {
+    inline bool isodd(unsigned int n) {
         typedef SEXP(*Ptr_isodd)(SEXP);
         static Ptr_isodd p_isodd = NULL;
         if (p_isodd == NULL) {
-            validateSignature("bool(*isodd)(int)");
+            validateSignature("bool(*isodd)(unsigned int)");
             p_isodd = (Ptr_isodd)R_GetCCallable("numberr", "_numberr_isodd");
         }
         RObject rcpp_result_gen;
@@ -461,11 +461,11 @@ namespace numberr {
         return Rcpp::as<bool >(rcpp_result_gen);
     }
 
-    inline bool issquare(int n) {
+    inline bool issquare(unsigned int n) {
         typedef SEXP(*Ptr_issquare)(SEXP);
         static Ptr_issquare p_issquare = NULL;
         if (p_issquare == NULL) {
-            validateSignature("bool(*issquare)(int)");
+            validateSignature("bool(*issquare)(unsigned int)");
             p_issquare = (Ptr_issquare)R_GetCCallable("numberr", "_numberr_issquare");
         }
         RObject rcpp_result_gen;

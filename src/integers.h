@@ -101,8 +101,8 @@ inline bool _iscomposite(unsigned int n) {
 
 inline bool _issquare(unsigned int n) {
   
-  long s = sqrt(n);
-  long p = pow(s, 2);
+  unsigned long s = sqrt(n);
+  unsigned long p = pow(s, 2);
   
   if (p == n) {
     return true;

@@ -9,12 +9,12 @@
 using namespace Rcpp;
 
 // binomial_coefficient
-long int binomial_coefficient(int n, int k, std::string method);
+unsigned long int binomial_coefficient(unsigned int n, unsigned int k, std::string method);
 static SEXP _numberr_binomial_coefficient_try(SEXP nSEXP, SEXP kSEXP, SEXP methodSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
-    Rcpp::traits::input_parameter< int >::type n(nSEXP);
-    Rcpp::traits::input_parameter< int >::type k(kSEXP);
+    Rcpp::traits::input_parameter< unsigned int >::type n(nSEXP);
+    Rcpp::traits::input_parameter< unsigned int >::type k(kSEXP);
     Rcpp::traits::input_parameter< std::string >::type method(methodSEXP);
     rcpp_result_gen = Rcpp::wrap(binomial_coefficient(n, k, method));
     return rcpp_result_gen;
@@ -41,12 +41,12 @@ RcppExport SEXP _numberr_binomial_coefficient(SEXP nSEXP, SEXP kSEXP, SEXP metho
     return rcpp_result_gen;
 }
 // binomial_recursive
-int binomial_recursive(int n, int k);
+unsigned long int binomial_recursive(unsigned int n, unsigned int k);
 static SEXP _numberr_binomial_recursive_try(SEXP nSEXP, SEXP kSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
-    Rcpp::traits::input_parameter< int >::type n(nSEXP);
-    Rcpp::traits::input_parameter< int >::type k(kSEXP);
+    Rcpp::traits::input_parameter< unsigned int >::type n(nSEXP);
+    Rcpp::traits::input_parameter< unsigned int >::type k(kSEXP);
     rcpp_result_gen = Rcpp::wrap(binomial_recursive(n, k));
     return rcpp_result_gen;
 END_RCPP_RETURN_ERROR
@@ -72,12 +72,12 @@ RcppExport SEXP _numberr_binomial_recursive(SEXP nSEXP, SEXP kSEXP) {
     return rcpp_result_gen;
 }
 // binomial_multiplicative
-int binomial_multiplicative(int n, int k);
+unsigned long int binomial_multiplicative(unsigned int n, unsigned int k);
 static SEXP _numberr_binomial_multiplicative_try(SEXP nSEXP, SEXP kSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
-    Rcpp::traits::input_parameter< int >::type n(nSEXP);
-    Rcpp::traits::input_parameter< int >::type k(kSEXP);
+    Rcpp::traits::input_parameter< unsigned int >::type n(nSEXP);
+    Rcpp::traits::input_parameter< unsigned int >::type k(kSEXP);
     rcpp_result_gen = Rcpp::wrap(binomial_multiplicative(n, k));
     return rcpp_result_gen;
 END_RCPP_RETURN_ERROR
@@ -103,12 +103,12 @@ RcppExport SEXP _numberr_binomial_multiplicative(SEXP nSEXP, SEXP kSEXP) {
     return rcpp_result_gen;
 }
 // binomial_factorial
-int binomial_factorial(int n, int k);
+unsigned long int binomial_factorial(unsigned int n, unsigned int k);
 static SEXP _numberr_binomial_factorial_try(SEXP nSEXP, SEXP kSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
-    Rcpp::traits::input_parameter< int >::type n(nSEXP);
-    Rcpp::traits::input_parameter< int >::type k(kSEXP);
+    Rcpp::traits::input_parameter< unsigned int >::type n(nSEXP);
+    Rcpp::traits::input_parameter< unsigned int >::type k(kSEXP);
     rcpp_result_gen = Rcpp::wrap(binomial_factorial(n, k));
     return rcpp_result_gen;
 END_RCPP_RETURN_ERROR
@@ -194,11 +194,11 @@ RcppExport SEXP _numberr_fermat_factor(SEXP nSEXP) {
     return rcpp_result_gen;
 }
 // pollardrho
-NumericVector pollardrho(unsigned long int n);
+NumericVector pollardrho(unsigned int n);
 static SEXP _numberr_pollardrho_try(SEXP nSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
-    Rcpp::traits::input_parameter< unsigned long int >::type n(nSEXP);
+    Rcpp::traits::input_parameter< unsigned int >::type n(nSEXP);
     rcpp_result_gen = Rcpp::wrap(pollardrho(n));
     return rcpp_result_gen;
 END_RCPP_RETURN_ERROR
@@ -224,11 +224,11 @@ RcppExport SEXP _numberr_pollardrho(SEXP nSEXP) {
     return rcpp_result_gen;
 }
 // factorial
-double factorial(int n);
+double factorial(unsigned int n);
 static SEXP _numberr_factorial_try(SEXP nSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
-    Rcpp::traits::input_parameter< int >::type n(nSEXP);
+    Rcpp::traits::input_parameter< unsigned int >::type n(nSEXP);
     rcpp_result_gen = Rcpp::wrap(factorial(n));
     return rcpp_result_gen;
 END_RCPP_RETURN_ERROR
@@ -254,11 +254,11 @@ RcppExport SEXP _numberr_factorial(SEXP nSEXP) {
     return rcpp_result_gen;
 }
 // stirling
-double stirling(int n);
+double stirling(unsigned int n);
 static SEXP _numberr_stirling_try(SEXP nSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
-    Rcpp::traits::input_parameter< int >::type n(nSEXP);
+    Rcpp::traits::input_parameter< unsigned int >::type n(nSEXP);
     rcpp_result_gen = Rcpp::wrap(stirling(n));
     return rcpp_result_gen;
 END_RCPP_RETURN_ERROR
@@ -284,11 +284,11 @@ RcppExport SEXP _numberr_stirling(SEXP nSEXP) {
     return rcpp_result_gen;
 }
 // stirlingln
-double stirlingln(int n);
+double stirlingln(unsigned int n);
 static SEXP _numberr_stirlingln_try(SEXP nSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
-    Rcpp::traits::input_parameter< int >::type n(nSEXP);
+    Rcpp::traits::input_parameter< unsigned int >::type n(nSEXP);
     rcpp_result_gen = Rcpp::wrap(stirlingln(n));
     return rcpp_result_gen;
 END_RCPP_RETURN_ERROR
@@ -314,11 +314,11 @@ RcppExport SEXP _numberr_stirlingln(SEXP nSEXP) {
     return rcpp_result_gen;
 }
 // ramanujan
-double ramanujan(int n);
+double ramanujan(unsigned int n);
 static SEXP _numberr_ramanujan_try(SEXP nSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
-    Rcpp::traits::input_parameter< int >::type n(nSEXP);
+    Rcpp::traits::input_parameter< unsigned int >::type n(nSEXP);
     rcpp_result_gen = Rcpp::wrap(ramanujan(n));
     return rcpp_result_gen;
 END_RCPP_RETURN_ERROR
@@ -375,12 +375,12 @@ RcppExport SEXP _numberr_fallingfactorial(SEXP xSEXP, SEXP nSEXP) {
     return rcpp_result_gen;
 }
 // fallingfactorial_function
-std::string fallingfactorial_function(std::string x, int n);
+std::string fallingfactorial_function(std::string x, unsigned int n);
 static SEXP _numberr_fallingfactorial_function_try(SEXP xSEXP, SEXP nSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::traits::input_parameter< std::string >::type x(xSEXP);
-    Rcpp::traits::input_parameter< int >::type n(nSEXP);
+    Rcpp::traits::input_parameter< unsigned int >::type n(nSEXP);
     rcpp_result_gen = Rcpp::wrap(fallingfactorial_function(x, n));
     return rcpp_result_gen;
 END_RCPP_RETURN_ERROR
@@ -437,12 +437,12 @@ RcppExport SEXP _numberr_risingfactorial(SEXP xSEXP, SEXP nSEXP) {
     return rcpp_result_gen;
 }
 // risingfactorial_function
-std::string risingfactorial_function(std::string x, int n);
+std::string risingfactorial_function(std::string x, unsigned int n);
 static SEXP _numberr_risingfactorial_function_try(SEXP xSEXP, SEXP nSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::traits::input_parameter< std::string >::type x(xSEXP);
-    Rcpp::traits::input_parameter< int >::type n(nSEXP);
+    Rcpp::traits::input_parameter< unsigned int >::type n(nSEXP);
     rcpp_result_gen = Rcpp::wrap(risingfactorial_function(x, n));
     return rcpp_result_gen;
 END_RCPP_RETURN_ERROR
@@ -592,11 +592,11 @@ RcppExport SEXP _numberr_gcd_extended(SEXP aSEXP, SEXP bSEXP) {
     return rcpp_result_gen;
 }
 // iscomposite
-bool iscomposite(int n);
+bool iscomposite(unsigned int n);
 static SEXP _numberr_iscomposite_try(SEXP nSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
-    Rcpp::traits::input_parameter< int >::type n(nSEXP);
+    Rcpp::traits::input_parameter< unsigned int >::type n(nSEXP);
     rcpp_result_gen = Rcpp::wrap(iscomposite(n));
     return rcpp_result_gen;
 END_RCPP_RETURN_ERROR
@@ -622,12 +622,12 @@ RcppExport SEXP _numberr_iscomposite(SEXP nSEXP) {
     return rcpp_result_gen;
 }
 // iscoprime
-bool iscoprime(int a, int b);
+bool iscoprime(unsigned int a, unsigned int b);
 static SEXP _numberr_iscoprime_try(SEXP aSEXP, SEXP bSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
-    Rcpp::traits::input_parameter< int >::type a(aSEXP);
-    Rcpp::traits::input_parameter< int >::type b(bSEXP);
+    Rcpp::traits::input_parameter< unsigned int >::type a(aSEXP);
+    Rcpp::traits::input_parameter< unsigned int >::type b(bSEXP);
     rcpp_result_gen = Rcpp::wrap(iscoprime(a, b));
     return rcpp_result_gen;
 END_RCPP_RETURN_ERROR
@@ -653,11 +653,11 @@ RcppExport SEXP _numberr_iscoprime(SEXP aSEXP, SEXP bSEXP) {
     return rcpp_result_gen;
 }
 // iseven
-bool iseven(int n);
+bool iseven(unsigned int n);
 static SEXP _numberr_iseven_try(SEXP nSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
-    Rcpp::traits::input_parameter< int >::type n(nSEXP);
+    Rcpp::traits::input_parameter< unsigned int >::type n(nSEXP);
     rcpp_result_gen = Rcpp::wrap(iseven(n));
     return rcpp_result_gen;
 END_RCPP_RETURN_ERROR
@@ -683,11 +683,11 @@ RcppExport SEXP _numberr_iseven(SEXP nSEXP) {
     return rcpp_result_gen;
 }
 // isodd
-bool isodd(int n);
+bool isodd(unsigned int n);
 static SEXP _numberr_isodd_try(SEXP nSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
-    Rcpp::traits::input_parameter< int >::type n(nSEXP);
+    Rcpp::traits::input_parameter< unsigned int >::type n(nSEXP);
     rcpp_result_gen = Rcpp::wrap(isodd(n));
     return rcpp_result_gen;
 END_RCPP_RETURN_ERROR
@@ -713,11 +713,11 @@ RcppExport SEXP _numberr_isodd(SEXP nSEXP) {
     return rcpp_result_gen;
 }
 // issquare
-bool issquare(int n);
+bool issquare(unsigned int n);
 static SEXP _numberr_issquare_try(SEXP nSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
-    Rcpp::traits::input_parameter< int >::type n(nSEXP);
+    Rcpp::traits::input_parameter< unsigned int >::type n(nSEXP);
     rcpp_result_gen = Rcpp::wrap(issquare(n));
     return rcpp_result_gen;
 END_RCPP_RETURN_ERROR
@@ -1019,30 +1019,30 @@ RcppExport SEXP _numberr_three_n_one(SEXP nSEXP) {
 static int _numberr_RcppExport_validate(const char* sig) { 
     static std::set<std::string> signatures;
     if (signatures.empty()) {
-        signatures.insert("long int(*binomial_coefficient)(int,int,std::string)");
-        signatures.insert("int(*binomial_recursive)(int,int)");
-        signatures.insert("int(*binomial_multiplicative)(int,int)");
-        signatures.insert("int(*binomial_factorial)(int,int)");
+        signatures.insert("unsigned long int(*binomial_coefficient)(unsigned int,unsigned int,std::string)");
+        signatures.insert("unsigned long int(*binomial_recursive)(unsigned int,unsigned int)");
+        signatures.insert("unsigned long int(*binomial_multiplicative)(unsigned int,unsigned int)");
+        signatures.insert("unsigned long int(*binomial_factorial)(unsigned int,unsigned int)");
         signatures.insert("NumericVector(*factor_trial)(unsigned int)");
         signatures.insert("NumericVector(*fermat_factor)(unsigned int)");
-        signatures.insert("NumericVector(*pollardrho)(unsigned long int)");
-        signatures.insert("double(*factorial)(int)");
-        signatures.insert("double(*stirling)(int)");
-        signatures.insert("double(*stirlingln)(int)");
-        signatures.insert("double(*ramanujan)(int)");
+        signatures.insert("NumericVector(*pollardrho)(unsigned int)");
+        signatures.insert("double(*factorial)(unsigned int)");
+        signatures.insert("double(*stirling)(unsigned int)");
+        signatures.insert("double(*stirlingln)(unsigned int)");
+        signatures.insert("double(*ramanujan)(unsigned int)");
         signatures.insert("double(*fallingfactorial)(int,int)");
-        signatures.insert("std::string(*fallingfactorial_function)(std::string,int)");
+        signatures.insert("std::string(*fallingfactorial_function)(std::string,unsigned int)");
         signatures.insert("double(*risingfactorial)(int,int)");
-        signatures.insert("std::string(*risingfactorial_function)(std::string,int)");
+        signatures.insert("std::string(*risingfactorial_function)(std::string,unsigned int)");
         signatures.insert("unsigned long int(*gcd_recursive)(unsigned int,unsigned int)");
         signatures.insert("unsigned long int(*gcd_division)(unsigned int,unsigned int)");
         signatures.insert("unsigned long int(*gcd_subtraction)(unsigned int,unsigned int)");
         signatures.insert("NumericVector(*gcd_extended)(unsigned int,unsigned int)");
-        signatures.insert("bool(*iscomposite)(int)");
-        signatures.insert("bool(*iscoprime)(int,int)");
-        signatures.insert("bool(*iseven)(int)");
-        signatures.insert("bool(*isodd)(int)");
-        signatures.insert("bool(*issquare)(int)");
+        signatures.insert("bool(*iscomposite)(unsigned int)");
+        signatures.insert("bool(*iscoprime)(unsigned int,unsigned int)");
+        signatures.insert("bool(*iseven)(unsigned int)");
+        signatures.insert("bool(*isodd)(unsigned int)");
+        signatures.insert("bool(*issquare)(unsigned int)");
         signatures.insert("bool(*isprime)(unsigned int)");
         signatures.insert("bool(*fermat_prime)(unsigned int,unsigned int)");
         signatures.insert("bool(*miller_rabin)(unsigned int,unsigned int)");

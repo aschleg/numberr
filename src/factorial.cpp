@@ -137,17 +137,17 @@ double ramanujan(unsigned int n) {
 //' @export
 // [[Rcpp::interfaces(r, cpp)]]
 // [[Rcpp::export]]
-double fallingfactorial(unsigned int x, int n) {
+double fallingfactorial(int x, int n) {
   double f = 1.0;
 
   if (n < 0) {
-    for (unsigned int i = 0; i >= n; i--) {
+    for (int i = 0; i >= n; i--) {
       f = f * (x - i);
     }
     f = 1.0 / f;
   }
   else {
-    for (unsigned int i = 0; i <= abs(n) - 1; i++) {
+    for (int i = 0; i <= abs(n) - 1; i++) {
       f = f * (x - i);
     }
   }
@@ -197,17 +197,17 @@ std::string fallingfactorial_function(std::string x, unsigned int n) {
 //' @export
 // [[Rcpp::interfaces(r, cpp)]]
 // [[Rcpp::export]]
-double risingfactorial(unsigned int x, int n) {
+double risingfactorial(int x, int n) {
   double f = 1.0;
 
   if (n < 0) {
-    for (unsigned int i = 0; i >= n; i--) {
+    for (int i = 0; i >= n; i--) {
       f = f * (x + i);
     }
     f = 1.0 / f;
   }
   else {
-    for (unsigned int i = 0; i <= abs(n) - 1; i++) {
+    for (int i = 0; i <= abs(n) - 1; i++) {
       f = f * (x + i);
     }
   }
