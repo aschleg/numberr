@@ -26,8 +26,8 @@ using namespace Rcpp;
 //' @param k number of unordered outcomes
 //' @param method selects the algorithm to use for calculating the binomial
 //'   coefficient. Options include the multiplicative (default), recursive, or
-//'   factorial methods. Please note the recursive method can be much slower than
-//'   the other two choices.
+//'   factorial methods. Please note the recursive method can be much slower
+//'   than the other two choices.
 //' @return The binomial coefficient
 //' @references Binomial coefficient. (2017, April 17). In Wikipedia, The Free
 //'   Encyclopedia. From
@@ -37,7 +37,6 @@ using namespace Rcpp;
 //'    Weisstein, Eric W. "Binomial Coefficient." From MathWorld--A Wolfram Web
 //'   Resource. http:#mathworld.wolfram.com/BinomialCoefficient.html
 //' @export
-// [[Rcpp::interfaces(r, cpp)]]
 // [[Rcpp::export]]
 unsigned long int binomial_coefficient(unsigned int n, unsigned int k, std::string method = "multiplicative") {
 
@@ -73,7 +72,6 @@ unsigned long int binomial_coefficient(unsigned int n, unsigned int k, std::stri
 //'    Weisstein, Eric W. "Binomial Coefficient." From MathWorld--A Wolfram Web
 //'   Resource. http://mathworld.wolfram.com/BinomialCoefficient.html
 //' @export
-// [[Rcpp::interfaces(r, cpp)]]
 // [[Rcpp::export]]
 unsigned long int binomial_recursive(unsigned int n, unsigned int k) {
   return _binomial_recursive(n, k);
@@ -98,7 +96,6 @@ unsigned long int binomial_recursive(unsigned int n, unsigned int k) {
 //'    Weisstein, Eric W. "Binomial Coefficient." From MathWorld--A Wolfram Web
 //'   Resource. http://mathworld.wolfram.com/BinomialCoefficient.html
 //' @export
-// [[Rcpp::interfaces(r, cpp)]]
 // [[Rcpp::export]]
 unsigned long int binomial_multiplicative(unsigned int n, unsigned int k) {
   return _binomial_multiplicative(n, k);
@@ -120,7 +117,6 @@ unsigned long int binomial_multiplicative(unsigned int n, unsigned int k) {
 //'    Weisstein, Eric W. "Binomial Coefficient." From MathWorld--A Wolfram Web
 //'   Resource. http://mathworld.wolfram.com/BinomialCoefficient.html
 //' @export
-// [[Rcpp::interfaces(r, cpp)]]
 // [[Rcpp::export]]
 unsigned long int binomial_factorial(unsigned int n, unsigned int k) {
 

@@ -12,14 +12,9 @@ using namespace Rcpp;
 //'
 //' @param n Value to test
 //' @return TRUE if n is composite, FALSE otherwise
-//' @examples
-//' iscomposite(9)
-//' iscomposite(3)
-//' iscomposite(10927)
 //' @references Weisstein, Eric W. "Composite Number." From MathWorld--A Wolfram
 //' Web Resource. http://mathworld.wolfram.com/CompositeNumber.html
 //' @export
-// [[Rcpp::interfaces(r, cpp)]]
 // [[Rcpp::export]]
 bool iscomposite(unsigned int n) {
   return _iscomposite(n);
@@ -34,15 +29,11 @@ bool iscomposite(unsigned int n) {
 //' @param a First integer
 //' @param b Second integer
 //' @return TRUE if given integers are coprime, FALSE otherwise
-//' @examples
-//' iscoprime(2, 4)
-//' iscoprime(2, 3)
 //' @references Cormen, T., Leiserson, C., Rivest, R., & Stein, C. (2009).
 //' Introduction to algorithms (3rd ed., pp. 931). Cambridge (Inglaterra): Mit
 //' Press. Weisstein, Eric W. "Relatively Prime." From MathWorld--A Wolfram Web
 //' Resource. http://mathworld.wolfram.com/RelativelyPrime.html
 //' @export
-// [[Rcpp::interfaces(r, cpp)]]
 // [[Rcpp::export]]
 bool iscoprime(unsigned int a, unsigned int b) {
   return _iscoprime(a, b);
@@ -57,14 +48,9 @@ bool iscoprime(unsigned int a, unsigned int b) {
 //'
 //' @param n Value to test
 //' @return TRUE if n is even, FALSE otherwise
-//' @examples
-//' iseven(5)
-//' iseven(4)
-//' iseven(4.23)
 //' @references Weisstein, Eric W. "Even Number." From MathWorld--A Wolfram Web
 //' Resource. http://mathworld.wolfram.com/EvenNumber.html
 //' @export
-// [[Rcpp::interfaces(r, cpp)]]
 // [[Rcpp::export]]
 bool iseven(unsigned int n) {
   return _iseven(n);
@@ -79,14 +65,9 @@ bool iseven(unsigned int n) {
 //'
 //' @param n Value to test
 //' @return TRUE if n is odd, FALSE otherwise
-//' @examples
-//' isodd(5)
-//' isodd(4)
-//' isodd(5.25)
 //' @references Weisstein, Eric W. "Odd Number." From MathWorld--A Wolfram Web
 //'   Resource. http://mathworld.wolfram.com/OddNumber.html
 //' @export
-// [[Rcpp::interfaces(r, cpp)]]
 // [[Rcpp::export]]
 bool isodd(unsigned int n) {
   return _isodd(n);
@@ -99,14 +80,9 @@ bool isodd(unsigned int n) {
 //'
 //' @param n Value to test
 //' @return TRUE if value is a square number, FALSE otherwise
-//' @examples
-//' issquare(25)
-//' issquare(9)
-//' issquare(3)
 //' @references Barnes, C. (2004). Integer Factorization Algorithms (1st ed.).
 //' Corvallis, OR: Department of Physics, Oregon State University.
 //' @export
-// [[Rcpp::interfaces(r, cpp)]]
 // [[Rcpp::export]]
 bool issquare(unsigned int n) {
   return _issquare(n);

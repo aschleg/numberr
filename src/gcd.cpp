@@ -12,16 +12,12 @@ using namespace Rcpp;
 //' @param a First integer
 //' @param b Second integer
 //' @return The greatest common divisor
-//' @examples
-//' gcd_recursive(24, 30)
-//' gcd_recursive(9, 5)
 //' @references Cormen, T., Leiserson, C., Rivest, R., & Stein, C. (2009).
 //'   Introduction to algorithms (3rd ed., pp. 928-930, 934-935). Cambridge
 //'   (Inglaterra): Mit Press. Euclidean algorithm. (2017, May 18). In Wikipedia,
 //'   The Free Encyclopedia. From
 //'   https://en.wikipedia.org/w/index.php?title=Euclidean_algorithm&oldid=780973502
 //' @export
-// [[Rcpp::interfaces(r, cpp)]]
 // [[Rcpp::export]]
 unsigned long int gcd_recursive(unsigned int a, unsigned int b) {
 
@@ -39,10 +35,6 @@ unsigned long int gcd_recursive(unsigned int a, unsigned int b) {
 //' @param a First integer
 //' @param b Second integer
 //' @return The greatest common divisor
-//' @examples
-//' gcd_division(24, 30)
-//' gcd_division(9, 5)
-//' gcd_division(193752, 234574)
 //' @references Cormen, T., Leiserson, C., Rivest, R., & Stein, C. (2009).
 //'   Introduction to algorithms (3rd ed., pp. 928-930). Cambridge (Inglaterra):
 //'   Mit Press. Euclidean algorithm. (2017, May 18). In Wikipedia, The Free
@@ -52,7 +44,6 @@ unsigned long int gcd_recursive(unsigned int a, unsigned int b) {
 //'   From
 //'   https://en.wikipedia.org/w/index.php?title=Euclidean_division&oldid=779699188
 //' @export
-// [[Rcpp::interfaces(r, cpp)]]
 // [[Rcpp::export]]
 unsigned long int gcd_division(unsigned int a, unsigned int b) {
   while (b != 0) {
@@ -75,12 +66,7 @@ unsigned long int gcd_division(unsigned int a, unsigned int b) {
 //' @param a First integer
 //' @param b Second integer
 //' @return The greatest common divisor
-//' @examples
-//' gcd_subtraction(24, 30)
-//' gcd_subtraction(9, 5)
-//' gcd_subtraction(135614, 234562)
 //' @export
-// [[Rcpp::interfaces(r, cpp)]]
 // [[Rcpp::export]]
 unsigned long int gcd_subtraction(unsigned int a, unsigned int b) {
   while (a != b) {
@@ -107,15 +93,12 @@ unsigned long int gcd_subtraction(unsigned int a, unsigned int b) {
 //'
 //' @param a First integer
 //' @param b Second integer
-//' @examples
-//' gcd.extended(99, 78)
 //' @references Bezout's identity. (2017, May 12). In Wikipedia, The Free
 //' Encyclopedia. From
 //' https://en.wikipedia.org/w/index.php?title=B%C3%A9zout%27s_identity&oldid=780050687
 //' Cormen, T., Leiserson, C., Rivest, R., & Stein, C. (2009). Introduction to
 //' algorithms (3rd ed., pp. 937-938). Cambridge (Inglaterra): Mit Press.
 //' @export
-// [[Rcpp::interfaces(r, cpp)]]
 // [[Rcpp::export]]
 NumericVector gcd_extended(unsigned int a, unsigned int b) {
   double d; double x; double y;

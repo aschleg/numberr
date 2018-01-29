@@ -4,7 +4,6 @@
 #include <cstdlib>
 #include <algorithm>
 #include "integers.h"
-#include "seed.h"
 
 using namespace Rcpp;
 
@@ -16,14 +15,9 @@ using namespace Rcpp;
 //'
 //' @param n Value to test
 //' @return TRUE if n is prime, FALSE otherwise
-//' @examples
-//' isprime(9)
-//' isprime(3)
-//' isprime(10927)
 //' @references Weisstein, Eric W. "Prime Number." From MathWorld--A Wolfram Web
 //' Resource. http://mathworld.wolfram.com/PrimeNumber.html
 //' @export
-// [[Rcpp::interfaces(r, cpp)]]
 // [[Rcpp::export]]
 bool isprime(unsigned int n) {
   return _isprime(n);
@@ -48,10 +42,6 @@ bool isprime(unsigned int n) {
 //' @param n integer
 //' @param k integer, default 1000
 //' @return TRUE if n is probably prime, FALSE otherwise
-//' @examples
-//' fermat_prime(11)
-//' fermat_prime(31)
-//' fermat_prime(100)
 //' @references Thomas H. Cormen, Charles E. Leiserson, Ronald L. Rivest,
 //' Clifford Stein (2001). "Section 31.8: Primality testing". Introduction to
 //' Algorithms (Second ed.). MIT Press; McGraw-Hill. Weisstein, Eric W.
@@ -60,35 +50,39 @@ bool isprime(unsigned int n) {
 //' "Primality Test." From MathWorld--A Wolfram Web Resource.
 //' http://mathworld.wolfram.com/PrimalityTest.html
 //' @export
-// [[Rcpp::interfaces(r, cpp)]]
 // [[Rcpp::export]]
 bool fermat_prime(unsigned int n, unsigned int k = 1000) {
   unsigned int M = 2;
   unsigned int N = n - 2;
-
-  seedgen();
+  
+  GetRNGstate();
 
   for (unsigned int i = 0; i >= k; i++) {
-    unsigned int a = M + std::rand() / (RAND_MAX / (N - M + 1) + 1);
+    unsigned int a = M + unif_rand() / (RAND_MAX / (N - M + 1) + 1);
 
     if (pow(a, n - 1) != 1 % n) {
       return false;
     }
   }
-
+  
+  PutRNGstate();
+  
   return true;
 }
 
-// [[Rcpp::interfaces(r, cpp)]]
+//' Tests an integer's primality using the Miller-Rabin test.
+//' 
 // [[Rcpp::export]]
 bool miller_rabin(unsigned int n, unsigned int k) {
-  unsigned int M = 2;
-  unsigned int N = n - 2;
+  // unsigned int M = 2;
+  // unsigned int N = n - 2;
 
-  seedgen();
+  //GetRNGstate();
 
-  int a = M + std::rand() / (RAND_MAX / (N - M + 1) + 1);
-
+  //int a = M + unif_rand() / (RAND_MAX / (N - M + 1) + 1);
+  
+  //PutRNGstate();
+  
   return true;
 }
 
@@ -105,23 +99,18 @@ bool miller_rabin(unsigned int n, unsigned int k) {
 //' iterations and if \eqn{s \equiv 0 \space (\text{mod} \space M_p)} then the
 //' Mersenne number \eqn{M_p} is prime.
 //'
-//' @param n integer
+//' @param p integer
 //' @returns TRUE if integer is prime (and a Mersenne Number), FALSE otherwise
-//' @examples
-//' lucas_lehmer(13)
-//' lucas_lehmer(31)
-//' lucas_lehmer(127)
 //' @references Lucas–Lehmer primality test. (2017, May 27). In Wikipedia, The
-//' Free Encyclopedia. From
-//' https://en.wikipedia.org/w/index.php?title=Lucas%E2%80%93Lehmer_primality_test&oldid=782483346
-//' Weisstein, Eric W. "Lucas-Lehmer Test." From MathWorld--A Wolfram Web
-//' Resource. http://mathworld.wolfram.com/Lucas-LehmerTest.html Weisstein, Eric
-//' W. "Mersenne Number." From MathWorld--A Wolfram Web Resource.
-//' http://mathworld.wolfram.com/MersenneNumber.html Weisstein, Eric W.
-//' "Primality Test." From MathWorld--A Wolfram Web Resource.
-//' http://mathworld.wolfram.com/PrimalityTest.html
+//'   Free Encyclopedia. From
+//'   https://en.wikipedia.org/w/index.php?title=Lucas%E2%80%93Lehmer_primality_test&oldid=782483346
+//'    Weisstein, Eric W. "Lucas-Lehmer Test." From MathWorld--A Wolfram Web
+//'   Resource. http://mathworld.wolfram.com/Lucas-LehmerTest.html Weisstein,
+//'   Eric W. "Mersenne Number." From MathWorld--A Wolfram Web Resource.
+//'   http://mathworld.wolfram.com/MersenneNumber.html Weisstein, Eric W.
+//'   "Primality Test." From MathWorld--A Wolfram Web Resource.
+//'   http://mathworld.wolfram.com/PrimalityTest.html
 //' @export
-// [[Rcpp::interfaces(r, cpp)]]
 // [[Rcpp::export]]
 bool lucas_lehmer(unsigned int p) {
   int s = 4;

@@ -17,15 +17,11 @@ using namespace Rcpp;
 //' factorial of 5 is written as: 5! = (5)(4)(3)(2)(1) = 120
 //'
 //' @param n Desired integer to compute factorial
-//' @examples
-//' factorial(10)
-//' factorial(50)
 //' @references Press, W., Teukolsky, S., Vetterling, W., & Flannery, B. (2007).
 //'   Numerical recipes (3rd ed.). Cambridge: Cambridge University Press.
 //'   Weisstein, Eric W. "Factorial." From MathWorld--A Wolfram Web Resource.
 //'   http://mathworld.wolfram.com/Factorial.html
 //' @export
-// [[Rcpp::interfaces(r, cpp)]]
 // [[Rcpp::export]]
 unsigned long int factorial(unsigned int n) {
   return _factorial(n);
@@ -44,19 +40,14 @@ unsigned long int factorial(unsigned int n) {
 //' \eqn{0! = 1}. \deqn{n! \approx \sqrt{(2n + \frac{1}{3})\pi} n^n e^{-n}}
 //'
 //' @param n desired integer to approximate factorial
-//' @examples
-//' stirling(0)
-//' stirling(5)
-//' stirling(50)
 //' @references Stirling's approximation. (2017, March 8). In Wikipedia, The
 //'   Free Encyclopedia. From
 //'   https://en.wikipedia.org/w/index.php?title=Stirling%27s_approximation&oldid=769328178
 //'    Weisstein, Eric W. "Stirling's Approximation." From MathWorld--A Wolfram
 //'   Web Resource. http://mathworld.wolfram.com/StirlingsApproximation.html
 //' @export
-// [[Rcpp::interfaces(r, cpp)]]
 // [[Rcpp::export]]
-double long stirling(unsigned int n) {
+long double stirling(unsigned int n) {
 
   return _stirling(n);
 }
@@ -74,16 +65,12 @@ double long stirling(unsigned int n) {
 //' \pi}
 //'
 //' @param n desired integer to approximate factorial
-//' @examples
-//' stirlingln(50)
-//' stirlingln(10)
 //' @references Stirling's approximation. (2017, March 8). In Wikipedia, The
 //'   Free Encyclopedia. From
 //'   https://en.wikipedia.org/w/index.php?title=Stirling%27s_approximation&oldid=769328178
 //' @export
-// [[Rcpp::interfaces(r, cpp)]]
 // [[Rcpp::export]]
-double stirlingln(unsigned int n) {
+long double stirlingln(unsigned int n) {
 
   return _stirlingln(n);
 }
@@ -100,17 +87,12 @@ double stirlingln(unsigned int n) {
 //' + n + \frac{1}{30}}}
 //'
 //' @param n integer to approximate factorial
-//' @examples
-//' ramanujan(10)
-//' ramanujan(1)
-//' ramanujan(5)
 //' @references Mortici, Cristinel. On Gosper's Formula for the Gamma Function.
 //'   Valahia University of Targoviste, Department of Mathematics. Retrieved
 //'   from http://files.ele-math.com/articles/jmi-05-53.pdf
 //' @export
-// [[Rcpp::interfaces(r, cpp)]]
 // [[Rcpp::export]]
-double long ramanujan(unsigned int n) {
+long double ramanujan(unsigned int n) {
 
   return _ramanujan(n);
 }
@@ -126,8 +108,7 @@ double long ramanujan(unsigned int n) {
 //' @param x integer
 //' @param n integer
 //' @examples
-//' fallingfactorial(10, 5)
-//' fallingfactorial(10, 6)
+//' fallingfactorial(6, 4)
 //' fallingfactorial(5, 3)
 //' @references Falling and rising factorials. (2017, June 8). In Wikipedia, The
 //'   Free Encyclopedia. From
@@ -135,7 +116,6 @@ double long ramanujan(unsigned int n) {
 //'    Weisstein, Eric W. "Falling Factorial." From MathWorld--A Wolfram Web
 //'   Resource. http://mathworld.wolfram.com/FallingFactorial.html
 //' @export
-// [[Rcpp::interfaces(r, cpp)]]
 // [[Rcpp::export]]
 double fallingfactorial(int x, int n) {
   double f = 1.0;
@@ -168,16 +148,14 @@ double fallingfactorial(int x, int n) {
 //' @param n integer
 //' @return string representation of falling factorial function.
 //' @examples
-//' fallingfactorial(10, 5)
-//' fallingfactorial(10, 6)
-//' fallingfactorial(5, 3)
+//' fallingfactorial_function("x", 2)
+//' fallingfactorial_function("z", 3)
 //' @references Falling and rising factorials. (2017, June 8). In Wikipedia, The
 //'   Free Encyclopedia. From
 //'   https://en.wikipedia.org/w/index.php?title=Falling_and_rising_factorials&oldid=784512036
 //'    Weisstein, Eric W. "Falling Factorial." From MathWorld--A Wolfram Web
 //'   Resource. http://mathworld.wolfram.com/FallingFactorial.html
 //' @export
-// [[Rcpp::interfaces(r, cpp)]]
 // [[Rcpp::export]]
 std::string fallingfactorial_function(std::string x, unsigned int n) {
   std::string f = x;
@@ -216,7 +194,6 @@ std::string fallingfactorial_function(std::string x, unsigned int n) {
 //'    Weisstein, Eric W. "Rising Factorial." From MathWorld--A Wolfram Web
 //'   Resource. http://mathworld.wolfram.com/RisingFactorial.html
 //' @export
-// [[Rcpp::interfaces(r, cpp)]]
 // [[Rcpp::export]]
 double risingfactorial(int x, int n) {
   double f = 1.0;
@@ -249,15 +226,14 @@ double risingfactorial(int x, int n) {
 //' @param n integer
 //' @return Computed rising factorial
 //' @examples
-//' risingfactorial(6, 2)
-//' risingfactorial(5, 3)
+//' risingfactorial_function('x', 2)
+//' risingfactorial_function('a', 3)
 //' @references Falling and rising factorials. (2017, June 8). In Wikipedia, The
 //'   Free Encyclopedia. From
 //'   https://en.wikipedia.org/w/index.php?title=Falling_and_rising_factorials&oldid=784512036
 //'    Weisstein, Eric W. "Rising Factorial." From MathWorld--A Wolfram Web
 //'   Resource. http://mathworld.wolfram.com/RisingFactorial.html
 //' @export
-// [[Rcpp::interfaces(r, cpp)]]
 // [[Rcpp::export]]
 std::string risingfactorial_function(std::string x, unsigned int n) {
   std::string f = x;
