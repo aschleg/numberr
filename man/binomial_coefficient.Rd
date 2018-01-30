@@ -14,15 +14,15 @@ binomial_coefficient(n, k, method = "multiplicative")
 
 \item{method}{selects the algorithm to use for calculating the binomial
 coefficient. Options include the multiplicative (default), recursive, or
-factorial methods. Please note the recursive method can be much slower than
-the other two choices.}
+factorial methods. Please note the recursive method can be much slower
+than the other two choices.}
 }
 \value{
 The binomial coefficient
 }
 \description{
 The binomial coefficient equation (in compact form) is defined as:
-\deqn{\binom{n}{k} = \frac{n}{k(n-k)} \qquad 0 \leq k \leq n}
+\deqn{\binom{n}{k} = \frac{n!}{k!(n-k)!} \qquad 0 \leq k \leq n}
 }
 \details{
 The multiplicative method for computing the binomial coefficient is more
@@ -31,7 +31,7 @@ efficient than the compact form calculation and is defined as:
 1} = \prod^k_{i=1} \frac{n + 1 - i}{i}}
 
 The recursive method of the binomial coefficient calculation is defined as:
-\deqn{\binom{n}{k} = \binom{n - 1}{n - k} + binom{n - 1}{k} \qquad for n, k:
+\deqn{\binom{n}{k} = \binom{n - 1}{n - k} + \binom{n - 1}{k} \qquad for n, k:
 1 \leq k \leq n - 1} With boundary values: \deqn{\binom{n}{0} = \binom{n}{n}
 = 1}
 }
