@@ -16,9 +16,9 @@ The binomial coefficient
 }
 \description{
 The recursive method of the binomial coefficient calculation is defined as:
-\deqn{\binom{n}{k} = \binom{n - 1}{n - k} + \binom{n - 1}{k} \qquad for n, k:
-1 \leq k \leq n - 1} With boundary values: \deqn{\binom{n}{0} = \binom{n}{n}
-= 1}
+\deqn{\binom{n}{k} = \binom{n - 1}{n - k} + \binom{n - 1}{k} \qquad for n,
+k: 1 \leq k \leq n - 1} With boundary values: \deqn{\binom{n}{0} =
+\binom{n}{n} = 1}
 }
 \references{
 Binomial coefficient. (2017, April 17). In Wikipedia, The Free

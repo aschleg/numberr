@@ -63,17 +63,15 @@ NumericVector catalan(int n) {
 NumericVector cullen(int n) {
   std::vector<long int> x(n);
 
-  x[0] = 0;
-
   float j = 1.0;
 
-  for (unsigned int i = 1; i <= x.size(); i++) {
+  for (unsigned int i = 0; i <= x.size(); i++) {
     x[i] = pow(2, j) * j + 1;
     j++;
   }
 
   NumericVector x1 = Rcpp::wrap(x);
-  return x1[x1 > 0];
+  return x1;
 }
 
 
@@ -98,7 +96,7 @@ NumericVector cullen(int n) {
 //'   @export
 // [[Rcpp::export]]
 NumericVector supercatalan(int n) {
-  std::vector<long int> x(n + 1);
+  std::vector<long int> x(n);
   x[0] = 1; x[1] = 1;
 
   float j = 3.0;

@@ -70,7 +70,7 @@ float stirling(int n) {
 //'   https://en.wikipedia.org/w/index.php?title=Stirling%27s_approximation&oldid=769328178
 //' @export
 // [[Rcpp::export]]
-double stirlingln(int n) {
+float stirlingln(int n) {
 
   return _stirlingln(n);
 }
@@ -92,7 +92,7 @@ double stirlingln(int n) {
 //'   from http://files.ele-math.com/articles/jmi-05-53.pdf
 //' @export
 // [[Rcpp::export]]
-double ramanujan(int n) {
+float ramanujan(int n) {
 
   return _ramanujan(n);
 }

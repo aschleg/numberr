@@ -110,7 +110,7 @@ BEGIN_RCPP
 END_RCPP
 }
 // stirlingln
-double stirlingln(int n);
+float stirlingln(int n);
 RcppExport SEXP _numberr_stirlingln(SEXP nSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
@@ -121,7 +121,7 @@ BEGIN_RCPP
 END_RCPP
 }
 // ramanujan
-double ramanujan(int n);
+float ramanujan(int n);
 RcppExport SEXP _numberr_ramanujan(SEXP nSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
