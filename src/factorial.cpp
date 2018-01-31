@@ -23,7 +23,7 @@ using namespace Rcpp;
 //'   http://mathworld.wolfram.com/Factorial.html
 //' @export
 // [[Rcpp::export]]
-unsigned long int factorial(unsigned int n) {
+long int factorial(int n) {
   return _factorial(n);
 }
 
@@ -47,7 +47,7 @@ unsigned long int factorial(unsigned int n) {
 //'   Web Resource. http://mathworld.wolfram.com/StirlingsApproximation.html
 //' @export
 // [[Rcpp::export]]
-long double stirling(unsigned int n) {
+float stirling(int n) {
 
   return _stirling(n);
 }
@@ -70,7 +70,7 @@ long double stirling(unsigned int n) {
 //'   https://en.wikipedia.org/w/index.php?title=Stirling%27s_approximation&oldid=769328178
 //' @export
 // [[Rcpp::export]]
-long double stirlingln(unsigned int n) {
+double stirlingln(int n) {
 
   return _stirlingln(n);
 }
@@ -92,7 +92,7 @@ long double stirlingln(unsigned int n) {
 //'   from http://files.ele-math.com/articles/jmi-05-53.pdf
 //' @export
 // [[Rcpp::export]]
-long double ramanujan(unsigned int n) {
+double ramanujan(int n) {
 
   return _ramanujan(n);
 }
@@ -117,8 +117,8 @@ long double ramanujan(unsigned int n) {
 //'   Resource. http://mathworld.wolfram.com/FallingFactorial.html
 //' @export
 // [[Rcpp::export]]
-double fallingfactorial(int x, int n) {
-  double f = 1.0;
+float fallingfactorial(int x, int n) {
+  float f = 1.0;
 
   if (n < 0) {
     for (int i = 0; i >= n; i--) {
@@ -157,7 +157,7 @@ double fallingfactorial(int x, int n) {
 //'   Resource. http://mathworld.wolfram.com/FallingFactorial.html
 //' @export
 // [[Rcpp::export]]
-std::string fallingfactorial_function(std::string x, unsigned int n) {
+std::string fallingfactorial_function(std::string x, int n) {
   std::string f = x;
   std::string parten1 = "*(";
   std::string negsep = " - ";
@@ -195,8 +195,8 @@ std::string fallingfactorial_function(std::string x, unsigned int n) {
 //'   Resource. http://mathworld.wolfram.com/RisingFactorial.html
 //' @export
 // [[Rcpp::export]]
-double risingfactorial(int x, int n) {
-  double f = 1.0;
+float risingfactorial(int x, int n) {
+  float f = 1.0;
 
   if (n < 0) {
     for (int i = 0; i >= n; i--) {
@@ -212,6 +212,7 @@ double risingfactorial(int x, int n) {
 
   return f;
 }
+
 
 //' Computes the rising factorial, also known as the Pochhammer symbol as a function string.
 //' 
@@ -235,7 +236,7 @@ double risingfactorial(int x, int n) {
 //'   Resource. http://mathworld.wolfram.com/RisingFactorial.html
 //' @export
 // [[Rcpp::export]]
-std::string risingfactorial_function(std::string x, unsigned int n) {
+std::string risingfactorial_function(std::string x, int n) {
   std::string f = x;
   std::string parten1 = "*(";
   std::string negsep = " + ";

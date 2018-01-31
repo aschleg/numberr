@@ -27,7 +27,7 @@ using namespace Rcpp;
 //'   https://en.wikipedia.org/w/index.php?title=Trial_division&oldid=778023614
 //' @export
 // [[Rcpp::export]]
-NumericVector factor_trial(unsigned int n) {
+NumericVector factor_trial(int n) {
   return _factor_trial(n);
 }
 
@@ -47,15 +47,15 @@ NumericVector factor_trial(unsigned int n) {
 //'   https://en.wikipedia.org/w/index.php?title=Fermat%27s_factorization_method&oldid=763010603
 //' @export
 // [[Rcpp::export]]
-NumericVector fermat_factor(unsigned int n) {
+NumericVector fermat_factor(int n) {
   if (_isprime(n) == true) {
     NumericVector fac(2);
     fac[0] = 1; fac[1] = n;
     return fac;
   }
 
-  unsigned long int a = ceil(sqrt(n));
-  unsigned long int b = pow(a, 2) - n;
+  long int a = ceil(sqrt(n));
+  long int b = pow(a, 2) - n;
 
   while(_issquare(b) == false) {
     a = a + 1;
@@ -79,10 +79,10 @@ NumericVector fermat_factor(unsigned int n) {
 //'   https://en.wikipedia.org/w/index.php?title=Fermat%27s_factorization_method&oldid=763010603
 //' @export
 // [[Rcpp::export]]
-NumericVector pollardrho(unsigned int n) {
-  unsigned long int x = 2; 
-  unsigned long int y = 2; 
-  unsigned long int d = 1;
+NumericVector pollardrho(int n) {
+  long int x = 2; 
+  long int y = 2; 
+  long int d = 1;
 
   while (d == 1) {
     x = pow(x, 2) + 1 % n;

@@ -16,7 +16,7 @@ using namespace Rcpp;
 //' Web Resource. http://mathworld.wolfram.com/CompositeNumber.html
 //' @export
 // [[Rcpp::export]]
-bool iscomposite(unsigned int n) {
+bool iscomposite(int n) {
   return _iscomposite(n);
 }
 
@@ -35,7 +35,7 @@ bool iscomposite(unsigned int n) {
 //' Resource. http://mathworld.wolfram.com/RelativelyPrime.html
 //' @export
 // [[Rcpp::export]]
-bool iscoprime(unsigned int a, unsigned int b) {
+bool iscoprime(int a, int b) {
   return _iscoprime(a, b);
 }
 
@@ -52,7 +52,7 @@ bool iscoprime(unsigned int a, unsigned int b) {
 //' Resource. http://mathworld.wolfram.com/EvenNumber.html
 //' @export
 // [[Rcpp::export]]
-bool iseven(unsigned int n) {
+bool iseven(float n) {
   return _iseven(n);
 }
 
@@ -69,7 +69,7 @@ bool iseven(unsigned int n) {
 //'   Resource. http://mathworld.wolfram.com/OddNumber.html
 //' @export
 // [[Rcpp::export]]
-bool isodd(unsigned int n) {
+bool isodd(float n) {
   return _isodd(n);
 }
 
@@ -84,6 +84,6 @@ bool isodd(unsigned int n) {
 //' Corvallis, OR: Department of Physics, Oregon State University.
 //' @export
 // [[Rcpp::export]]
-bool issquare(unsigned int n) {
+bool issquare(float n) {
   return _issquare(n);
 }

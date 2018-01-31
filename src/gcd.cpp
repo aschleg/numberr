@@ -19,7 +19,7 @@ using namespace Rcpp;
 //'   https://en.wikipedia.org/w/index.php?title=Euclidean_algorithm&oldid=780973502
 //' @export
 // [[Rcpp::export]]
-unsigned long int gcd_recursive(unsigned int a, unsigned int b) {
+long int gcd_recursive(int a, int b) {
 
   return _gcd_recursive(a, b);
 }
@@ -45,7 +45,7 @@ unsigned long int gcd_recursive(unsigned int a, unsigned int b) {
 //'   https://en.wikipedia.org/w/index.php?title=Euclidean_division&oldid=779699188
 //' @export
 // [[Rcpp::export]]
-unsigned long int gcd_division(unsigned int a, unsigned int b) {
+long int gcd_division(int a, int b) {
   while (b != 0) {
     int x = b;
     b = fmod(a, b);
@@ -68,7 +68,7 @@ unsigned long int gcd_division(unsigned int a, unsigned int b) {
 //' @return The greatest common divisor
 //' @export
 // [[Rcpp::export]]
-unsigned long int gcd_subtraction(unsigned int a, unsigned int b) {
+long int gcd_subtraction(int a, int b) {
   while (a != b) {
     if (a > b) {
       a = a - b;
@@ -100,8 +100,8 @@ unsigned long int gcd_subtraction(unsigned int a, unsigned int b) {
 //' algorithms (3rd ed., pp. 937-938). Cambridge (Inglaterra): Mit Press.
 //' @export
 // [[Rcpp::export]]
-NumericVector gcd_extended(unsigned int a, unsigned int b) {
-  double d; double x; double y;
+NumericVector gcd_extended(int a, int b) {
+  float d; float x; float y;
 
   if (b == 0) {
     NumericVector xx = NumericVector::create(a, 1, 0);

@@ -6,133 +6,133 @@
 using namespace Rcpp;
 
 // binomial_coefficient
-unsigned long int binomial_coefficient(unsigned int n, unsigned int k, std::string method);
+long int binomial_coefficient(int n, int k, std::string method);
 RcppExport SEXP _numberr_binomial_coefficient(SEXP nSEXP, SEXP kSEXP, SEXP methodSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< unsigned int >::type n(nSEXP);
-    Rcpp::traits::input_parameter< unsigned int >::type k(kSEXP);
+    Rcpp::traits::input_parameter< int >::type n(nSEXP);
+    Rcpp::traits::input_parameter< int >::type k(kSEXP);
     Rcpp::traits::input_parameter< std::string >::type method(methodSEXP);
     rcpp_result_gen = Rcpp::wrap(binomial_coefficient(n, k, method));
     return rcpp_result_gen;
 END_RCPP
 }
 // binomial_recursive
-unsigned long int binomial_recursive(unsigned int n, unsigned int k);
+long int binomial_recursive(int n, int k);
 RcppExport SEXP _numberr_binomial_recursive(SEXP nSEXP, SEXP kSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< unsigned int >::type n(nSEXP);
-    Rcpp::traits::input_parameter< unsigned int >::type k(kSEXP);
+    Rcpp::traits::input_parameter< int >::type n(nSEXP);
+    Rcpp::traits::input_parameter< int >::type k(kSEXP);
     rcpp_result_gen = Rcpp::wrap(binomial_recursive(n, k));
     return rcpp_result_gen;
 END_RCPP
 }
 // binomial_multiplicative
-unsigned long int binomial_multiplicative(unsigned int n, unsigned int k);
+long int binomial_multiplicative(int n, int k);
 RcppExport SEXP _numberr_binomial_multiplicative(SEXP nSEXP, SEXP kSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< unsigned int >::type n(nSEXP);
-    Rcpp::traits::input_parameter< unsigned int >::type k(kSEXP);
+    Rcpp::traits::input_parameter< int >::type n(nSEXP);
+    Rcpp::traits::input_parameter< int >::type k(kSEXP);
     rcpp_result_gen = Rcpp::wrap(binomial_multiplicative(n, k));
     return rcpp_result_gen;
 END_RCPP
 }
 // binomial_factorial
-unsigned long int binomial_factorial(unsigned int n, unsigned int k);
+long int binomial_factorial(int n, int k);
 RcppExport SEXP _numberr_binomial_factorial(SEXP nSEXP, SEXP kSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< unsigned int >::type n(nSEXP);
-    Rcpp::traits::input_parameter< unsigned int >::type k(kSEXP);
+    Rcpp::traits::input_parameter< int >::type n(nSEXP);
+    Rcpp::traits::input_parameter< int >::type k(kSEXP);
     rcpp_result_gen = Rcpp::wrap(binomial_factorial(n, k));
     return rcpp_result_gen;
 END_RCPP
 }
 // factor_trial
-NumericVector factor_trial(unsigned int n);
+NumericVector factor_trial(int n);
 RcppExport SEXP _numberr_factor_trial(SEXP nSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< unsigned int >::type n(nSEXP);
+    Rcpp::traits::input_parameter< int >::type n(nSEXP);
     rcpp_result_gen = Rcpp::wrap(factor_trial(n));
     return rcpp_result_gen;
 END_RCPP
 }
 // fermat_factor
-NumericVector fermat_factor(unsigned int n);
+NumericVector fermat_factor(int n);
 RcppExport SEXP _numberr_fermat_factor(SEXP nSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< unsigned int >::type n(nSEXP);
+    Rcpp::traits::input_parameter< int >::type n(nSEXP);
     rcpp_result_gen = Rcpp::wrap(fermat_factor(n));
     return rcpp_result_gen;
 END_RCPP
 }
 // pollardrho
-NumericVector pollardrho(unsigned int n);
+NumericVector pollardrho(int n);
 RcppExport SEXP _numberr_pollardrho(SEXP nSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< unsigned int >::type n(nSEXP);
+    Rcpp::traits::input_parameter< int >::type n(nSEXP);
     rcpp_result_gen = Rcpp::wrap(pollardrho(n));
     return rcpp_result_gen;
 END_RCPP
 }
 // factorial
-unsigned long int factorial(unsigned int n);
+long int factorial(int n);
 RcppExport SEXP _numberr_factorial(SEXP nSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< unsigned int >::type n(nSEXP);
+    Rcpp::traits::input_parameter< int >::type n(nSEXP);
     rcpp_result_gen = Rcpp::wrap(factorial(n));
     return rcpp_result_gen;
 END_RCPP
 }
 // stirling
-long double stirling(unsigned int n);
+float stirling(int n);
 RcppExport SEXP _numberr_stirling(SEXP nSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< unsigned int >::type n(nSEXP);
+    Rcpp::traits::input_parameter< int >::type n(nSEXP);
     rcpp_result_gen = Rcpp::wrap(stirling(n));
     return rcpp_result_gen;
 END_RCPP
 }
 // stirlingln
-long double stirlingln(unsigned int n);
+double stirlingln(int n);
 RcppExport SEXP _numberr_stirlingln(SEXP nSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< unsigned int >::type n(nSEXP);
+    Rcpp::traits::input_parameter< int >::type n(nSEXP);
     rcpp_result_gen = Rcpp::wrap(stirlingln(n));
     return rcpp_result_gen;
 END_RCPP
 }
 // ramanujan
-long double ramanujan(unsigned int n);
+double ramanujan(int n);
 RcppExport SEXP _numberr_ramanujan(SEXP nSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< unsigned int >::type n(nSEXP);
+    Rcpp::traits::input_parameter< int >::type n(nSEXP);
     rcpp_result_gen = Rcpp::wrap(ramanujan(n));
     return rcpp_result_gen;
 END_RCPP
 }
 // fallingfactorial
-double fallingfactorial(int x, int n);
+float fallingfactorial(int x, int n);
 RcppExport SEXP _numberr_fallingfactorial(SEXP xSEXP, SEXP nSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
@@ -144,19 +144,19 @@ BEGIN_RCPP
 END_RCPP
 }
 // fallingfactorial_function
-std::string fallingfactorial_function(std::string x, unsigned int n);
+std::string fallingfactorial_function(std::string x, int n);
 RcppExport SEXP _numberr_fallingfactorial_function(SEXP xSEXP, SEXP nSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
     Rcpp::traits::input_parameter< std::string >::type x(xSEXP);
-    Rcpp::traits::input_parameter< unsigned int >::type n(nSEXP);
+    Rcpp::traits::input_parameter< int >::type n(nSEXP);
     rcpp_result_gen = Rcpp::wrap(fallingfactorial_function(x, n));
     return rcpp_result_gen;
 END_RCPP
 }
 // risingfactorial
-double risingfactorial(int x, int n);
+float risingfactorial(int x, int n);
 RcppExport SEXP _numberr_risingfactorial(SEXP xSEXP, SEXP nSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
@@ -168,218 +168,218 @@ BEGIN_RCPP
 END_RCPP
 }
 // risingfactorial_function
-std::string risingfactorial_function(std::string x, unsigned int n);
+std::string risingfactorial_function(std::string x, int n);
 RcppExport SEXP _numberr_risingfactorial_function(SEXP xSEXP, SEXP nSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
     Rcpp::traits::input_parameter< std::string >::type x(xSEXP);
-    Rcpp::traits::input_parameter< unsigned int >::type n(nSEXP);
+    Rcpp::traits::input_parameter< int >::type n(nSEXP);
     rcpp_result_gen = Rcpp::wrap(risingfactorial_function(x, n));
     return rcpp_result_gen;
 END_RCPP
 }
 // gcd_recursive
-unsigned long int gcd_recursive(unsigned int a, unsigned int b);
+long int gcd_recursive(int a, int b);
 RcppExport SEXP _numberr_gcd_recursive(SEXP aSEXP, SEXP bSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< unsigned int >::type a(aSEXP);
-    Rcpp::traits::input_parameter< unsigned int >::type b(bSEXP);
+    Rcpp::traits::input_parameter< int >::type a(aSEXP);
+    Rcpp::traits::input_parameter< int >::type b(bSEXP);
     rcpp_result_gen = Rcpp::wrap(gcd_recursive(a, b));
     return rcpp_result_gen;
 END_RCPP
 }
 // gcd_division
-unsigned long int gcd_division(unsigned int a, unsigned int b);
+long int gcd_division(int a, int b);
 RcppExport SEXP _numberr_gcd_division(SEXP aSEXP, SEXP bSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< unsigned int >::type a(aSEXP);
-    Rcpp::traits::input_parameter< unsigned int >::type b(bSEXP);
+    Rcpp::traits::input_parameter< int >::type a(aSEXP);
+    Rcpp::traits::input_parameter< int >::type b(bSEXP);
     rcpp_result_gen = Rcpp::wrap(gcd_division(a, b));
     return rcpp_result_gen;
 END_RCPP
 }
 // gcd_subtraction
-unsigned long int gcd_subtraction(unsigned int a, unsigned int b);
+long int gcd_subtraction(int a, int b);
 RcppExport SEXP _numberr_gcd_subtraction(SEXP aSEXP, SEXP bSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< unsigned int >::type a(aSEXP);
-    Rcpp::traits::input_parameter< unsigned int >::type b(bSEXP);
+    Rcpp::traits::input_parameter< int >::type a(aSEXP);
+    Rcpp::traits::input_parameter< int >::type b(bSEXP);
     rcpp_result_gen = Rcpp::wrap(gcd_subtraction(a, b));
     return rcpp_result_gen;
 END_RCPP
 }
 // gcd_extended
-NumericVector gcd_extended(unsigned int a, unsigned int b);
+NumericVector gcd_extended(int a, int b);
 RcppExport SEXP _numberr_gcd_extended(SEXP aSEXP, SEXP bSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< unsigned int >::type a(aSEXP);
-    Rcpp::traits::input_parameter< unsigned int >::type b(bSEXP);
+    Rcpp::traits::input_parameter< int >::type a(aSEXP);
+    Rcpp::traits::input_parameter< int >::type b(bSEXP);
     rcpp_result_gen = Rcpp::wrap(gcd_extended(a, b));
     return rcpp_result_gen;
 END_RCPP
 }
 // iscomposite
-bool iscomposite(unsigned int n);
+bool iscomposite(int n);
 RcppExport SEXP _numberr_iscomposite(SEXP nSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< unsigned int >::type n(nSEXP);
+    Rcpp::traits::input_parameter< int >::type n(nSEXP);
     rcpp_result_gen = Rcpp::wrap(iscomposite(n));
     return rcpp_result_gen;
 END_RCPP
 }
 // iscoprime
-bool iscoprime(unsigned int a, unsigned int b);
+bool iscoprime(int a, int b);
 RcppExport SEXP _numberr_iscoprime(SEXP aSEXP, SEXP bSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< unsigned int >::type a(aSEXP);
-    Rcpp::traits::input_parameter< unsigned int >::type b(bSEXP);
+    Rcpp::traits::input_parameter< int >::type a(aSEXP);
+    Rcpp::traits::input_parameter< int >::type b(bSEXP);
     rcpp_result_gen = Rcpp::wrap(iscoprime(a, b));
     return rcpp_result_gen;
 END_RCPP
 }
 // iseven
-bool iseven(unsigned int n);
+bool iseven(float n);
 RcppExport SEXP _numberr_iseven(SEXP nSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< unsigned int >::type n(nSEXP);
+    Rcpp::traits::input_parameter< float >::type n(nSEXP);
     rcpp_result_gen = Rcpp::wrap(iseven(n));
     return rcpp_result_gen;
 END_RCPP
 }
 // isodd
-bool isodd(unsigned int n);
+bool isodd(float n);
 RcppExport SEXP _numberr_isodd(SEXP nSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< unsigned int >::type n(nSEXP);
+    Rcpp::traits::input_parameter< float >::type n(nSEXP);
     rcpp_result_gen = Rcpp::wrap(isodd(n));
     return rcpp_result_gen;
 END_RCPP
 }
 // issquare
-bool issquare(unsigned int n);
+bool issquare(float n);
 RcppExport SEXP _numberr_issquare(SEXP nSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< unsigned int >::type n(nSEXP);
+    Rcpp::traits::input_parameter< float >::type n(nSEXP);
     rcpp_result_gen = Rcpp::wrap(issquare(n));
     return rcpp_result_gen;
 END_RCPP
 }
 // isprime
-bool isprime(unsigned int n);
+bool isprime(int n);
 RcppExport SEXP _numberr_isprime(SEXP nSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< unsigned int >::type n(nSEXP);
+    Rcpp::traits::input_parameter< int >::type n(nSEXP);
     rcpp_result_gen = Rcpp::wrap(isprime(n));
     return rcpp_result_gen;
 END_RCPP
 }
 // fermat_prime
-bool fermat_prime(unsigned int n, unsigned int k);
+bool fermat_prime(int n, int k);
 RcppExport SEXP _numberr_fermat_prime(SEXP nSEXP, SEXP kSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< unsigned int >::type n(nSEXP);
-    Rcpp::traits::input_parameter< unsigned int >::type k(kSEXP);
+    Rcpp::traits::input_parameter< int >::type n(nSEXP);
+    Rcpp::traits::input_parameter< int >::type k(kSEXP);
     rcpp_result_gen = Rcpp::wrap(fermat_prime(n, k));
     return rcpp_result_gen;
 END_RCPP
 }
 // miller_rabin
-bool miller_rabin(unsigned int n, unsigned int k);
+bool miller_rabin(int n, int k);
 RcppExport SEXP _numberr_miller_rabin(SEXP nSEXP, SEXP kSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< unsigned int >::type n(nSEXP);
-    Rcpp::traits::input_parameter< unsigned int >::type k(kSEXP);
+    Rcpp::traits::input_parameter< int >::type n(nSEXP);
+    Rcpp::traits::input_parameter< int >::type k(kSEXP);
     rcpp_result_gen = Rcpp::wrap(miller_rabin(n, k));
     return rcpp_result_gen;
 END_RCPP
 }
 // lucas_lehmer
-bool lucas_lehmer(unsigned int p);
+bool lucas_lehmer(int p);
 RcppExport SEXP _numberr_lucas_lehmer(SEXP pSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< unsigned int >::type p(pSEXP);
+    Rcpp::traits::input_parameter< int >::type p(pSEXP);
     rcpp_result_gen = Rcpp::wrap(lucas_lehmer(p));
     return rcpp_result_gen;
 END_RCPP
 }
 // catalan
-NumericVector catalan(unsigned int n);
+NumericVector catalan(int n);
 RcppExport SEXP _numberr_catalan(SEXP nSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< unsigned int >::type n(nSEXP);
+    Rcpp::traits::input_parameter< int >::type n(nSEXP);
     rcpp_result_gen = Rcpp::wrap(catalan(n));
     return rcpp_result_gen;
 END_RCPP
 }
 // cullen
-NumericVector cullen(unsigned int n);
+NumericVector cullen(int n);
 RcppExport SEXP _numberr_cullen(SEXP nSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< unsigned int >::type n(nSEXP);
+    Rcpp::traits::input_parameter< int >::type n(nSEXP);
     rcpp_result_gen = Rcpp::wrap(cullen(n));
     return rcpp_result_gen;
 END_RCPP
 }
 // supercatalan
-NumericVector supercatalan(unsigned int n);
+NumericVector supercatalan(int n);
 RcppExport SEXP _numberr_supercatalan(SEXP nSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< unsigned int >::type n(nSEXP);
+    Rcpp::traits::input_parameter< int >::type n(nSEXP);
     rcpp_result_gen = Rcpp::wrap(supercatalan(n));
     return rcpp_result_gen;
 END_RCPP
 }
 // fibonacci
-NumericVector fibonacci(unsigned int n);
+NumericVector fibonacci(int n);
 RcppExport SEXP _numberr_fibonacci(SEXP nSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< unsigned int >::type n(nSEXP);
+    Rcpp::traits::input_parameter< int >::type n(nSEXP);
     rcpp_result_gen = Rcpp::wrap(fibonacci(n));
     return rcpp_result_gen;
 END_RCPP
 }
 // three_n_one
-NumericVector three_n_one(unsigned int n);
+NumericVector three_n_one(int n);
 RcppExport SEXP _numberr_three_n_one(SEXP nSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< unsigned int >::type n(nSEXP);
+    Rcpp::traits::input_parameter< int >::type n(nSEXP);
     rcpp_result_gen = Rcpp::wrap(three_n_one(n));
     return rcpp_result_gen;
 END_RCPP

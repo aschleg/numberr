@@ -8,7 +8,7 @@ using namespace Rcpp;
 #ifndef __TRIALFACTOR__
 #define __TRIALFACTOR__
 
-inline NumericVector _factor_trial(unsigned int n) {
+inline NumericVector _factor_trial(int n) {
   std::vector<unsigned int> x(ceil(sqrt(n)));
 
   if (n < 2 || _isprime(n) == true) {
@@ -18,10 +18,10 @@ inline NumericVector _factor_trial(unsigned int n) {
     return x1;
   }
 
-  unsigned long div = 2.0;
-  unsigned int i = 0;
+  float div = 2.0;
+  int i = 0;
 
-  if (n % div == 0) {
+  if (fmod(n, div) == 0) {
     x[i] = div;
     n = n / div;
     i = i + 1;
@@ -30,7 +30,7 @@ inline NumericVector _factor_trial(unsigned int n) {
   div += 1;
 
   do {
-    if (n % div == 0) {
+    if (fmod(n, div) == 0) {
       x[i] = div;
       n = n / div;
       i = i + 1;

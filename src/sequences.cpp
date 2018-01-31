@@ -30,12 +30,12 @@ using namespace Rcpp;
 //'   Web Resource. http://mathworld.wolfram.com/CatalanNumber.html
 //' @export
 // [[Rcpp::export]]
-NumericVector catalan(unsigned int n) {
-  std::vector<unsigned long int> x(n);
+NumericVector catalan(int n) {
+  std::vector<long int> x(n);
 
   x[0] = 1;
 
-  double j = 1.0;
+  float j = 1.0;
   for (unsigned int i = 1; i <= x.size(); i++) {
     x[i] = (2.0 * (2.0 * j + 1.0)) / (j + 2.0) * x[j - 1.0];
     j++;
@@ -60,12 +60,12 @@ NumericVector catalan(unsigned int n) {
 //'   Resource. http://mathworld.wolfram.com/CullenNumber.html
 //' @export
 // [[Rcpp::export]]
-NumericVector cullen(unsigned int n) {
-  std::vector<unsigned long int> x(n);
+NumericVector cullen(int n) {
+  std::vector<long int> x(n);
 
   x[0] = 0;
 
-  double j = 1.0;
+  float j = 1.0;
 
   for (unsigned int i = 1; i <= x.size(); i++) {
     x[i] = pow(2, j) * j + 1;
@@ -97,11 +97,11 @@ NumericVector cullen(unsigned int n) {
 //'   http://mathworld.wolfram.com/SuperCatalanNumber.html
 //'   @export
 // [[Rcpp::export]]
-NumericVector supercatalan(unsigned int n) {
-  std::vector<unsigned long int> x(n + 1);
+NumericVector supercatalan(int n) {
+  std::vector<long int> x(n + 1);
   x[0] = 1; x[1] = 1;
 
-  double j = 3.0;
+  float j = 3.0;
   for (unsigned int i = 2; i <= x.size(); i++) {
     x[i] = (3.0 * (2.0 * j - 3.0) * x[j - 2.0] - (j - 3.0) * x[j - 3.0]) / j;
 
@@ -124,8 +124,8 @@ NumericVector supercatalan(unsigned int n) {
 //' Philadelphia, Pa: Society for Industrial & Applied Mathematics.
 //' @export
 // [[Rcpp::export]]
-NumericVector fibonacci(unsigned int n) {
-  std::vector<unsigned long int> x(n);
+NumericVector fibonacci(int n) {
+  std::vector<long int> x(n);
 
   x[0] = 1;
   x[1] = 1;
@@ -159,8 +159,8 @@ NumericVector fibonacci(unsigned int n) {
 //' Pa: Society for Industrial & Applied Mathematics.
 //' @export
 // [[Rcpp::export]]
-NumericVector three_n_one(unsigned int n) {
-  std::vector<unsigned long int> x(n);
+NumericVector three_n_one(int n) {
+  std::vector<long int> x(n);
 
   if (n == 1) {
     x.resize(1);

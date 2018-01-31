@@ -5,7 +5,7 @@
 #ifndef __ISCOPRIME__
 #define __ISCOPRIME__
 
-inline bool _iscoprime(unsigned int a, unsigned int b) {
+inline bool _iscoprime(int a, int b) {
   if (_gcd_recursive(a, b) == 1) {
     return true;
   }
@@ -18,11 +18,12 @@ inline bool _iscoprime(unsigned int a, unsigned int b) {
 #ifndef __ISODD__
 #define __ISODD__
 
-inline bool _isodd(unsigned int n) {
+inline bool _isodd(float n) {
   if (n != round(n)) {
     return false;
   }
-  if (n % 2 == 0) {
+  
+  if (fmod(n, 2) == 0) {
     return false;
   }
   
@@ -35,7 +36,7 @@ inline bool _isodd(unsigned int n) {
 #ifndef __ISEVEN__
 #define __ISEVEN__
 
-inline bool _iseven(unsigned int n) {
+inline bool _iseven(float n) {
   if (n != round(n)) {
     return false;
   }
@@ -53,7 +54,7 @@ inline bool _iseven(unsigned int n) {
 #ifndef __ISPRIME__
 #define __ISPRIME__
 
-inline bool _isprime(unsigned int n) {
+inline bool _isprime(int n) {
   
   if (_iseven(n) == true) {
     return false;
@@ -67,12 +68,12 @@ inline bool _isprime(unsigned int n) {
     return true;
   }
   
-  if (n % 2 == 0 || n % 3 == 0 || n % 5 == 0) {
+  if (fmod(n, 2) == 0 || fmod(n, 3) == 0 || fmod(n, 5) == 0) {
     return false;
   }
   
   for (unsigned int i = 7; i < floor(sqrt(n)); i += 2) {
-    if (n % i == 0 || n % (i + 1) == 0) {
+    if (fmod(n, i) == 0 || fmod(n, (i + 1)) == 0) {
       return false;
     }
   }
@@ -86,7 +87,7 @@ inline bool _isprime(unsigned int n) {
 #ifndef __ISCOMPOSITE__
 #define __ISCOMPOSITE__
 
-inline bool _iscomposite(unsigned int n) {
+inline bool _iscomposite(int n) {
   if (_isprime(n) == true) {
     return false;
   }
@@ -99,10 +100,10 @@ inline bool _iscomposite(unsigned int n) {
 #ifndef __ISSQUARE__
 #define __ISSQUARE__
 
-inline bool _issquare(unsigned int n) {
+inline bool _issquare(float n) {
   
-  unsigned long s = sqrt(n);
-  unsigned long p = pow(s, 2);
+  long int s = sqrt(n);
+  long int p = pow(s, 2);
   
   if (p == n) {
     return true;

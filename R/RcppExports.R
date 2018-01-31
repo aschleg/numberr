@@ -4,25 +4,15 @@
 #' Calculates the binomial coefficient with several different algorithm methods
 #' available.
 #'
-#' The binomial coefficient equation (in compact form) is defined as:
-#' \deqn{\binom{n}{k} = \frac{n!}{k!(n-k)!} \qquad 0 \leq k \leq n}
-#'
-#' The multiplicative method for computing the binomial coefficient is more
-#' efficient than the compact form calculation and is defined as:
-#' \deqn{\binom{n}{k} = \frac{n(n-1)(n-2) \cdots (n-(k-1))}{k(k-1)(k-2) \cdots
-#' 1} = \prod^k_{i=1} \frac{n + 1 - i}{i}}
-#'
-#' The recursive method of the binomial coefficient calculation is defined as:
-#' \deqn{\binom{n}{k} = \binom{n - 1}{n - k} + \binom{n - 1}{k} \qquad for n, k:
-#' 1 \leq k \leq n - 1} With boundary values: \deqn{\binom{n}{0} = \binom{n}{n}
-#' = 1}
+#' Algorithms available for computing the binomial coefficient include
+#' 'recursive', 'multiplicative' (default), and 'factorial'. Note the recursive
+#' method can be very slow and is not recommended over the other methods.
 #'
 #' @param n Number of possibilities
 #' @param k number of unordered outcomes
 #' @param method selects the algorithm to use for calculating the binomial
 #'   coefficient. Options include the multiplicative (default), recursive, or
-#'   factorial methods. Please note the recursive method can be much slower
-#'   than the other two choices.
+#'   factorial methods.
 #' @return The binomial coefficient
 #' @references Binomial coefficient. (2017, April 17). In Wikipedia, The Free
 #'   Encyclopedia. From
@@ -39,9 +29,10 @@ binomial_coefficient <- function(n, k, method = "multiplicative") {
 #' Calculates the binomial coefficient using a recursive method.
 #'
 #' The recursive method of the binomial coefficient calculation is defined as:
-#' \deqn{\binom{n}{k} = \binom{n - 1}{n - k} + \binom{n - 1}{k} \qquad for n, k:
-#' 1 \leq k \leq n - 1} With boundary values: \deqn{\binom{n}{0} = \binom{n}{n}
-#' = 1}
+#' \deqn{\binom{n}{k} = \binom{n - 1}{n - k} + \binom{n - 1}{k} \qquad for n,
+#' k: 1 \leq k \leq n - 1} With boundary values: \deqn{\binom{n}{0} =
+#' \binom{n}{n} = 1}
+#' 
 #' @param n Number of possibilities
 #' @param k number of unordered outcomes
 #' @return The binomial coefficient
@@ -57,43 +48,10 @@ binomial_recursive <- function(n, k) {
     .Call(`_numberr_binomial_recursive`, n, k)
 }
 
-#' Calculates the binomial coefficient using the multiplicative equation.
-#'
-#' The multiplicative method for computing the binomial coefficient is more
-#' efficient than the compact form calculation and is defined as:
-#' \deqn{\binom{n}{k} = \frac{n(n-1)(n-2) \cdots (n-(k-1))}{k(k-1)(k-2) \cdots
-#' 1} = \prod^k_{i=1} \frac{n + 1 - i}{i}}
-#'
-#' @param n Number of possibilities
-#' @param k number of unordered outcomes
-#' @return The binomial coefficient
-#' @references Binomial coefficient. (2017, April 17). In Wikipedia, The Free
-#'   Encyclopedia. From
-#'   https://en.wikipedia.org/w/index.php?title=Binomial_coefficient&oldid=775905810
-#'    Binomial coefficients. Encyclopedia of Mathematics. From
-#'   http://www.encyclopediaofmath.org/index.php?title=Binomial_coefficients&oldid=39155
-#'    Weisstein, Eric W. "Binomial Coefficient." From MathWorld--A Wolfram Web
-#'   Resource. http://mathworld.wolfram.com/BinomialCoefficient.html
-#' @export
 binomial_multiplicative <- function(n, k) {
     .Call(`_numberr_binomial_multiplicative`, n, k)
 }
 
-#' Calculates the binomial coefficient using the factorial method.
-#'
-#' The binomial coefficient equation (in compact form) is defined as:
-#' \deqn{\binom{n}{k} = \frac{n!}{k!(n-k)!} \qquad 0 \leq k \leq n}
-#' @param n Number of possibilities
-#' @param k number of unordered outcomes
-#' @return The binomial coefficient
-#' @references Binomial coefficient. (2017, April 17). In Wikipedia, The Free
-#'   Encyclopedia. From
-#'   https://en.wikipedia.org/w/index.php?title=Binomial_coefficient&oldid=775905810
-#'    Binomial coefficients. Encyclopedia of Mathematics. From
-#'   http://www.encyclopediaofmath.org/index.php?title=Binomial_coefficients&oldid=39155
-#'    Weisstein, Eric W. "Binomial Coefficient." From MathWorld--A Wolfram Web
-#'   Resource. http://mathworld.wolfram.com/BinomialCoefficient.html
-#' @export
 binomial_factorial <- function(n, k) {
     .Call(`_numberr_binomial_factorial`, n, k)
 }
@@ -536,15 +494,6 @@ miller_rabin <- function(n, k) {
 
 #' Performs the Lucas-Lehmer primality test for determining if a Mersenne
 #' number is prime.
-#'
-#' The Lucas-Lehmer primality test is a deterministic (the test outputs with
-#' absolute certainty the integer in question is prime) test for finding if a
-#' Mersenne number, \eqn{M_p}, is prime. The Lucas-Lehmer test proceeds as
-#' follows: The Mersenne number to test is denoted \eqn{M_p = 2^p - 1}.
-#' Starting with \eqn{s_0 \equiv 4}, the recurrence relation \eqn{s_p \equiv
-#' s^2_{p-1} - 2 \space (\text{mod} \space M_p)}, continues for \eqn{p-2}
-#' iterations and if \eqn{s \equiv 0 \space (\text{mod} \space M_p)} then the
-#' Mersenne number \eqn{M_p} is prime.
 #'
 #' @param p integer
 #' @returns TRUE if integer is prime (and a Mersenne Number), FALSE otherwise

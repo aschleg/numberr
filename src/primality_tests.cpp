@@ -19,7 +19,7 @@ using namespace Rcpp;
 //' Resource. http://mathworld.wolfram.com/PrimeNumber.html
 //' @export
 // [[Rcpp::export]]
-bool isprime(unsigned int n) {
+bool isprime(int n) {
   return _isprime(n);
 }
 
@@ -51,14 +51,14 @@ bool isprime(unsigned int n) {
 //' http://mathworld.wolfram.com/PrimalityTest.html
 //' @export
 // [[Rcpp::export]]
-bool fermat_prime(unsigned int n, unsigned int k = 1000) {
-  unsigned int M = 2;
-  unsigned int N = n - 2;
+bool fermat_prime(int n, int k = 1000) {
+  int M = 2;
+  int N = n - 2;
   
   GetRNGstate();
 
   for (unsigned int i = 0; i >= k; i++) {
-    unsigned int a = M + unif_rand() / (RAND_MAX / (N - M + 1) + 1);
+    int a = M + unif_rand() / (RAND_MAX / (N - M + 1) + 1);
 
     if (pow(a, n - 1) != 1 % n) {
       return false;
@@ -73,7 +73,7 @@ bool fermat_prime(unsigned int n, unsigned int k = 1000) {
 //' Tests an integer's primality using the Miller-Rabin test.
 //' 
 // [[Rcpp::export]]
-bool miller_rabin(unsigned int n, unsigned int k) {
+bool miller_rabin(int n, int k) {
   // unsigned int M = 2;
   // unsigned int N = n - 2;
 
@@ -90,15 +90,6 @@ bool miller_rabin(unsigned int n, unsigned int k) {
 //' Performs the Lucas-Lehmer primality test for determining if a Mersenne
 //' number is prime.
 //'
-//' The Lucas-Lehmer primality test is a deterministic (the test outputs with
-//' absolute certainty the integer in question is prime) test for finding if a
-//' Mersenne number, \eqn{M_p}, is prime. The Lucas-Lehmer test proceeds as
-//' follows: The Mersenne number to test is denoted \eqn{M_p = 2^p - 1}.
-//' Starting with \eqn{s_0 \equiv 4}, the recurrence relation \eqn{s_p \equiv
-//' s^2_{p-1} - 2 \space (\text{mod} \space M_p)}, continues for \eqn{p-2}
-//' iterations and if \eqn{s \equiv 0 \space (\text{mod} \space M_p)} then the
-//' Mersenne number \eqn{M_p} is prime.
-//'
 //' @param p integer
 //' @returns TRUE if integer is prime (and a Mersenne Number), FALSE otherwise
 //' @references Lucas–Lehmer primality test. (2017, May 27). In Wikipedia, The
@@ -112,7 +103,7 @@ bool miller_rabin(unsigned int n, unsigned int k) {
 //'   http://mathworld.wolfram.com/PrimalityTest.html
 //' @export
 // [[Rcpp::export]]
-bool lucas_lehmer(unsigned int p) {
+bool lucas_lehmer(int p) {
   int s = 4;
   int m = pow(2, p) - 1;
 
