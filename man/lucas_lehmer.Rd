@@ -10,6 +10,9 @@ lucas_lehmer(p)
 \arguments{
 \item{p}{integer}
 }
+\value{
+TRUE if integer is prime (and a Mersenne Number), FALSE otherwise
+}
 \description{
 The Lucas-Lehmer primality test is a deterministic (the test outputs with
 absolute certainty the integer in question is prime) test for finding if a

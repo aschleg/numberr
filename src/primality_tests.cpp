@@ -100,7 +100,7 @@ bool miller_rabin(int n, int k) {
 //' Mersenne number \eqn{M_p} is prime.
 //'
 //' @param p integer
-//' @returns TRUE if integer is prime (and a Mersenne Number), FALSE otherwise
+//' @return TRUE if integer is prime (and a Mersenne Number), FALSE otherwise
 //' @references Lucas–Lehmer primality test. (2017, May 27). In Wikipedia, The
 //'   Free Encyclopedia. From
 //'   https://en.wikipedia.org/w/index.php?title=Lucas%E2%80%93Lehmer_primality_test&oldid=782483346

@@ -21,10 +21,6 @@ The falling factorial, denoted as
 factorials are then: \deqn{(x)_0 = 1} \deqn{(x)_1 = x} \deqn{(x)_2 = x(x -
 1)} \deqn{(x)_3 = x(x - 1)(x - 2)} \deqn{(x)_4 = x(x - 1)(x - 2)(x - 3)}
 }
-\examples{
-fallingfactorial_function("x", 2)
-fallingfactorial_function("z", 3)
-}
 \references{
 Falling and rising factorials. (2017, June 8). In Wikipedia, The
   Free Encyclopedia. From

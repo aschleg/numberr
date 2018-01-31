@@ -11,16 +11,15 @@ fallingfactorial(x, n)
 
 \item{n}{integer}
 }
+\value{
+Computed falling factorial
+}
 \description{
 The falling factorial, denoted as
 \eqn{(x)_{n}} (or \eqn{x^{\underline{n}}}) is defined as the following:
 \deqn{(x)_n = x(x - 1) \cdots (x - (n - 1))} The first few falling
 factorials are then: \deqn{(x)_0 = 1} \deqn{(x)_1 = x} \deqn{(x)_2 = x(x -
 1)} \deqn{(x)_3 = x(x - 1)(x - 2)} \deqn{(x)_4 = x(x - 1)(x - 2)(x - 3)}
-}
-\examples{
-fallingfactorial(6, 4)
-fallingfactorial(5, 3)
 }
 \references{
 Falling and rising factorials. (2017, June 8). In Wikipedia, The

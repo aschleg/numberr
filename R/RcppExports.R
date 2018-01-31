@@ -239,9 +239,7 @@ ramanujan <- function(n) {
 #'
 #' @param x integer
 #' @param n integer
-#' @examples
-#' fallingfactorial(6, 4)
-#' fallingfactorial(5, 3)
+#' @return Computed falling factorial
 #' @references Falling and rising factorials. (2017, June 8). In Wikipedia, The
 #'   Free Encyclopedia. From
 #'   https://en.wikipedia.org/w/index.php?title=Falling_and_rising_factorials&oldid=784512036
@@ -263,9 +261,6 @@ fallingfactorial <- function(x, n) {
 #' @param x integer
 #' @param n integer
 #' @return string representation of falling factorial function.
-#' @examples
-#' fallingfactorial_function("x", 2)
-#' fallingfactorial_function("z", 3)
 #' @references Falling and rising factorials. (2017, June 8). In Wikipedia, The
 #'   Free Encyclopedia. From
 #'   https://en.wikipedia.org/w/index.php?title=Falling_and_rising_factorials&oldid=784512036
@@ -287,10 +282,7 @@ fallingfactorial_function <- function(x, n) {
 #'
 #' @param x integer or character
 #' @param n integer
-#' @return string representation of rising factorial function.
-#' @examples
-#' risingfactorial(5, 3)
-#' risingfactorial(6, 2)
+#' @return Computed rising factorial
 #' @references Falling and rising factorials. (2017, June 8). In Wikipedia, The
 #'   Free Encyclopedia. From
 #'   https://en.wikipedia.org/w/index.php?title=Falling_and_rising_factorials&oldid=784512036
@@ -312,10 +304,7 @@ risingfactorial <- function(x, n) {
 #'
 #' @param x integer or character
 #' @param n integer
-#' @return Computed rising factorial
-#' @examples
-#' risingfactorial_function('x', 2)
-#' risingfactorial_function('a', 3)
+#' @return string representation of rising factorial function.
 #' @references Falling and rising factorials. (2017, June 8). In Wikipedia, The
 #'   Free Encyclopedia. From
 #'   https://en.wikipedia.org/w/index.php?title=Falling_and_rising_factorials&oldid=784512036
@@ -545,7 +534,7 @@ miller_rabin <- function(n, k) {
 #' Mersenne number \eqn{M_p} is prime.
 #'
 #' @param p integer
-#' @returns TRUE if integer is prime (and a Mersenne Number), FALSE otherwise
+#' @return TRUE if integer is prime (and a Mersenne Number), FALSE otherwise
 #' @references Lucas–Lehmer primality test. (2017, May 27). In Wikipedia, The
 #'   Free Encyclopedia. From
 #'   https://en.wikipedia.org/w/index.php?title=Lucas%E2%80%93Lehmer_primality_test&oldid=782483346

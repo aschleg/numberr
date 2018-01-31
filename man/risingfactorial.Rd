@@ -12,7 +12,7 @@ risingfactorial(x, n)
 \item{n}{integer}
 }
 \value{
-string representation of rising factorial function.
+Computed rising factorial
 }
 \description{
 The rising factorial, \eqn{x^{(n)}} (sometimes denoted \eqn{\langle x
@@ -21,10 +21,6 @@ mathematics. The rising factorial is related to the gamma function
 \eqn{\Gamma (z)}. \deqn{x^{(n)} \equiv \frac{\Gamma (x + n)}{\Gamma (n)}}
 where \eqn{x^(0) = 1}. The rising factorial is related to the falling
 factorial by: \deqn{x^{(n)} = (-x)_n (-1)^n}
-}
-\examples{
-risingfactorial(5, 3)
-risingfactorial(6, 2)
 }
 \references{
 Falling and rising factorials. (2017, June 8). In Wikipedia, The
