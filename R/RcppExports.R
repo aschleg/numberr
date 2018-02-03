@@ -470,6 +470,20 @@ issquare <- function(n) {
     .Call(`_numberr_issquare`, n)
 }
 
+#' Computes the least common multiple of two integers, a and b.
+#' 
+#' The least common multiple is defined as the smallest possible positive integer that 
+#' is divisible by both \eqn{a} and \eqn{b}, and is usually denoted \eqn{lcm(a,b)} or 
+#' \eqn{LCM(a,b)}. The function implementation for finding the least common multiple takes advantage 
+#' of the relation between the greatest common divisor and the least common multiple, such that:
+#' \deqn{lcm(a,b) = \bigg(\frac{|a|}{gcd(a,b)} \bigg) \space |b|}
+#' @param a First integer
+#' @param b Second integer
+#' @return the least common multiple of the two given integers
+lcm <- function(a, b) {
+    .Call(`_numberr_lcm`, a, b)
+}
+
 #' Tests whether a given value n is prime with a naive test.
 #'
 #' A prime number is defined as a positive integer, \eqn{n > 1} that has no

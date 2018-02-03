@@ -283,6 +283,18 @@ BEGIN_RCPP
     return rcpp_result_gen;
 END_RCPP
 }
+// lcm
+long int lcm(int a, int b);
+RcppExport SEXP _numberr_lcm(SEXP aSEXP, SEXP bSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< int >::type a(aSEXP);
+    Rcpp::traits::input_parameter< int >::type b(bSEXP);
+    rcpp_result_gen = Rcpp::wrap(lcm(a, b));
+    return rcpp_result_gen;
+END_RCPP
+}
 // isprime
 bool isprime(int n);
 RcppExport SEXP _numberr_isprime(SEXP nSEXP) {
@@ -410,6 +422,7 @@ static const R_CallMethodDef CallEntries[] = {
     {"_numberr_iseven", (DL_FUNC) &_numberr_iseven, 1},
     {"_numberr_isodd", (DL_FUNC) &_numberr_isodd, 1},
     {"_numberr_issquare", (DL_FUNC) &_numberr_issquare, 1},
+    {"_numberr_lcm", (DL_FUNC) &_numberr_lcm, 2},
     {"_numberr_isprime", (DL_FUNC) &_numberr_isprime, 1},
     {"_numberr_fermat_prime", (DL_FUNC) &_numberr_fermat_prime, 2},
     {"_numberr_miller_rabin", (DL_FUNC) &_numberr_miller_rabin, 2},
