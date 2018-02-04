@@ -36,19 +36,16 @@ using namespace Rcpp;
 // [[Rcpp::export]]
 long int binomial_coefficient(int n, int k, std::string method = "multiplicative") {
 
-  long int bc;
-
   if (method == "factorial") {
-    bc = _binomial_factorial(n, k);
+    return _binomial_factorial(n, k);
   }
   else if (method == "recursive") {
-    bc = _binomial_recursive(n, k);
+    return _binomial_recursive(n, k);
   }
   else {
-    bc = _binomial_multiplicative(n, k);
+    return _binomial_multiplicative(n, k);
   }
 
-  return bc;
 }
 
 

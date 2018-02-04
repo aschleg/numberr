@@ -1,6 +1,6 @@
 Package: numberr
 Type: Package
-Title: Numberr is a package containing number-theoretic algorithms and functions primarily written in C++ using Rcpp.
+Title: Numberr is a package containing number-theoretic algorithms and functions primarily written in C++ using Rcpp
 Version: 0.1.0
 Date: 2018-01-28
 Author: Aaron Schlegel

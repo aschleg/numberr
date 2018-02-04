@@ -80,20 +80,17 @@ NumericVector cullen(int n) {
 //' The super-Catalan numbers, also known as the Schroeder-Hipparchus numbers,
 //' or little Schroeder numbers, count the number of lattice paths (path
 //' composed of a connected horizontal and vertical line segment) with diagonal
-//' steps from \eqn{n, n} to \eqn{0, 0} without crossing the diagonal line. The 
-//' super-Catalan numbers are given by the recurrence relation:
-//' \deqn{S(n) = \frac{3(2n - 3) \space S(n-1) - (n-3) \space S(n-2)}{n}}
+//' steps from \eqn{n, n} to \eqn{0, 0} without crossing the diagonal line. The
+//' super-Catalan numbers are given by the recurrence relation: \deqn{S(n) =
+//' \frac{3(2n - 3) \space S(n-1) - (n-3) \space S(n-2)}{n}}
 //'
 //' @param n Specifies the length of the returned super-Catalan number sequence
 //' @return vector of length n
-//' @references Schröder–Hipparchus number. (2016, December 2). In Wikipedia,
-//'   The Free Encyclopedia. Retrieved 14:24, January 27, 2018, from
-//'   https://en.wikipedia.org/w/index.php?title=Schr%C3%B6der%E2%80%93Hipparchus_number&oldid=752625057
-//'    Weisstein, Eric W. "Lattice Path." From MathWorld--A Wolfram Web
+//' @references Weisstein, Eric W. "Lattice Path." From MathWorld--A Wolfram Web
 //'   Resource. http://mathworld.wolfram.com/LatticePath.html Weisstein, Eric W.
 //'   "Super Catalan Number." From MathWorld--A Wolfram Web Resource.
 //'   http://mathworld.wolfram.com/SuperCatalanNumber.html
-//'   @export
+//' @export
 // [[Rcpp::export]]
 NumericVector supercatalan(int n) {
   std::vector<long int> x(n);

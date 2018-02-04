@@ -315,6 +315,21 @@ risingfactorial_function <- function(x, n) {
     .Call(`_numberr_risingfactorial_function`, x, n)
 }
 
+#' Computes the greatest common divisor with several algorithms available. The
+#' default algorithm is the recursive method, which is typically faster than
+#' the others.
+#'
+#' @param a First integer
+#' @param b Second integer
+#' @param method Specifies the algorithm used to calculate the greatest common
+#'   divisior. Defaults to 'recursive', which is generally faster than other
+#'   methods. Other algorithms available include 'division' and 'subtraction'.
+#' @return The greatest common divisor
+#' @export
+gcd <- function(a, b, method = "recursive") {
+    .Call(`_numberr_gcd`, a, b, method)
+}
+
 #' Calculates the Greatest Common Divisor of two integers using the recursive
 #' Euclidean algorithm.
 #'
@@ -484,6 +499,34 @@ lcm <- function(a, b) {
     .Call(`_numberr_lcm`, a, b)
 }
 
+#' Tests if an integer is (probably) prime using the Fermat primality test.
+#'
+#' Fermat's primality test is a probabilistic method (there is a chance, albeit
+#' very small, that a composite number will be flagged as prime) for
+#' identifying prime numbers. The test is based on Fermat's Little Theorem,
+#' which states that if \eqn{p} is prime and \eqn{a_{p-1}} is not divisible by
+#' \eqn{p}, then:
+#'
+#' \deqn{a^{p-1} \equiv 1 \space (text{mod} \space p)}
+#'
+#' The test proceeds as follows: Select a value for \eqn{a} at random that is
+#' not divisible by \eqn{p} and check if the equality holds. This test is
+#' performed \eqn{k} times and if the equality does not hold, the integer
+#' \eqn{p} is composite. It is possible the test will falsely identify a
+#' composite number as prime.
+#'
+#' @param n integer
+#' @param k integer, default 1000
+#' @return TRUE if n is probably prime, FALSE otherwise
+#' @references Thomas H. Cormen, Charles E. Leiserson, Ronald L. Rivest,
+#' Clifford Stein (2001). "Section 31.8: Primality testing". Introduction to
+#' Algorithms (Second ed.). MIT Press; McGraw-Hill. Weisstein, Eric W.
+#' "Fermat's Little Theorem." From MathWorld--A Wolfram Web Resource.
+#' http://mathworld.wolfram.com/FermatsLittleTheorem.html Weisstein, Eric W.
+#' "Primality Test." From MathWorld--A Wolfram Web Resource.
+#' http://mathworld.wolfram.com/PrimalityTest.html
+NULL
+
 #' Tests whether a given value n is prime with a naive test.
 #'
 #' A prime number is defined as a positive integer, \eqn{n > 1} that has no
@@ -512,48 +555,15 @@ isprime <- function(n) {
 #'
 #' @param p integer
 #' @return TRUE if integer is prime (and a Mersenne Number), FALSE otherwise
-#' @references Lucas–Lehmer primality test. (2017, May 27). In Wikipedia, The
-#'   Free Encyclopedia. From
-#'   https://en.wikipedia.org/w/index.php?title=Lucas%E2%80%93Lehmer_primality_test&oldid=782483346
-#'    Weisstein, Eric W. "Lucas-Lehmer Test." From MathWorld--A Wolfram Web
-#'   Resource. http://mathworld.wolfram.com/Lucas-LehmerTest.html Weisstein,
-#'   Eric W. "Mersenne Number." From MathWorld--A Wolfram Web Resource.
-#'   http://mathworld.wolfram.com/MersenneNumber.html Weisstein, Eric W.
-#'   "Primality Test." From MathWorld--A Wolfram Web Resource.
+#' @references Weisstein, Eric W. "Lucas-Lehmer Test." From MathWorld--A
+#'   Wolfram Web Resource. http://mathworld.wolfram.com/Lucas-LehmerTest.html
+#'   Weisstein, Eric W. "Mersenne Number." From MathWorld--A Wolfram Web
+#'   Resource. http://mathworld.wolfram.com/MersenneNumber.html Weisstein, Eric
+#'   W. "Primality Test." From MathWorld--A Wolfram Web Resource.
 #'   http://mathworld.wolfram.com/PrimalityTest.html
 #' @export
 lucas_lehmer <- function(p) {
     .Call(`_numberr_lucas_lehmer`, p)
-}
-
-#' Tests if an integer is (probably) prime using the Fermat primality test.
-#'
-#' Fermat's primality test is a probabilistic method (there is a chance, albeit
-#' very small, that a composite number will be flagged as prime) for
-#' identifying prime numbers. The test is based on Fermat's Little Theorem,
-#' which states that if \eqn{p} is prime and \eqn{a_{p-1}} is not divisible by
-#' \eqn{p}, then:
-#'
-#' \deqn{a^{p-1} \equiv 1 \space (text{mod} \space p)}
-#'
-#' The test proceeds as follows: Select a value for \eqn{a} at random that is
-#' not divisible by \eqn{p} and check if the equality holds. This test is
-#' performed \eqn{k} times and if the equality does not hold, the integer
-#' \eqn{p} is composite. It is possible the test will falsely identify a
-#' composite number as prime.
-#'
-#' @param n integer
-#' @param k integer, default 1000
-#' @return TRUE if n is probably prime, FALSE otherwise
-#' @references Thomas H. Cormen, Charles E. Leiserson, Ronald L. Rivest,
-#' Clifford Stein (2001). "Section 31.8: Primality testing". Introduction to
-#' Algorithms (Second ed.). MIT Press; McGraw-Hill. Weisstein, Eric W.
-#' "Fermat's Little Theorem." From MathWorld--A Wolfram Web Resource.
-#' http://mathworld.wolfram.com/FermatsLittleTheorem.html Weisstein, Eric W.
-#' "Primality Test." From MathWorld--A Wolfram Web Resource.
-#' http://mathworld.wolfram.com/PrimalityTest.html
-fermat_prime <- function(n, k = 1000L) {
-    .Call(`_numberr_fermat_prime`, n, k)
 }
 
 #' Returns the Catalan numbers up to n.
@@ -604,20 +614,17 @@ cullen <- function(n) {
 #' The super-Catalan numbers, also known as the Schroeder-Hipparchus numbers,
 #' or little Schroeder numbers, count the number of lattice paths (path
 #' composed of a connected horizontal and vertical line segment) with diagonal
-#' steps from \eqn{n, n} to \eqn{0, 0} without crossing the diagonal line. The 
-#' super-Catalan numbers are given by the recurrence relation:
-#' \deqn{S(n) = \frac{3(2n - 3) \space S(n-1) - (n-3) \space S(n-2)}{n}}
+#' steps from \eqn{n, n} to \eqn{0, 0} without crossing the diagonal line. The
+#' super-Catalan numbers are given by the recurrence relation: \deqn{S(n) =
+#' \frac{3(2n - 3) \space S(n-1) - (n-3) \space S(n-2)}{n}}
 #'
 #' @param n Specifies the length of the returned super-Catalan number sequence
 #' @return vector of length n
-#' @references Schröder–Hipparchus number. (2016, December 2). In Wikipedia,
-#'   The Free Encyclopedia. Retrieved 14:24, January 27, 2018, from
-#'   https://en.wikipedia.org/w/index.php?title=Schr%C3%B6der%E2%80%93Hipparchus_number&oldid=752625057
-#'    Weisstein, Eric W. "Lattice Path." From MathWorld--A Wolfram Web
+#' @references Weisstein, Eric W. "Lattice Path." From MathWorld--A Wolfram Web
 #'   Resource. http://mathworld.wolfram.com/LatticePath.html Weisstein, Eric W.
 #'   "Super Catalan Number." From MathWorld--A Wolfram Web Resource.
 #'   http://mathworld.wolfram.com/SuperCatalanNumber.html
-#'   @export
+#' @export
 supercatalan <- function(n) {
     .Call(`_numberr_supercatalan`, n)
 }

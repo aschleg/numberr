@@ -179,6 +179,19 @@ BEGIN_RCPP
     return rcpp_result_gen;
 END_RCPP
 }
+// gcd
+long int gcd(int a, int b, std::string method);
+RcppExport SEXP _numberr_gcd(SEXP aSEXP, SEXP bSEXP, SEXP methodSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< int >::type a(aSEXP);
+    Rcpp::traits::input_parameter< int >::type b(bSEXP);
+    Rcpp::traits::input_parameter< std::string >::type method(methodSEXP);
+    rcpp_result_gen = Rcpp::wrap(gcd(a, b, method));
+    return rcpp_result_gen;
+END_RCPP
+}
 // gcd_recursive
 long int gcd_recursive(int a, int b);
 RcppExport SEXP _numberr_gcd_recursive(SEXP aSEXP, SEXP bSEXP) {
@@ -306,30 +319,6 @@ BEGIN_RCPP
     return rcpp_result_gen;
 END_RCPP
 }
-// fermat_prime
-bool fermat_prime(int n, int k);
-RcppExport SEXP _numberr_fermat_prime(SEXP nSEXP, SEXP kSEXP) {
-BEGIN_RCPP
-    Rcpp::RObject rcpp_result_gen;
-    Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< int >::type n(nSEXP);
-    Rcpp::traits::input_parameter< int >::type k(kSEXP);
-    rcpp_result_gen = Rcpp::wrap(fermat_prime(n, k));
-    return rcpp_result_gen;
-END_RCPP
-}
-// miller_rabin
-bool miller_rabin(int n, int k);
-RcppExport SEXP _numberr_miller_rabin(SEXP nSEXP, SEXP kSEXP) {
-BEGIN_RCPP
-    Rcpp::RObject rcpp_result_gen;
-    Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< int >::type n(nSEXP);
-    Rcpp::traits::input_parameter< int >::type k(kSEXP);
-    rcpp_result_gen = Rcpp::wrap(miller_rabin(n, k));
-    return rcpp_result_gen;
-END_RCPP
-}
 // lucas_lehmer
 bool lucas_lehmer(int p);
 RcppExport SEXP _numberr_lucas_lehmer(SEXP pSEXP) {
@@ -413,6 +402,7 @@ static const R_CallMethodDef CallEntries[] = {
     {"_numberr_fallingfactorial_function", (DL_FUNC) &_numberr_fallingfactorial_function, 2},
     {"_numberr_risingfactorial", (DL_FUNC) &_numberr_risingfactorial, 2},
     {"_numberr_risingfactorial_function", (DL_FUNC) &_numberr_risingfactorial_function, 2},
+    {"_numberr_gcd", (DL_FUNC) &_numberr_gcd, 3},
     {"_numberr_gcd_recursive", (DL_FUNC) &_numberr_gcd_recursive, 2},
     {"_numberr_gcd_division", (DL_FUNC) &_numberr_gcd_division, 2},
     {"_numberr_gcd_subtraction", (DL_FUNC) &_numberr_gcd_subtraction, 2},
@@ -424,8 +414,6 @@ static const R_CallMethodDef CallEntries[] = {
     {"_numberr_issquare", (DL_FUNC) &_numberr_issquare, 1},
     {"_numberr_lcm", (DL_FUNC) &_numberr_lcm, 2},
     {"_numberr_isprime", (DL_FUNC) &_numberr_isprime, 1},
-    {"_numberr_fermat_prime", (DL_FUNC) &_numberr_fermat_prime, 2},
-    {"_numberr_miller_rabin", (DL_FUNC) &_numberr_miller_rabin, 2},
     {"_numberr_lucas_lehmer", (DL_FUNC) &_numberr_lucas_lehmer, 1},
     {"_numberr_catalan", (DL_FUNC) &_numberr_catalan, 1},
     {"_numberr_cullen", (DL_FUNC) &_numberr_cullen, 1},

@@ -4,6 +4,32 @@
 using namespace Rcpp;
 
 
+//' Computes the greatest common divisor with several algorithms available. The
+//' default algorithm is the recursive method, which is typically faster than
+//' the others.
+//'
+//' @param a First integer
+//' @param b Second integer
+//' @param method Specifies the algorithm used to calculate the greatest common
+//'   divisior. Defaults to 'recursive', which is generally faster than other
+//'   methods. Other algorithms available include 'division' and 'subtraction'.
+//' @return The greatest common divisor
+//' @export
+// [[Rcpp::export]]
+long int gcd(int a, int b, std::string method = "recursive") {
+  
+  if (method == "division") {
+    return _gcd_division(a, b);
+  }
+  else if (method == "subtraction") {
+    return _gcd_subtraction(a, b);
+  }
+  else {
+    return _gcd_recursive(a, b);
+  }
+}
+
+
 //' Calculates the Greatest Common Divisor of two integers using the recursive
 //' Euclidean algorithm.
 //'
@@ -20,9 +46,9 @@ using namespace Rcpp;
 //' @export
 // [[Rcpp::export]]
 long int gcd_recursive(int a, int b) {
-
   return _gcd_recursive(a, b);
 }
+
 
 //' Calculates the Greatest Common Divisor using the Euclidean division
 //' algorithm.
@@ -46,12 +72,7 @@ long int gcd_recursive(int a, int b) {
 //' @export
 // [[Rcpp::export]]
 long int gcd_division(int a, int b) {
-  while (b != 0) {
-    int x = b;
-    b = fmod(a, b);
-    a = x;
-  }
-  return a;
+  return _gcd_division(a, b);
 }
 
 
@@ -69,15 +90,7 @@ long int gcd_division(int a, int b) {
 //' @export
 // [[Rcpp::export]]
 long int gcd_subtraction(int a, int b) {
-  while (a != b) {
-    if (a > b) {
-      a = a - b;
-    }
-    else {
-      b = b - a;
-    }
-  }
-  return a;
+  return _gcd_subtraction(a, b);
 }
 
 

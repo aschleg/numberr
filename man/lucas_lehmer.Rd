@@ -24,13 +24,10 @@ iterations and if \eqn{s \equiv 0 \space (\text{mod} \space M_p)} then the
 Mersenne number \eqn{M_p} is prime.
 }
 \references{
-Lucas–Lehmer primality test. (2017, May 27). In Wikipedia, The
-  Free Encyclopedia. From
-  https://en.wikipedia.org/w/index.php?title=Lucas%E2%80%93Lehmer_primality_test&oldid=782483346
-   Weisstein, Eric W. "Lucas-Lehmer Test." From MathWorld--A Wolfram Web
-  Resource. http://mathworld.wolfram.com/Lucas-LehmerTest.html Weisstein,
-  Eric W. "Mersenne Number." From MathWorld--A Wolfram Web Resource.
-  http://mathworld.wolfram.com/MersenneNumber.html Weisstein, Eric W.
-  "Primality Test." From MathWorld--A Wolfram Web Resource.
+Weisstein, Eric W. "Lucas-Lehmer Test." From MathWorld--A
+  Wolfram Web Resource. http://mathworld.wolfram.com/Lucas-LehmerTest.html
+  Weisstein, Eric W. "Mersenne Number." From MathWorld--A Wolfram Web
+  Resource. http://mathworld.wolfram.com/MersenneNumber.html Weisstein, Eric
+  W. "Primality Test." From MathWorld--A Wolfram Web Resource.
   http://mathworld.wolfram.com/PrimalityTest.html
 }
