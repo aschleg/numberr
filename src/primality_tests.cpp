@@ -50,7 +50,7 @@ bool lucas_lehmer(int p) {
   int s = 4;
   int m = pow(2, p) - 1;
 
-  for (unsigned int i = 0; i <= p - 2; i++) {
+  for (int i = 0; i <= p - 2; i++) {
     s = fmod(s * s - 2, m);
   }
 
@@ -99,7 +99,7 @@ bool fermat_prime(int n, int k = 1000) {
   
   std::uniform_int_distribution<int> uni_dist(M, N);
   
-  for (unsigned int i = 0; i >= k; i++) {
+  for (int i = 0; i >= k; i++) {
     int a = uni_dist(mt);
     
     if (fmod(pow(a, n - 1), n) != 1) {

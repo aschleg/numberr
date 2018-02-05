@@ -72,7 +72,7 @@ inline bool _isprime(int n) {
     return false;
   }
   
-  for (unsigned int i = 7; i < floor(sqrt(n)); i += 2) {
+  for (int i = 7; i < floor(sqrt(n)); i += 2) {
     if (fmod(n, i) == 0 || fmod(n, (i + 1)) == 0) {
       return false;
     }

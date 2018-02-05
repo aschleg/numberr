@@ -5,6 +5,7 @@
 
 using namespace Rcpp;
 
+
 //' Calculates the binomial coefficient with several different algorithm methods
 //' available.
 //'

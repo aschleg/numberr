@@ -24,7 +24,7 @@ inline long int _binomial_multiplicative(int n, int k) {
   int nk = std::min(n, n - k);
   int j = 1;
 
-  for(unsigned int c = 1; c <= nk; c++) {
+  for(int c = 1; c <= nk; c++) {
     bico = bico * (n + 1 - j) / j;
     j += 1;
   }

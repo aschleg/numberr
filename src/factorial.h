@@ -42,7 +42,7 @@ inline float _stirlingln(float n) {
 inline long int _factorial(int n) {
   long int fac = 1;
 
-  for (unsigned int i = n; i >= 1; i--) {
+  for (int i = n; i >= 1; i--) {
     fac = fac * i;
   }
 

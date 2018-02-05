@@ -36,7 +36,7 @@ NumericVector catalan(int n) {
   x[0] = 1;
 
   float j = 1.0;
-  for (unsigned int i = 1; i <= x.size(); i++) {
+  for (int i = 1; i <= x.size(); i++) {
     x[i] = (2.0 * (2.0 * j + 1.0)) / (j + 2.0) * x[j - 1.0];
     j++;
   }
@@ -65,7 +65,7 @@ NumericVector cullen(int n) {
 
   float j = 1.0;
 
-  for (unsigned int i = 0; i <= x.size(); i++) {
+  for (int i = 0; i <= x.size(); i++) {
     x[i] = pow(2, j) * j + 1;
     j++;
   }
@@ -97,7 +97,7 @@ NumericVector supercatalan(int n) {
   x[0] = 1; x[1] = 1;
 
   float j = 3.0;
-  for (unsigned int i = 2; i <= x.size(); i++) {
+  for (int i = 2; i <= x.size(); i++) {
     x[i] = (3.0 * (2.0 * j - 3.0) * x[j - 2.0] - (j - 3.0) * x[j - 3.0]) / j;
 
     j++;
@@ -125,7 +125,7 @@ NumericVector fibonacci(int n) {
   x[0] = 1;
   x[1] = 1;
 
-  for (unsigned int i = 2; i <= x.size(); i++) {
+  for (int i = 2; i <= x.size(); i++) {
     x[i] = x[i - 1] + x[i - 2];
   }
 
@@ -164,7 +164,7 @@ NumericVector three_n_one(int n) {
     return x1;
   }
 
-  unsigned int i = 0;
+  int i = 0;
 
   do {
     if (_iseven(n) == true) {

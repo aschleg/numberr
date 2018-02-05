@@ -158,7 +158,7 @@ std::string fallingfactorial_function(std::string x, int n) {
   std::string negsep = " - ";
   std::string parten2 = ")";
 
-  for (unsigned int i = 1; i <= n; i++) {
+  for (int i = 1; i <= n; i++) {
     std::stringstream j;
     j << i;
     std::string jstr = j.str();
@@ -231,7 +231,7 @@ std::string risingfactorial_function(std::string x, int n) {
   std::string negsep = " + ";
   std::string parten2 = ")";
 
-  for (unsigned int i = 1; i <= n; i++) {
+  for (int i = 1; i <= n; i++) {
     std::stringstream j;
     j << i;
     std::string jstr = j.str();
