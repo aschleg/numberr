@@ -2,8 +2,8 @@
 #include <math.h>
 #include <cstdlib>
 #include <algorithm>
-#include <random>
 #include "integers.h"
+// #include <random>
 
 using namespace Rcpp;
 
@@ -89,18 +89,20 @@ bool lucas_lehmer(int p) {
 //' http://mathworld.wolfram.com/FermatsLittleTheorem.html Weisstein, Eric W.
 //' "Primality Test." From MathWorld--A Wolfram Web Resource.
 //' http://mathworld.wolfram.com/PrimalityTest.html
+// [[Rcpp::export]]
 bool fermat_prime(int n, int k = 1000) {
-  std::random_device rd;
+  // std::random_device rd;
   
-  std::mt19937 mt(rd());
+  // std::mt19937 mt(rd());
   
   int M = 2;
   int N = n - 2;
   
-  std::uniform_int_distribution<int> uni_dist(M, N);
+  // std::uniform_int_distribution<int> uni_dist(M, N);
   
   for (int i = 0; i >= k; i++) {
-    int a = uni_dist(mt);
+    // int a = uni_dist(mt);
+    int a = R::runif(M, N);
     
     if (fmod(pow(a, n - 1), n) != 1) {
       return false;

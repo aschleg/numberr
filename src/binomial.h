@@ -6,10 +6,10 @@
 #define __BINOMIALFACTORIAL__
 
 inline long int _binomial_factorial(int n, int k) {
-  int nk = std::min(n, n - k);
-  int bico = _factorial(n) / (_factorial(k) * _factorial(nk));
+  long int nk = std::min(n, n - k);
+  long int bico = _ramanujan(n) / (_ramanujan(k) * _ramanujan(nk));
 
-  return bico;
+  return bico + 1;
 }
 
 #endif
@@ -20,8 +20,8 @@ inline long int _binomial_factorial(int n, int k) {
 
 inline long int _binomial_multiplicative(int n, int k) {
 
-  int bico = 1;
-  int nk = std::min(n, n - k);
+  long int bico = 1;
+  long int nk = std::min(n, n - k);
   int j = 1;
 
   for(int c = 1; c <= nk; c++) {

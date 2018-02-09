@@ -499,34 +499,6 @@ lcm <- function(a, b) {
     .Call(`_numberr_lcm`, a, b)
 }
 
-#' Tests if an integer is (probably) prime using the Fermat primality test.
-#'
-#' Fermat's primality test is a probabilistic method (there is a chance, albeit
-#' very small, that a composite number will be flagged as prime) for
-#' identifying prime numbers. The test is based on Fermat's Little Theorem,
-#' which states that if \eqn{p} is prime and \eqn{a_{p-1}} is not divisible by
-#' \eqn{p}, then:
-#'
-#' \deqn{a^{p-1} \equiv 1 \space (text{mod} \space p)}
-#'
-#' The test proceeds as follows: Select a value for \eqn{a} at random that is
-#' not divisible by \eqn{p} and check if the equality holds. This test is
-#' performed \eqn{k} times and if the equality does not hold, the integer
-#' \eqn{p} is composite. It is possible the test will falsely identify a
-#' composite number as prime.
-#'
-#' @param n integer
-#' @param k integer, default 1000
-#' @return TRUE if n is probably prime, FALSE otherwise
-#' @references Thomas H. Cormen, Charles E. Leiserson, Ronald L. Rivest,
-#' Clifford Stein (2001). "Section 31.8: Primality testing". Introduction to
-#' Algorithms (Second ed.). MIT Press; McGraw-Hill. Weisstein, Eric W.
-#' "Fermat's Little Theorem." From MathWorld--A Wolfram Web Resource.
-#' http://mathworld.wolfram.com/FermatsLittleTheorem.html Weisstein, Eric W.
-#' "Primality Test." From MathWorld--A Wolfram Web Resource.
-#' http://mathworld.wolfram.com/PrimalityTest.html
-NULL
-
 #' Tests whether a given value n is prime with a naive test.
 #'
 #' A prime number is defined as a positive integer, \eqn{n > 1} that has no
@@ -564,6 +536,36 @@ isprime <- function(n) {
 #' @export
 lucas_lehmer <- function(p) {
     .Call(`_numberr_lucas_lehmer`, p)
+}
+
+#' Tests if an integer is (probably) prime using the Fermat primality test.
+#'
+#' Fermat's primality test is a probabilistic method (there is a chance, albeit
+#' very small, that a composite number will be flagged as prime) for
+#' identifying prime numbers. The test is based on Fermat's Little Theorem,
+#' which states that if \eqn{p} is prime and \eqn{a_{p-1}} is not divisible by
+#' \eqn{p}, then:
+#'
+#' \deqn{a^{p-1} \equiv 1 \space (text{mod} \space p)}
+#'
+#' The test proceeds as follows: Select a value for \eqn{a} at random that is
+#' not divisible by \eqn{p} and check if the equality holds. This test is
+#' performed \eqn{k} times and if the equality does not hold, the integer
+#' \eqn{p} is composite. It is possible the test will falsely identify a
+#' composite number as prime.
+#'
+#' @param n integer
+#' @param k integer, default 1000
+#' @return TRUE if n is probably prime, FALSE otherwise
+#' @references Thomas H. Cormen, Charles E. Leiserson, Ronald L. Rivest,
+#' Clifford Stein (2001). "Section 31.8: Primality testing". Introduction to
+#' Algorithms (Second ed.). MIT Press; McGraw-Hill. Weisstein, Eric W.
+#' "Fermat's Little Theorem." From MathWorld--A Wolfram Web Resource.
+#' http://mathworld.wolfram.com/FermatsLittleTheorem.html Weisstein, Eric W.
+#' "Primality Test." From MathWorld--A Wolfram Web Resource.
+#' http://mathworld.wolfram.com/PrimalityTest.html
+fermat_prime <- function(n, k = 1000L) {
+    .Call(`_numberr_fermat_prime`, n, k)
 }
 
 #' Returns the Catalan numbers up to n.

@@ -8,8 +8,8 @@ using namespace Rcpp;
 #ifndef __TRIALFACTOR__
 #define __TRIALFACTOR__
 
-inline NumericVector _factor_trial(int n) {
-  std::vector<unsigned int> x(ceil(sqrt(n)));
+inline NumericVector _factor_trial(long int n) {
+  std::vector<long int> x(ceil(sqrt(n)));
 
   if (n < 2 || _isprime(n) == true) {
     x.resize(2);

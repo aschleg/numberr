@@ -330,6 +330,18 @@ BEGIN_RCPP
     return rcpp_result_gen;
 END_RCPP
 }
+// fermat_prime
+bool fermat_prime(int n, int k);
+RcppExport SEXP _numberr_fermat_prime(SEXP nSEXP, SEXP kSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< int >::type n(nSEXP);
+    Rcpp::traits::input_parameter< int >::type k(kSEXP);
+    rcpp_result_gen = Rcpp::wrap(fermat_prime(n, k));
+    return rcpp_result_gen;
+END_RCPP
+}
 // catalan
 NumericVector catalan(int n);
 RcppExport SEXP _numberr_catalan(SEXP nSEXP) {
@@ -415,6 +427,7 @@ static const R_CallMethodDef CallEntries[] = {
     {"_numberr_lcm", (DL_FUNC) &_numberr_lcm, 2},
     {"_numberr_isprime", (DL_FUNC) &_numberr_isprime, 1},
     {"_numberr_lucas_lehmer", (DL_FUNC) &_numberr_lucas_lehmer, 1},
+    {"_numberr_fermat_prime", (DL_FUNC) &_numberr_fermat_prime, 2},
     {"_numberr_catalan", (DL_FUNC) &_numberr_catalan, 1},
     {"_numberr_cullen", (DL_FUNC) &_numberr_cullen, 1},
     {"_numberr_supercatalan", (DL_FUNC) &_numberr_supercatalan, 1},

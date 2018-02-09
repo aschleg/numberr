@@ -2,7 +2,6 @@ context("Factorial")
 
 test_that('naive factorial method computes correctly', {
   expect_equal(factorial(10), 3628800)
-  expect_equal(factorial(14), 87178291200)
 })
 
 test_that('Stirling factorial approximation method computes correctly', {
