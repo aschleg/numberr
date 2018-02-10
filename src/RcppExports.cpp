@@ -308,6 +308,19 @@ BEGIN_RCPP
     return rcpp_result_gen;
 END_RCPP
 }
+// mod_expo
+int mod_expo(int a, unsigned int n, int m);
+RcppExport SEXP _numberr_mod_expo(SEXP aSEXP, SEXP nSEXP, SEXP mSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< int >::type a(aSEXP);
+    Rcpp::traits::input_parameter< unsigned int >::type n(nSEXP);
+    Rcpp::traits::input_parameter< int >::type m(mSEXP);
+    rcpp_result_gen = Rcpp::wrap(mod_expo(a, n, m));
+    return rcpp_result_gen;
+END_RCPP
+}
 // isprime
 bool isprime(int n);
 RcppExport SEXP _numberr_isprime(SEXP nSEXP) {
@@ -331,12 +344,12 @@ BEGIN_RCPP
 END_RCPP
 }
 // fermat_prime
-bool fermat_prime(int n, int k);
+bool fermat_prime(unsigned int n, int k);
 RcppExport SEXP _numberr_fermat_prime(SEXP nSEXP, SEXP kSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< int >::type n(nSEXP);
+    Rcpp::traits::input_parameter< unsigned int >::type n(nSEXP);
     Rcpp::traits::input_parameter< int >::type k(kSEXP);
     rcpp_result_gen = Rcpp::wrap(fermat_prime(n, k));
     return rcpp_result_gen;
@@ -425,6 +438,7 @@ static const R_CallMethodDef CallEntries[] = {
     {"_numberr_isodd", (DL_FUNC) &_numberr_isodd, 1},
     {"_numberr_issquare", (DL_FUNC) &_numberr_issquare, 1},
     {"_numberr_lcm", (DL_FUNC) &_numberr_lcm, 2},
+    {"_numberr_mod_expo", (DL_FUNC) &_numberr_mod_expo, 3},
     {"_numberr_isprime", (DL_FUNC) &_numberr_isprime, 1},
     {"_numberr_lucas_lehmer", (DL_FUNC) &_numberr_lucas_lehmer, 1},
     {"_numberr_fermat_prime", (DL_FUNC) &_numberr_fermat_prime, 2},

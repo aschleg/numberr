@@ -499,6 +499,10 @@ lcm <- function(a, b) {
     .Call(`_numberr_lcm`, a, b)
 }
 
+mod_expo <- function(a, n, m) {
+    .Call(`_numberr_mod_expo`, a, n, m)
+}
+
 #' Tests whether a given value n is prime with a naive test.
 #'
 #' A prime number is defined as a positive integer, \eqn{n > 1} that has no
@@ -564,6 +568,7 @@ lucas_lehmer <- function(p) {
 #' http://mathworld.wolfram.com/FermatsLittleTheorem.html Weisstein, Eric W.
 #' "Primality Test." From MathWorld--A Wolfram Web Resource.
 #' http://mathworld.wolfram.com/PrimalityTest.html
+#' @export
 fermat_prime <- function(n, k = 1000L) {
     .Call(`_numberr_fermat_prime`, n, k)
 }

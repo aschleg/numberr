@@ -4,7 +4,7 @@
 \alias{fermat_prime}
 \title{Tests if an integer is (probably) prime using the Fermat primality test.}
 \usage{
-fermat_prime(n, k = 1000L)
+fermat_prime(n, k = 10000L)
 }
 \arguments{
 \item{n}{integer}

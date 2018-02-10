@@ -3,10 +3,12 @@
 #include <cstdlib>
 #include <algorithm>
 #include "integers.h"
-// #include <random>
+#include "numlib.h"
+#include <random>
 
 using namespace Rcpp;
 
+// [[Rcpp::plugins("cpp11")]]
 
 //' Tests whether a given value n is prime with a naive test.
 //'
@@ -89,22 +91,20 @@ bool lucas_lehmer(int p) {
 //' http://mathworld.wolfram.com/FermatsLittleTheorem.html Weisstein, Eric W.
 //' "Primality Test." From MathWorld--A Wolfram Web Resource.
 //' http://mathworld.wolfram.com/PrimalityTest.html
+//' @export
 // [[Rcpp::export]]
-bool fermat_prime(int n, int k = 1000) {
-  // std::random_device rd;
-  
-  // std::mt19937 mt(rd());
-  
+bool fermat_prime(unsigned int n, int k = 1000) {
   int M = 2;
   int N = n - 2;
   
-  // std::uniform_int_distribution<int> uni_dist(M, N);
+  std::random_device rd;
+  std::mt19937 mt(rd());
+  std::uniform_int_distribution<int> uni_dist(M, N);
   
-  for (int i = 0; i >= k; i++) {
-    // int a = uni_dist(mt);
-    int a = R::runif(M, N);
+  for (int i = 0; i <= k; i++) {
+    int a = uni_dist(mt);
     
-    if (fmod(pow(a, n - 1), n) != 1) {
+    if (modular_exponentiation(a, n - 1, n) != 1) {
       return false;
     }
   }
