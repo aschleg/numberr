@@ -3,6 +3,7 @@ cache: packages
 sudo: false
 
 r_packages:
+  - testthat
   - covr
 
 after_success:
