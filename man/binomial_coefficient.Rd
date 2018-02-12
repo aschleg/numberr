@@ -14,8 +14,8 @@ binomial_coefficient(n, k, method = "multiplicative")
 
 \item{method}{selects the algorithm to use for calculating the binomial
 coefficient. Options include the multiplicative (default), recursive, or
-factorial methods. Please note the recursive method can be very slow and is 
-not recommended over other algorithms.}
+factorial methods. Please note the recursive method can be very slow and
+is not recommended over other algorithms.}
 }
 \value{
 The binomial coefficient
@@ -30,6 +30,10 @@ efficient than the compact form calculation and is defined as:
 coefficient calculation is defined as: \deqn{\binom{n}{k} = \binom{n - 1}{n
 - k} + \binom{n - 1}{k} \qquad for n, k: 1 \leq k \leq n - 1} With boundary
 values: \deqn{\binom{n}{0} = \binom{n}{n} = 1}
+}
+\examples{
+binomial_coefficient(5, 3)
+binomial_coefficient(6, 4, 'factorial')
 }
 \references{
 Binomial coefficient. (2017, April 17). In Wikipedia, The Free

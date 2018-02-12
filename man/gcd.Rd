@@ -25,3 +25,8 @@ Computes the greatest common divisor with several algorithms available. The
 default algorithm is the recursive method, which is typically faster than
 the others.
 }
+\examples{
+gcd(21, 28)
+gcd(30, 10, 'subtraction')
+gcd(21, 6, 'division')
+}

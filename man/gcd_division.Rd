@@ -22,6 +22,10 @@ step \eqn{k} from the two numbers \eqn{a} and \eqn{b}. The quotient component
 of Euclidean division is not used in the algorithm, thus only modulo
 operations are required as that only returns the remainder.
 }
+\examples{
+gcd_division(30, 15)
+gcd_division(24, 8)
+}
 \references{
 Cormen, T., Leiserson, C., Rivest, R., & Stein, C. (2009).
   Introduction to algorithms (3rd ed., pp. 928-930). Cambridge (Inglaterra):

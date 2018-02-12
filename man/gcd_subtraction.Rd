@@ -21,3 +21,7 @@ is calculated by repeated division by subtraction. Therefore, in this implementa
 greatest common divisor algorithm, the modulo operation in the division implementation is
 replaced by division by repeated subtraction.
 }
+\examples{
+gcd_subtraction(21, 6)
+gcd_subtraction(25, 5)
+}

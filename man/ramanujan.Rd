@@ -11,12 +11,19 @@ ramanujan(n)
 \arguments{
 \item{n}{integer to approximate factorial}
 }
+\value{
+the approximated factorial, n!, as per Ramanujan's approximation.
+}
 \description{
 Ramanujan's formula is another factorial approximation method known for its
 accuracy in comparison to other factorial approximation approaches including
 Stirling's and Gosper's approximations. Ramanujan's formula is defined as:
 \deqn{n! \approx \sqrt{\pi} \left(\frac{n}{e}\right)^n \sqrt[6]{8n^3 + 4n^2
 + n + \frac{1}{30}}}
+}
+\examples{
+ramanujan(10)
+ramanujan(5)
 }
 \references{
 Mortici, Cristinel. On Gosper's Formula for the Gamma Function.

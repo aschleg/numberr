@@ -13,12 +13,19 @@ gcd_extended(a, b)
 
 \item{b}{Second integer}
 }
+\value{
+vector containing coefficients (d, x, y)
+}
 \description{
 The extended Euclidean algorithm computes the greatest common divisor,
 \eqn{d} of two integers \eqn{a} and \eqn{b} as well as the coefficients
 \eqn{x} and \eqn{y} such that: \deqn{d = gcd(a, b) = ax + by} The
 coefficients \eqn{x} and \eqn{y} are known as Bezout's coefficients and can
 be zero or negative.
+}
+\examples{
+gcd_extended(99, 78)
+gcd_extended(55, 45)
 }
 \references{
 Bezout's identity. (2017, May 12). In Wikipedia, The Free

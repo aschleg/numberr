@@ -18,6 +18,9 @@ The binomial coefficient
 The binomial coefficient equation (in compact form) is defined as:
 \deqn{\binom{n}{k} = \frac{n!}{k!(n-k)!} \qquad 0 \leq k \leq n}
 }
+\examples{
+binomial_factorial(4, 2)
+}
 \references{
 Binomial coefficient. (2017, April 17). In Wikipedia, The Free
   Encyclopedia. From

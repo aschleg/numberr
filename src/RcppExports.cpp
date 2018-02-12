@@ -332,17 +332,6 @@ BEGIN_RCPP
     return rcpp_result_gen;
 END_RCPP
 }
-// lucas_lehmer
-bool lucas_lehmer(int p);
-RcppExport SEXP _numberr_lucas_lehmer(SEXP pSEXP) {
-BEGIN_RCPP
-    Rcpp::RObject rcpp_result_gen;
-    Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< int >::type p(pSEXP);
-    rcpp_result_gen = Rcpp::wrap(lucas_lehmer(p));
-    return rcpp_result_gen;
-END_RCPP
-}
 // fermat_prime
 bool fermat_prime(unsigned int n, int k);
 RcppExport SEXP _numberr_fermat_prime(SEXP nSEXP, SEXP kSEXP) {
@@ -352,6 +341,17 @@ BEGIN_RCPP
     Rcpp::traits::input_parameter< unsigned int >::type n(nSEXP);
     Rcpp::traits::input_parameter< int >::type k(kSEXP);
     rcpp_result_gen = Rcpp::wrap(fermat_prime(n, k));
+    return rcpp_result_gen;
+END_RCPP
+}
+// lucas_lehmer
+bool lucas_lehmer(int p);
+RcppExport SEXP _numberr_lucas_lehmer(SEXP pSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< int >::type p(pSEXP);
+    rcpp_result_gen = Rcpp::wrap(lucas_lehmer(p));
     return rcpp_result_gen;
 END_RCPP
 }
@@ -440,8 +440,8 @@ static const R_CallMethodDef CallEntries[] = {
     {"_numberr_lcm", (DL_FUNC) &_numberr_lcm, 2},
     {"_numberr_mod_expo", (DL_FUNC) &_numberr_mod_expo, 3},
     {"_numberr_isprime", (DL_FUNC) &_numberr_isprime, 1},
-    {"_numberr_lucas_lehmer", (DL_FUNC) &_numberr_lucas_lehmer, 1},
     {"_numberr_fermat_prime", (DL_FUNC) &_numberr_fermat_prime, 2},
+    {"_numberr_lucas_lehmer", (DL_FUNC) &_numberr_lucas_lehmer, 1},
     {"_numberr_catalan", (DL_FUNC) &_numberr_catalan, 1},
     {"_numberr_cullen", (DL_FUNC) &_numberr_cullen, 1},
     {"_numberr_supercatalan", (DL_FUNC) &_numberr_supercatalan, 1},

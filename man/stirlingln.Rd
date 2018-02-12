@@ -12,12 +12,19 @@ stirlingln(n)
 \arguments{
 \item{n}{desired integer to approximate factorial}
 }
+\value{
+the natural log of the approximated factorial per Stirling's approximation.
+}
 \description{
 It is often useful to compute the logarithmic form of the factorial and
 convert it to exponent form to avoid overflow. The approximation is an
 alternative approach given by Srinivasa Ramanujan (Ramanujan 1988). \deqn{ln
 n! \approx n ln n - n + \frac{1}{6} ln(n(1 + 4n(1 + 2n))) + \frac{1}{2} ln
 \pi}
+}
+\examples{
+stirlingln(10)
+stirlingln(15)
 }
 \references{
 Stirling's approximation. (2017, March 8). In Wikipedia, The

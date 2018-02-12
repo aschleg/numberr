@@ -26,15 +26,23 @@ install_github("aaron/numberr")
   - Stirling's Approximation
   - Gosper's natural log Approximation
   - Ramanujan's factorial approximation
+  - Rising and Falling Factorials
+    - Function representations of rising and falling factorials
 * Greatest Common Divisor
   - Recursive, division, and subtraction (Euclid) methods
+* Least Common Multiple
 * Primes and Composite Numbers
   - Coprime integers
   - squares, composites
 * Primality Tests
   - Naive method
+  - Fermat Test
   - Lucas-Lehmer
-
-### License
-
-MIT
+* Sequences
+  - Catalan
+  - Cullen
+  - Fibonacci
+  - Supercatalan
+  - Three-n-One
+* Miscellaneous
+  - Modular Exponentiation

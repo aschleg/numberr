@@ -20,6 +20,10 @@ efficient than the compact form calculation and is defined as:
 \deqn{\binom{n}{k} = \frac{n(n-1)(n-2) \cdots (n-(k-1))}{k(k-1)(k-2) \cdots
 1} = \prod^k_{i=1} \frac{n + 1 - i}{i}}
 }
+\examples{
+binomial_multiplicative(5, 3)
+binomial_multiplicative(4, 2)
+}
 \references{
 Binomial coefficient. (2017, April 17). In Wikipedia, The Free
   Encyclopedia. From

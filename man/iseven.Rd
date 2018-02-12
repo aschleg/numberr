@@ -17,6 +17,11 @@ An even number is defined as an integer with the form \eqn{n = 2k} where
 \eqn{k} is also an integer. Put differently, an even number is not odd and is
 thus evenly divisible by 2.
 }
+\examples{
+iseven(4)
+iseven(5)
+iseven(5.25)
+}
 \references{
 Weisstein, Eric W. "Even Number." From MathWorld--A Wolfram Web
 Resource. http://mathworld.wolfram.com/EvenNumber.html

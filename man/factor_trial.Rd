@@ -23,6 +23,10 @@ and 3. Also, the trial factors never need to go further than the square root
 of \eqn{n}, \eqn{\sqrt{n}}, due to the fact that if \eqn{n} has a factor,
 there exists a factor \eqn{f \leq \sqrt{n}}.
 }
+\examples{
+factor_trial(9)
+factor_trial(121)
+}
 \references{
 Trial division. (2017, April 30). In Wikipedia, The Free
   Encyclopedia. From

@@ -16,6 +16,9 @@ vector of length n
 Cullen numbers are a special case of Proth numbers that have the form:
 \deqn{C_n = 2^n n + 1} The first few Cullen numbers are 3, 9, 25, 65, 161, ...
 }
+\examples{
+cullen(5)
+}
 \references{
 Cullen number. (2018, January 22). In Wikipedia, The Free
   Encyclopedia. Retrieved 14:17, January 27, 2018, from

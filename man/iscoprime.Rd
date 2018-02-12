@@ -18,6 +18,10 @@ TRUE if given integers are coprime, FALSE otherwise
 Two integers \eqn{a} and \eqn{b} are said to be relatively prime (also called
 relatively prime) if they share no positive divisors except 1.
 }
+\examples{
+iscoprime(2, 3)
+iscoprime(2, 4)
+}
 \references{
 Cormen, T., Leiserson, C., Rivest, R., & Stein, C. (2009).
 Introduction to algorithms (3rd ed., pp. 931). Cambridge (Inglaterra): Mit

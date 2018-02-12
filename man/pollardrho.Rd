@@ -17,6 +17,10 @@ Vector containing the two prime factors of \eqn{n}, should they exist.
 Implementation of Pollard's rho algorithm for factorizing an
 integer \eqn{n} into two non-trivial prime numbers.
 }
+\examples{
+pollardrho(9)
+pollardrho(7799)
+}
 \references{
 Barnes, C. (2004). Integer Factorization Algorithms (1st ed.).
   Corvallis, OR: Department of Physics, Oregon State University. Fermat's

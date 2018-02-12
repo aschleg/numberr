@@ -21,3 +21,7 @@ is divisible by both \eqn{a} and \eqn{b}, and is usually denoted \eqn{lcm(a,b)} 
 of the relation between the greatest common divisor and the least common multiple, such that:
 \deqn{lcm(a,b) = \bigg(\frac{|a|}{gcd(a,b)} \bigg) \space |b|}
 }
+\examples{
+lcm(21, 6)
+lcm(15, 3)
+}

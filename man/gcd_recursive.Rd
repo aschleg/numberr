@@ -19,6 +19,9 @@ The greatest common divisor
 The recursive implementation of the greatest common divisor algorithm was
 described in the Elements of Euclid but may even predate that.
 }
+\examples{
+gcd_recursive(21, 6)
+}
 \references{
 Cormen, T., Leiserson, C., Rivest, R., & Stein, C. (2009).
   Introduction to algorithms (3rd ed., pp. 928-930, 934-935). Cambridge

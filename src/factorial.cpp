@@ -17,6 +17,10 @@ using namespace Rcpp;
 //' factorial of 5 is written as: 5! = (5)(4)(3)(2)(1) = 120
 //'
 //' @param n Desired integer to compute factorial
+//' @return the factorial, n!, of n
+//' @examples
+//' factorial(5)
+//' factorial(10)
 //' @references Press, W., Teukolsky, S., Vetterling, W., & Flannery, B. (2007).
 //'   Numerical recipes (3rd ed.). Cambridge: Cambridge University Press.
 //'   Weisstein, Eric W. "Factorial." From MathWorld--A Wolfram Web Resource.
@@ -40,6 +44,10 @@ long int factorial(int n) {
 //' \eqn{0! = 1}. \deqn{n! \approx \sqrt{(2n + \frac{1}{3})\pi} n^n e^{-n}}
 //'
 //' @param n desired integer to approximate factorial
+//' @return the approximated factorial, n! per Gosper's approximation
+//' @examples
+//' stirling(5)
+//' stirling(10)
 //' @references Stirling's approximation. (2017, March 8). In Wikipedia, The
 //'   Free Encyclopedia. From
 //'   https://en.wikipedia.org/w/index.php?title=Stirling%27s_approximation&oldid=769328178
@@ -65,13 +73,16 @@ float stirling(int n) {
 //' \pi}
 //'
 //' @param n desired integer to approximate factorial
+//' @return the natural log of the approximated factorial per Stirling's approximation.
+//' @examples
+//' stirlingln(10)
+//' stirlingln(15)
 //' @references Stirling's approximation. (2017, March 8). In Wikipedia, The
 //'   Free Encyclopedia. From
 //'   https://en.wikipedia.org/w/index.php?title=Stirling%27s_approximation&oldid=769328178
 //' @export
 // [[Rcpp::export]]
 float stirlingln(int n) {
-
   return _stirlingln(n);
 }
 
@@ -87,13 +98,16 @@ float stirlingln(int n) {
 //' + n + \frac{1}{30}}}
 //'
 //' @param n integer to approximate factorial
+//' @return the approximated factorial, n!, as per Ramanujan's approximation.
+//' @examples
+//' ramanujan(10)
+//' ramanujan(5)
 //' @references Mortici, Cristinel. On Gosper's Formula for the Gamma Function.
 //'   Valahia University of Targoviste, Department of Mathematics. Retrieved
 //'   from http://files.ele-math.com/articles/jmi-05-53.pdf
 //' @export
 // [[Rcpp::export]]
 float ramanujan(int n) {
-
   return _ramanujan(n);
 }
 
@@ -108,6 +122,9 @@ float ramanujan(int n) {
 //' @param x integer
 //' @param n integer
 //' @return Computed falling factorial
+//' @examples
+//' fallingfactorial(5, 3)
+//' fallingfactorial(10, 6)
 //' @references Falling and rising factorials. (2017, June 8). In Wikipedia, The
 //'   Free Encyclopedia. From
 //'   https://en.wikipedia.org/w/index.php?title=Falling_and_rising_factorials&oldid=784512036
@@ -145,6 +162,9 @@ float fallingfactorial(int x, int n) {
 //' @param x integer
 //' @param n integer
 //' @return string representation of falling factorial function.
+//' @examples
+//' fallingfactorial_function('x', 5)
+//' fallingfactorial_function('a', 3)
 //' @references Falling and rising factorials. (2017, June 8). In Wikipedia, The
 //'   Free Encyclopedia. From
 //'   https://en.wikipedia.org/w/index.php?title=Falling_and_rising_factorials&oldid=784512036
@@ -180,6 +200,9 @@ std::string fallingfactorial_function(std::string x, int n) {
 //' @param x integer or character
 //' @param n integer
 //' @return Computed rising factorial
+//' @examples
+//' risingfactorial(5, 3)
+//' risingfactorial(10, 6)
 //' @references Falling and rising factorials. (2017, June 8). In Wikipedia, The
 //'   Free Encyclopedia. From
 //'   https://en.wikipedia.org/w/index.php?title=Falling_and_rising_factorials&oldid=784512036
@@ -218,6 +241,9 @@ float risingfactorial(int x, int n) {
 //' @param x integer or character
 //' @param n integer
 //' @return string representation of rising factorial function.
+//' @examples
+//' risingfactorial_function('x', 3)
+//' risingfactorial_function('a', 2)
 //' @references Falling and rising factorials. (2017, June 8). In Wikipedia, The
 //'   Free Encyclopedia. From
 //'   https://en.wikipedia.org/w/index.php?title=Falling_and_rising_factorials&oldid=784512036

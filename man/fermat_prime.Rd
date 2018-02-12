@@ -4,7 +4,7 @@
 \alias{fermat_prime}
 \title{Tests if an integer is (probably) prime using the Fermat primality test.}
 \usage{
-fermat_prime(n, k = 10000L)
+fermat_prime(n, k = 1000L)
 }
 \arguments{
 \item{n}{integer}
@@ -29,6 +29,10 @@ not divisible by \eqn{p} and check if the equality holds. This test is
 performed \eqn{k} times and if the equality does not hold, the integer
 \eqn{p} is composite. It is possible the test will falsely identify a
 composite number as prime.
+}
+\examples{
+fermat_prime(11)
+fermat_prime(221)
 }
 \references{
 Thomas H. Cormen, Charles E. Leiserson, Ronald L. Rivest,

@@ -22,6 +22,10 @@ mathematics. The rising factorial is related to the gamma function
 where \eqn{x^(0) = 1}. The rising factorial is related to the falling
 factorial by: \deqn{x^{(n)} = (-x)_n (-1)^n}
 }
+\examples{
+risingfactorial_function('x', 3)
+risingfactorial_function('a', 2)
+}
 \references{
 Falling and rising factorials. (2017, June 8). In Wikipedia, The
   Free Encyclopedia. From

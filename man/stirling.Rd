@@ -11,6 +11,9 @@ stirling(n)
 \arguments{
 \item{n}{desired integer to approximate factorial}
 }
+\value{
+the approximated factorial, n! per Gosper's approximation
+}
 \description{
 Stirling's approximation is a method of approximating a factorial \eqn{n!}.
 As the value of \eqn{n} increases, the more exact the approximation becomes;
@@ -18,6 +21,10 @@ however, it still yields almost exact results for small values of \eqn{n}.
 The approximation used is given by Gosper, which is noted to be a better
 approximation to \eqn{n!} and also results in a very close approximation to
 \eqn{0! = 1}. \deqn{n! \approx \sqrt{(2n + \frac{1}{3})\pi} n^n e^{-n}}
+}
+\examples{
+stirling(5)
+stirling(10)
 }
 \references{
 Stirling's approximation. (2017, March 8). In Wikipedia, The

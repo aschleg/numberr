@@ -8,10 +8,10 @@ using namespace Rcpp;
 #ifndef __TRIALFACTOR__
 #define __TRIALFACTOR__
 
-inline NumericVector _factor_trial(long int n) {
-  std::vector<long int> x(ceil(sqrt(n)));
+inline NumericVector _factor_trial(int n) {
+  std::vector<int> x(ceil(sqrt(n)));
 
-  if (n < 2 || _isprime(n) == true) {
+  if (n == 3 || n == 2 || n == 1) {
     x.resize(2);
     x[0] = 1; x[1] = n;
     NumericVector x1 = Rcpp::wrap(x);

@@ -17,6 +17,10 @@ TRUE if n is composite, FALSE otherwise
 A composite number is defined as a positive integer :math:`n` that has a
 factor than 1 and itself. In short, a composite number is not prime.
 }
+\examples{
+iscomposite(5)
+iscomposite(11)
+}
 \references{
 Weisstein, Eric W. "Composite Number." From MathWorld--A Wolfram
 Web Resource. http://mathworld.wolfram.com/CompositeNumber.html

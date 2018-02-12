@@ -23,9 +23,12 @@ using namespace Rcpp;
 //' @param k number of unordered outcomes
 //' @param method selects the algorithm to use for calculating the binomial
 //'   coefficient. Options include the multiplicative (default), recursive, or
-//'   factorial methods. Please note the recursive method can be very slow and is 
-//'   not recommended over other algorithms.
+//'   factorial methods. Please note the recursive method can be very slow and
+//'   is not recommended over other algorithms.
 //' @return The binomial coefficient
+//' @examples
+//' binomial_coefficient(5, 3)
+//' binomial_coefficient(6, 4, 'factorial')
 //' @references Binomial coefficient. (2017, April 17). In Wikipedia, The Free
 //'   Encyclopedia. From
 //'   https:#en.wikipedia.org/w/index.php?title=Binomial_coefficient&oldid=775905810
@@ -84,6 +87,9 @@ long int binomial_recursive(int n, int k) {
 //' @param n Number of possibilities
 //' @param k number of unordered outcomes
 //' @return The binomial coefficient
+//' @examples
+//' binomial_multiplicative(5, 3)
+//' binomial_multiplicative(4, 2)
 //' @references Binomial coefficient. (2017, April 17). In Wikipedia, The Free
 //'   Encyclopedia. From
 //'   https://en.wikipedia.org/w/index.php?title=Binomial_coefficient&oldid=775905810
@@ -101,9 +107,12 @@ long int binomial_multiplicative(int n, int k) {
 //'
 //' The binomial coefficient equation (in compact form) is defined as:
 //' \deqn{\binom{n}{k} = \frac{n!}{k!(n-k)!} \qquad 0 \leq k \leq n}
+//' 
 //' @param n Number of possibilities
 //' @param k number of unordered outcomes
 //' @return The binomial coefficient
+//' @examples
+//' binomial_factorial(4, 2)
 //' @references Binomial coefficient. (2017, April 17). In Wikipedia, The Free
 //'   Encyclopedia. From
 //'   https://en.wikipedia.org/w/index.php?title=Binomial_coefficient&oldid=775905810

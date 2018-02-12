@@ -10,10 +10,17 @@ factorial(n)
 \arguments{
 \item{n}{Desired integer to compute factorial}
 }
+\value{
+the factorial, n!, of n
+}
 \description{
 Factorials are denoted for a positive integer \eqn{x} as \eqn{x!} and are
 defined as: \deqn{x! = (x)(x - 1)(x - 2) \cdots (2)(1)} For example, the
 factorial of 5 is written as: 5! = (5)(4)(3)(2)(1) = 120
+}
+\examples{
+factorial(5)
+factorial(10)
 }
 \references{
 Press, W., Teukolsky, S., Vetterling, W., & Flannery, B. (2007).

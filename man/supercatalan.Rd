@@ -20,6 +20,9 @@ steps from \eqn{n, n} to \eqn{0, 0} without crossing the diagonal line. The
 super-Catalan numbers are given by the recurrence relation: \deqn{S(n) =
 \frac{3(2n - 3) \space S(n-1) - (n-3) \space S(n-2)}{n}}
 }
+\examples{
+supercatalan(5)
+}
 \references{
 Weisstein, Eric W. "Lattice Path." From MathWorld--A Wolfram Web
   Resource. http://mathworld.wolfram.com/LatticePath.html Weisstein, Eric W.

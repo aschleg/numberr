@@ -6,6 +6,6 @@ test_that('Naive prime test function accurately determines prime integers', {
 })
 
 test_that('Fermat primality test function accurately determines prime integers', {
-  expect_equal(fermat_prime(15), FALSE)
-  expect_equal(fermat_prime(11), TRUE)
+  expect_equal(fermat_prime(21), FALSE)
+  expect_equal(fermat_prime(23), TRUE)
 })

@@ -22,6 +22,9 @@ is odd, multiply by 3 and add 1 to obtain \eqn{3n + 1} Repeat this process
 until the sequence reaches 1. It is unknown if there is a starting integer
 \eqn{n} that does not result in the sequence ending with 1.
 }
+\examples{
+three_n_one(5)
+}
 \references{
 3x + 1 problem. (2017, May 13). In Wikipedia, The Free
 Encyclopedia. from

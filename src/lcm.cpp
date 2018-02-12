@@ -14,6 +14,9 @@ using namespace Rcpp;
 //' \deqn{lcm(a,b) = \bigg(\frac{|a|}{gcd(a,b)} \bigg) \space |b|}
 //' @param a First integer
 //' @param b Second integer
+//' @examples
+//' lcm(21, 6)
+//' lcm(15, 3)
 //' @return the least common multiple of the two given integers
 // [[Rcpp::export]]
 long int lcm(int a, int b) {

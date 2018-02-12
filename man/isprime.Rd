@@ -16,6 +16,10 @@ TRUE if n is prime, FALSE otherwise
 A prime number is defined as a positive integer, \eqn{n > 1} that has no
 positive divisors other than 1 and itself.
 }
+\examples{
+isprime(9)
+isprime(11)
+}
 \references{
 Weisstein, Eric W. "Prime Number." From MathWorld--A Wolfram Web
 Resource. http://mathworld.wolfram.com/PrimeNumber.html

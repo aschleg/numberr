@@ -22,6 +22,9 @@ The first few Catalan numbers are 1, 1, 2, 5, 14, 42, 132, 429, ... The
 function is implemented using the recurrence relation of \eqn{C_n}:
 \deqn{C_{n+1} = \frac{2(2n + 1)}{n + 2} C_n}
 }
+\examples{
+catalan(5)
+}
 \references{
 Catalan number. (2018, January 18). In Wikipedia, The Free
   Encyclopedia. Retrieved 14:03, January 27, 2018, from

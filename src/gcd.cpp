@@ -14,6 +14,10 @@ using namespace Rcpp;
 //'   divisior. Defaults to 'recursive', which is generally faster than other
 //'   methods. Other algorithms available include 'division' and 'subtraction'.
 //' @return The greatest common divisor
+//' @examples
+//' gcd(21, 28)
+//' gcd(30, 10, 'subtraction')
+//' gcd(21, 6, 'division')
 //' @export
 // [[Rcpp::export]]
 long int gcd(int a, int b, std::string method = "recursive") {
@@ -38,6 +42,8 @@ long int gcd(int a, int b, std::string method = "recursive") {
 //' @param a First integer
 //' @param b Second integer
 //' @return The greatest common divisor
+//' @examples
+//' gcd_recursive(21, 6)
 //' @references Cormen, T., Leiserson, C., Rivest, R., & Stein, C. (2009).
 //'   Introduction to algorithms (3rd ed., pp. 928-930, 934-935). Cambridge
 //'   (Inglaterra): Mit Press. Euclidean algorithm. (2017, May 18). In Wikipedia,
@@ -61,6 +67,9 @@ long int gcd_recursive(int a, int b) {
 //' @param a First integer
 //' @param b Second integer
 //' @return The greatest common divisor
+//' @examples
+//' gcd_division(30, 15)
+//' gcd_division(24, 8)
 //' @references Cormen, T., Leiserson, C., Rivest, R., & Stein, C. (2009).
 //'   Introduction to algorithms (3rd ed., pp. 928-930). Cambridge (Inglaterra):
 //'   Mit Press. Euclidean algorithm. (2017, May 18). In Wikipedia, The Free
@@ -87,6 +96,9 @@ long int gcd_division(int a, int b) {
 //' @param a First integer
 //' @param b Second integer
 //' @return The greatest common divisor
+//' @examples
+//' gcd_subtraction(21, 6)
+//' gcd_subtraction(25, 5)
 //' @export
 // [[Rcpp::export]]
 long int gcd_subtraction(int a, int b) {
@@ -106,6 +118,10 @@ long int gcd_subtraction(int a, int b) {
 //'
 //' @param a First integer
 //' @param b Second integer
+//' @return vector containing coefficients (d, x, y)
+//' @examples
+//' gcd_extended(99, 78)
+//' gcd_extended(55, 45)
 //' @references Bezout's identity. (2017, May 12). In Wikipedia, The Free
 //' Encyclopedia. From
 //' https://en.wikipedia.org/w/index.php?title=B%C3%A9zout%27s_identity&oldid=780050687

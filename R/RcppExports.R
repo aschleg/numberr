@@ -18,9 +18,12 @@
 #' @param k number of unordered outcomes
 #' @param method selects the algorithm to use for calculating the binomial
 #'   coefficient. Options include the multiplicative (default), recursive, or
-#'   factorial methods. Please note the recursive method can be very slow and is 
-#'   not recommended over other algorithms.
+#'   factorial methods. Please note the recursive method can be very slow and
+#'   is not recommended over other algorithms.
 #' @return The binomial coefficient
+#' @examples
+#' binomial_coefficient(5, 3)
+#' binomial_coefficient(6, 4, 'factorial')
 #' @references Binomial coefficient. (2017, April 17). In Wikipedia, The Free
 #'   Encyclopedia. From
 #'   https:#en.wikipedia.org/w/index.php?title=Binomial_coefficient&oldid=775905810
@@ -65,6 +68,9 @@ binomial_recursive <- function(n, k) {
 #' @param n Number of possibilities
 #' @param k number of unordered outcomes
 #' @return The binomial coefficient
+#' @examples
+#' binomial_multiplicative(5, 3)
+#' binomial_multiplicative(4, 2)
 #' @references Binomial coefficient. (2017, April 17). In Wikipedia, The Free
 #'   Encyclopedia. From
 #'   https://en.wikipedia.org/w/index.php?title=Binomial_coefficient&oldid=775905810
@@ -81,9 +87,12 @@ binomial_multiplicative <- function(n, k) {
 #'
 #' The binomial coefficient equation (in compact form) is defined as:
 #' \deqn{\binom{n}{k} = \frac{n!}{k!(n-k)!} \qquad 0 \leq k \leq n}
+#' 
 #' @param n Number of possibilities
 #' @param k number of unordered outcomes
 #' @return The binomial coefficient
+#' @examples
+#' binomial_factorial(4, 2)
 #' @references Binomial coefficient. (2017, April 17). In Wikipedia, The Free
 #'   Encyclopedia. From
 #'   https://en.wikipedia.org/w/index.php?title=Binomial_coefficient&oldid=775905810
@@ -110,6 +119,9 @@ binomial_factorial <- function(n, k) {
 #' @param n Integer to be factored into product of smaller integers.
 #' @return Vector containing the factors of \eqn{n} should they exist. If
 #'   \eqn{n} is prime, the returned list will only contain \eqn{n}.
+#' @examples
+#' factor_trial(9)
+#' factor_trial(121)
 #' @references Trial division. (2017, April 30). In Wikipedia, The Free
 #'   Encyclopedia. From
 #'   https://en.wikipedia.org/w/index.php?title=Trial_division&oldid=778023614
@@ -126,6 +138,10 @@ factor_trial <- function(n) {
 #' \deqn{n = (a + b)(a - b)}
 #'
 #' @param n Integer to be factored into product of smaller integers.
+#' @return vector of length two containing factors of integers
+#' @examples
+#' fermat_factor(9)
+#' fermat_factor(30)
 #' @references Barnes, C. (2004). Integer Factorization Algorithms (1st ed.).
 #'   Corvallis, OR: Department of Physics, Oregon State University. Fermat's
 #'   factorization method. (2017, January 31). In Wikipedia, The Free
@@ -141,6 +157,9 @@ fermat_factor <- function(n) {
 #'
 #' @param n Integer to be factored into product of smaller integers.
 #' @return Vector containing the two prime factors of \eqn{n}, should they exist.
+#' @examples
+#' pollardrho(9)
+#' pollardrho(7799)
 #' @references Barnes, C. (2004). Integer Factorization Algorithms (1st ed.).
 #'   Corvallis, OR: Department of Physics, Oregon State University. Fermat's
 #'   factorization method. (2017, January 31). In Wikipedia, The Free
@@ -159,6 +178,10 @@ pollardrho <- function(n) {
 #' factorial of 5 is written as: 5! = (5)(4)(3)(2)(1) = 120
 #'
 #' @param n Desired integer to compute factorial
+#' @return the factorial, n!, of n
+#' @examples
+#' factorial(5)
+#' factorial(10)
 #' @references Press, W., Teukolsky, S., Vetterling, W., & Flannery, B. (2007).
 #'   Numerical recipes (3rd ed.). Cambridge: Cambridge University Press.
 #'   Weisstein, Eric W. "Factorial." From MathWorld--A Wolfram Web Resource.
@@ -180,6 +203,10 @@ factorial <- function(n) {
 #' \eqn{0! = 1}. \deqn{n! \approx \sqrt{(2n + \frac{1}{3})\pi} n^n e^{-n}}
 #'
 #' @param n desired integer to approximate factorial
+#' @return the approximated factorial, n! per Gosper's approximation
+#' @examples
+#' stirling(5)
+#' stirling(10)
 #' @references Stirling's approximation. (2017, March 8). In Wikipedia, The
 #'   Free Encyclopedia. From
 #'   https://en.wikipedia.org/w/index.php?title=Stirling%27s_approximation&oldid=769328178
@@ -202,6 +229,10 @@ stirling <- function(n) {
 #' \pi}
 #'
 #' @param n desired integer to approximate factorial
+#' @return the natural log of the approximated factorial per Stirling's approximation.
+#' @examples
+#' stirlingln(10)
+#' stirlingln(15)
 #' @references Stirling's approximation. (2017, March 8). In Wikipedia, The
 #'   Free Encyclopedia. From
 #'   https://en.wikipedia.org/w/index.php?title=Stirling%27s_approximation&oldid=769328178
@@ -221,6 +252,10 @@ stirlingln <- function(n) {
 #' + n + \frac{1}{30}}}
 #'
 #' @param n integer to approximate factorial
+#' @return the approximated factorial, n!, as per Ramanujan's approximation.
+#' @examples
+#' ramanujan(10)
+#' ramanujan(5)
 #' @references Mortici, Cristinel. On Gosper's Formula for the Gamma Function.
 #'   Valahia University of Targoviste, Department of Mathematics. Retrieved
 #'   from http://files.ele-math.com/articles/jmi-05-53.pdf
@@ -240,6 +275,9 @@ ramanujan <- function(n) {
 #' @param x integer
 #' @param n integer
 #' @return Computed falling factorial
+#' @examples
+#' fallingfactorial(5, 3)
+#' fallingfactorial(10, 6)
 #' @references Falling and rising factorials. (2017, June 8). In Wikipedia, The
 #'   Free Encyclopedia. From
 #'   https://en.wikipedia.org/w/index.php?title=Falling_and_rising_factorials&oldid=784512036
@@ -261,6 +299,9 @@ fallingfactorial <- function(x, n) {
 #' @param x integer
 #' @param n integer
 #' @return string representation of falling factorial function.
+#' @examples
+#' fallingfactorial_function('x', 5)
+#' fallingfactorial_function('a', 3)
 #' @references Falling and rising factorials. (2017, June 8). In Wikipedia, The
 #'   Free Encyclopedia. From
 #'   https://en.wikipedia.org/w/index.php?title=Falling_and_rising_factorials&oldid=784512036
@@ -283,6 +324,9 @@ fallingfactorial_function <- function(x, n) {
 #' @param x integer or character
 #' @param n integer
 #' @return Computed rising factorial
+#' @examples
+#' risingfactorial(5, 3)
+#' risingfactorial(10, 6)
 #' @references Falling and rising factorials. (2017, June 8). In Wikipedia, The
 #'   Free Encyclopedia. From
 #'   https://en.wikipedia.org/w/index.php?title=Falling_and_rising_factorials&oldid=784512036
@@ -305,6 +349,9 @@ risingfactorial <- function(x, n) {
 #' @param x integer or character
 #' @param n integer
 #' @return string representation of rising factorial function.
+#' @examples
+#' risingfactorial_function('x', 3)
+#' risingfactorial_function('a', 2)
 #' @references Falling and rising factorials. (2017, June 8). In Wikipedia, The
 #'   Free Encyclopedia. From
 #'   https://en.wikipedia.org/w/index.php?title=Falling_and_rising_factorials&oldid=784512036
@@ -325,6 +372,10 @@ risingfactorial_function <- function(x, n) {
 #'   divisior. Defaults to 'recursive', which is generally faster than other
 #'   methods. Other algorithms available include 'division' and 'subtraction'.
 #' @return The greatest common divisor
+#' @examples
+#' gcd(21, 28)
+#' gcd(30, 10, 'subtraction')
+#' gcd(21, 6, 'division')
 #' @export
 gcd <- function(a, b, method = "recursive") {
     .Call(`_numberr_gcd`, a, b, method)
@@ -338,6 +389,8 @@ gcd <- function(a, b, method = "recursive") {
 #' @param a First integer
 #' @param b Second integer
 #' @return The greatest common divisor
+#' @examples
+#' gcd_recursive(21, 6)
 #' @references Cormen, T., Leiserson, C., Rivest, R., & Stein, C. (2009).
 #'   Introduction to algorithms (3rd ed., pp. 928-930, 934-935). Cambridge
 #'   (Inglaterra): Mit Press. Euclidean algorithm. (2017, May 18). In Wikipedia,
@@ -359,6 +412,9 @@ gcd_recursive <- function(a, b) {
 #' @param a First integer
 #' @param b Second integer
 #' @return The greatest common divisor
+#' @examples
+#' gcd_division(30, 15)
+#' gcd_division(24, 8)
 #' @references Cormen, T., Leiserson, C., Rivest, R., & Stein, C. (2009).
 #'   Introduction to algorithms (3rd ed., pp. 928-930). Cambridge (Inglaterra):
 #'   Mit Press. Euclidean algorithm. (2017, May 18). In Wikipedia, The Free
@@ -383,6 +439,9 @@ gcd_division <- function(a, b) {
 #' @param a First integer
 #' @param b Second integer
 #' @return The greatest common divisor
+#' @examples
+#' gcd_subtraction(21, 6)
+#' gcd_subtraction(25, 5)
 #' @export
 gcd_subtraction <- function(a, b) {
     .Call(`_numberr_gcd_subtraction`, a, b)
@@ -400,6 +459,10 @@ gcd_subtraction <- function(a, b) {
 #'
 #' @param a First integer
 #' @param b Second integer
+#' @return vector containing coefficients (d, x, y)
+#' @examples
+#' gcd_extended(99, 78)
+#' gcd_extended(55, 45)
 #' @references Bezout's identity. (2017, May 12). In Wikipedia, The Free
 #' Encyclopedia. From
 #' https://en.wikipedia.org/w/index.php?title=B%C3%A9zout%27s_identity&oldid=780050687
@@ -418,6 +481,9 @@ gcd_extended <- function(a, b) {
 #'
 #' @param n Value to test
 #' @return TRUE if n is composite, FALSE otherwise
+#' @examples
+#' iscomposite(5)
+#' iscomposite(11)
 #' @references Weisstein, Eric W. "Composite Number." From MathWorld--A Wolfram
 #' Web Resource. http://mathworld.wolfram.com/CompositeNumber.html
 #' @export
@@ -433,6 +499,9 @@ iscomposite <- function(n) {
 #' @param a First integer
 #' @param b Second integer
 #' @return TRUE if given integers are coprime, FALSE otherwise
+#' @examples
+#' iscoprime(2, 3)
+#' iscoprime(2, 4)
 #' @references Cormen, T., Leiserson, C., Rivest, R., & Stein, C. (2009).
 #' Introduction to algorithms (3rd ed., pp. 931). Cambridge (Inglaterra): Mit
 #' Press. Weisstein, Eric W. "Relatively Prime." From MathWorld--A Wolfram Web
@@ -450,6 +519,10 @@ iscoprime <- function(a, b) {
 #'
 #' @param n Value to test
 #' @return TRUE if n is even, FALSE otherwise
+#' @examples
+#' iseven(4)
+#' iseven(5)
+#' iseven(5.25)
 #' @references Weisstein, Eric W. "Even Number." From MathWorld--A Wolfram Web
 #' Resource. http://mathworld.wolfram.com/EvenNumber.html
 #' @export
@@ -465,6 +538,10 @@ iseven <- function(n) {
 #'
 #' @param n Value to test
 #' @return TRUE if n is odd, FALSE otherwise
+#' @examples
+#' isodd(3)
+#' isodd(4)
+#' isodd(3.2)
 #' @references Weisstein, Eric W. "Odd Number." From MathWorld--A Wolfram Web
 #'   Resource. http://mathworld.wolfram.com/OddNumber.html
 #' @export
@@ -478,6 +555,9 @@ isodd <- function(n) {
 #'
 #' @param n Value to test
 #' @return TRUE if value is a square number, FALSE otherwise
+#' @examples
+#' issquare(25)
+#' issquare(24)
 #' @references Barnes, C. (2004). Integer Factorization Algorithms (1st ed.).
 #' Corvallis, OR: Department of Physics, Oregon State University.
 #' @export
@@ -494,11 +574,21 @@ issquare <- function(n) {
 #' \deqn{lcm(a,b) = \bigg(\frac{|a|}{gcd(a,b)} \bigg) \space |b|}
 #' @param a First integer
 #' @param b Second integer
+#' @examples
+#' lcm(21, 6)
+#' lcm(15, 3)
 #' @return the least common multiple of the two given integers
 lcm <- function(a, b) {
     .Call(`_numberr_lcm`, a, b)
 }
 
+#' Computes large modular exponents with modular exponentiation.
+#' 
+#' @param a the base integer, as in a^n mod m
+#' @param n the exponent power
+#' @param m the modulus
+#' @return the computed exponent mod m
+#' @export
 mod_expo <- function(a, n, m) {
     .Call(`_numberr_mod_expo`, a, n, m)
 }
@@ -510,11 +600,48 @@ mod_expo <- function(a, n, m) {
 #'
 #' @param n Value to test
 #' @return TRUE if n is prime, FALSE otherwise
+#' @examples
+#' isprime(9)
+#' isprime(11)
 #' @references Weisstein, Eric W. "Prime Number." From MathWorld--A Wolfram Web
 #' Resource. http://mathworld.wolfram.com/PrimeNumber.html
 #' @export
 isprime <- function(n) {
     .Call(`_numberr_isprime`, n)
+}
+
+#' Tests if an integer is (probably) prime using the Fermat primality test.
+#'
+#' Fermat's primality test is a probabilistic method (there is a chance, albeit
+#' very small, that a composite number will be flagged as prime) for
+#' identifying prime numbers. The test is based on Fermat's Little Theorem,
+#' which states that if \eqn{p} is prime and \eqn{a_{p-1}} is not divisible by
+#' \eqn{p}, then:
+#'
+#' \deqn{a^{p-1} \equiv 1 \space (text{mod} \space p)}
+#'
+#' The test proceeds as follows: Select a value for \eqn{a} at random that is
+#' not divisible by \eqn{p} and check if the equality holds. This test is
+#' performed \eqn{k} times and if the equality does not hold, the integer
+#' \eqn{p} is composite. It is possible the test will falsely identify a
+#' composite number as prime.
+#'
+#' @param n integer
+#' @param k integer, default 1000
+#' @return TRUE if n is probably prime, FALSE otherwise
+#' @examples
+#' fermat_prime(11)
+#' fermat_prime(221)
+#' @references Thomas H. Cormen, Charles E. Leiserson, Ronald L. Rivest,
+#' Clifford Stein (2001). "Section 31.8: Primality testing". Introduction to
+#' Algorithms (Second ed.). MIT Press; McGraw-Hill. Weisstein, Eric W.
+#' "Fermat's Little Theorem." From MathWorld--A Wolfram Web Resource.
+#' http://mathworld.wolfram.com/FermatsLittleTheorem.html Weisstein, Eric W.
+#' "Primality Test." From MathWorld--A Wolfram Web Resource.
+#' http://mathworld.wolfram.com/PrimalityTest.html
+#' @export
+fermat_prime <- function(n, k = 1000L) {
+    .Call(`_numberr_fermat_prime`, n, k)
 }
 
 #' Performs the Lucas-Lehmer primality test for determining if a Mersenne
@@ -542,37 +669,6 @@ lucas_lehmer <- function(p) {
     .Call(`_numberr_lucas_lehmer`, p)
 }
 
-#' Tests if an integer is (probably) prime using the Fermat primality test.
-#'
-#' Fermat's primality test is a probabilistic method (there is a chance, albeit
-#' very small, that a composite number will be flagged as prime) for
-#' identifying prime numbers. The test is based on Fermat's Little Theorem,
-#' which states that if \eqn{p} is prime and \eqn{a_{p-1}} is not divisible by
-#' \eqn{p}, then:
-#'
-#' \deqn{a^{p-1} \equiv 1 \space (text{mod} \space p)}
-#'
-#' The test proceeds as follows: Select a value for \eqn{a} at random that is
-#' not divisible by \eqn{p} and check if the equality holds. This test is
-#' performed \eqn{k} times and if the equality does not hold, the integer
-#' \eqn{p} is composite. It is possible the test will falsely identify a
-#' composite number as prime.
-#'
-#' @param n integer
-#' @param k integer, default 1000
-#' @return TRUE if n is probably prime, FALSE otherwise
-#' @references Thomas H. Cormen, Charles E. Leiserson, Ronald L. Rivest,
-#' Clifford Stein (2001). "Section 31.8: Primality testing". Introduction to
-#' Algorithms (Second ed.). MIT Press; McGraw-Hill. Weisstein, Eric W.
-#' "Fermat's Little Theorem." From MathWorld--A Wolfram Web Resource.
-#' http://mathworld.wolfram.com/FermatsLittleTheorem.html Weisstein, Eric W.
-#' "Primality Test." From MathWorld--A Wolfram Web Resource.
-#' http://mathworld.wolfram.com/PrimalityTest.html
-#' @export
-fermat_prime <- function(n, k = 1000L) {
-    .Call(`_numberr_fermat_prime`, n, k)
-}
-
 #' Returns the Catalan numbers up to n.
 #'
 #' The Catalan numbers are a sequence of natural numbers, typically denoted
@@ -586,6 +682,8 @@ fermat_prime <- function(n, k = 1000L) {
 #'
 #' @param n Specify the length of the returned Catalan number sequence.
 #' @return vector of n length
+#' @examples
+#' catalan(5)
 #' @references Catalan number. (2018, January 18). In Wikipedia, The Free
 #'   Encyclopedia. Retrieved 14:03, January 27, 2018, from
 #'   https://en.wikipedia.org/w/index.php?title=Catalan_number&oldid=821121794
@@ -606,6 +704,8 @@ catalan <- function(n) {
 #'
 #' @param n Specifies the length of the Cullen number sequence to return
 #' @return vector of length n
+#' @examples
+#' cullen(5)
 #' @references Cullen number. (2018, January 22). In Wikipedia, The Free
 #'   Encyclopedia. Retrieved 14:17, January 27, 2018, from
 #'   https://en.wikipedia.org/w/index.php?title=Cullen_number&oldid=821774732
@@ -627,6 +727,8 @@ cullen <- function(n) {
 #'
 #' @param n Specifies the length of the returned super-Catalan number sequence
 #' @return vector of length n
+#' @examples
+#' supercatalan(5)
 #' @references Weisstein, Eric W. "Lattice Path." From MathWorld--A Wolfram Web
 #'   Resource. http://mathworld.wolfram.com/LatticePath.html Weisstein, Eric W.
 #'   "Super Catalan Number." From MathWorld--A Wolfram Web Resource.
@@ -643,6 +745,8 @@ supercatalan <- function(n) {
 #' With initial coniditions: \deqn{f_1 = 1, \qquad f_2 = 2}
 #' @param n Integer designating the stopping point of the Fibonacci sequence
 #' @return array of the Fibonacci sequence up to \eqn{n}.
+#' @examples
+#' fibonacci(5)
 #' @references Moler, C. (2011). Numerical computing with MATLAB (1st ed.).
 #' Philadelphia, Pa: Society for Industrial & Applied Mathematics.
 #' @export
@@ -663,6 +767,8 @@ fibonacci <- function(n) {
 #' @param n Starting integer to begin \eqn{3n + 1} process
 #' @return vector containing sequence generated by the Collatz conjecture. If n
 #'   is 1, 1 is returned.
+#' @examples
+#' three_n_one(5)
 #' @references 3x + 1 problem. (2017, May 13). In Wikipedia, The Free
 #' Encyclopedia. from
 #' https://en.wikipedia.org/w/index.php?title=3x_%2B_1_problem&oldid=780191927

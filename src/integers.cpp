@@ -12,6 +12,9 @@ using namespace Rcpp;
 //'
 //' @param n Value to test
 //' @return TRUE if n is composite, FALSE otherwise
+//' @examples
+//' iscomposite(5)
+//' iscomposite(11)
 //' @references Weisstein, Eric W. "Composite Number." From MathWorld--A Wolfram
 //' Web Resource. http://mathworld.wolfram.com/CompositeNumber.html
 //' @export
@@ -29,6 +32,9 @@ bool iscomposite(int n) {
 //' @param a First integer
 //' @param b Second integer
 //' @return TRUE if given integers are coprime, FALSE otherwise
+//' @examples
+//' iscoprime(2, 3)
+//' iscoprime(2, 4)
 //' @references Cormen, T., Leiserson, C., Rivest, R., & Stein, C. (2009).
 //' Introduction to algorithms (3rd ed., pp. 931). Cambridge (Inglaterra): Mit
 //' Press. Weisstein, Eric W. "Relatively Prime." From MathWorld--A Wolfram Web
@@ -48,6 +54,10 @@ bool iscoprime(int a, int b) {
 //'
 //' @param n Value to test
 //' @return TRUE if n is even, FALSE otherwise
+//' @examples
+//' iseven(4)
+//' iseven(5)
+//' iseven(5.25)
 //' @references Weisstein, Eric W. "Even Number." From MathWorld--A Wolfram Web
 //' Resource. http://mathworld.wolfram.com/EvenNumber.html
 //' @export
@@ -65,6 +75,10 @@ bool iseven(float n) {
 //'
 //' @param n Value to test
 //' @return TRUE if n is odd, FALSE otherwise
+//' @examples
+//' isodd(3)
+//' isodd(4)
+//' isodd(3.2)
 //' @references Weisstein, Eric W. "Odd Number." From MathWorld--A Wolfram Web
 //'   Resource. http://mathworld.wolfram.com/OddNumber.html
 //' @export
@@ -80,6 +94,9 @@ bool isodd(float n) {
 //'
 //' @param n Value to test
 //' @return TRUE if value is a square number, FALSE otherwise
+//' @examples
+//' issquare(25)
+//' issquare(24)
 //' @references Barnes, C. (2004). Integer Factorization Algorithms (1st ed.).
 //' Corvallis, OR: Department of Physics, Oregon State University.
 //' @export

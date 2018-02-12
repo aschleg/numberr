@@ -10,10 +10,17 @@ fermat_factor(n)
 \arguments{
 \item{n}{Integer to be factored into product of smaller integers.}
 }
+\value{
+vector of length two containing factors of integers
+}
 \description{
 Fermat's factorization theorem redefines a composite number \eqn{n} as the
 difference of squares: \deqn{n = a^2 - b^2} Which can also be written as:
 \deqn{n = (a + b)(a - b)}
+}
+\examples{
+fermat_factor(9)
+fermat_factor(30)
 }
 \references{
 Barnes, C. (2004). Integer Factorization Algorithms (1st ed.).

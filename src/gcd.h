@@ -44,4 +44,3 @@ inline long int _gcd_subtraction(int a, int b) {
 }
 
 #endif
-
