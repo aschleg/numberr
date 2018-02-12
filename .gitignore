@@ -15,4 +15,4 @@ _Rhistory
 _Rprofile
 inst/doc
 vignettes/
-src/exponentiation.h
+tests/testthat.R

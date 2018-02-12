@@ -54,6 +54,17 @@ BEGIN_RCPP
     return rcpp_result_gen;
 END_RCPP
 }
+// catalans_constant
+double catalans_constant(int k);
+RcppExport SEXP _numberr_catalans_constant(SEXP kSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< int >::type k(kSEXP);
+    rcpp_result_gen = Rcpp::wrap(catalans_constant(k));
+    return rcpp_result_gen;
+END_RCPP
+}
 // factor_trial
 NumericVector factor_trial(int n);
 RcppExport SEXP _numberr_factor_trial(SEXP nSEXP) {
@@ -416,6 +427,7 @@ static const R_CallMethodDef CallEntries[] = {
     {"_numberr_binomial_recursive", (DL_FUNC) &_numberr_binomial_recursive, 2},
     {"_numberr_binomial_multiplicative", (DL_FUNC) &_numberr_binomial_multiplicative, 2},
     {"_numberr_binomial_factorial", (DL_FUNC) &_numberr_binomial_factorial, 2},
+    {"_numberr_catalans_constant", (DL_FUNC) &_numberr_catalans_constant, 1},
     {"_numberr_factor_trial", (DL_FUNC) &_numberr_factor_trial, 1},
     {"_numberr_fermat_factor", (DL_FUNC) &_numberr_fermat_factor, 1},
     {"_numberr_pollardrho", (DL_FUNC) &_numberr_pollardrho, 1},

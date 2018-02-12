@@ -6,7 +6,7 @@ using namespace Rcpp;
 
 namespace Constants {
   
-  static double constexpr CatalansConstant = .915965594177
+  static double CatalansConstant = .915965594177;
 
 }
 
@@ -15,7 +15,7 @@ double catalans_constant(int k = 10) {
   double K = 0;
   
   for (int i = 0; i <= k; i++) {
-    K = K + pow(-1, i) / pow(2 * i + 1, 2)
+    K = K + pow(-1, i) / pow(2 * i + 1, 2);
   }
   
   return K;

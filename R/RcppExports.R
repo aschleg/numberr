@@ -105,6 +105,10 @@ binomial_factorial <- function(n, k) {
     .Call(`_numberr_binomial_factorial`, n, k)
 }
 
+catalans_constant <- function(k = 10L) {
+    .Call(`_numberr_catalans_constant`, k)
+}
+
 #' Computes the factors of an integer, should they exist, using the trial
 #' division method.
 #'
