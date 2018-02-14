@@ -89,12 +89,12 @@ NumericVector fermat_factor(int n) {
 //' @export
 // [[Rcpp::export]]
 NumericVector pollardrho(int n) {
-  long int x = 2; 
-  long int y = 2; 
-  long int d = 1;
+  int x = 2; 
+  int y = 2; 
+  int d = 1;
 
   while (d == 1) {
-    x = pow(x, 2) + 1 % n;
+    x = fmod(pow(x, 2) + 1, n);
     y = fmod(pow(pow(y, 2) + 1, 2), n);
     d = _gcd_recursive(x - y, n);
   }
@@ -102,6 +102,7 @@ NumericVector pollardrho(int n) {
   if (d == n) {
     return 0;
   }
+  
   else {
     NumericVector fac = NumericVector::create(d, n / d);
     return fac;

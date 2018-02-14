@@ -17,5 +17,5 @@ test_that('Fibonacci sequence returns correct numbers', {
 })
 
 test_that('Three-n-one sequence returns consistent numbers', {
-  expect_equal(three_n_one(5), c(16, 8, 4, 2, 1))
+  expect_equal(collatz(5), c(16, 8, 4, 2, 1))
 })

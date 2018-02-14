@@ -10,6 +10,12 @@ namespace Constants {
 
 }
 
+
+//' Approximates Catalan's Constant, K.
+//' 
+//' @param k number of summations to perform, defaults to 10.
+//' @return Approximated Catalan's Constant
+//' @export
 // [[Rcpp::export]]
 double catalans_constant(int k = 10) {
   double K = 0;

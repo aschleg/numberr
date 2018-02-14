@@ -83,22 +83,17 @@ bool fermat_prime(unsigned int n, int k = 1000) {
 //' Performs the Lucas-Lehmer primality test for determining if a Mersenne
 //' number is prime.
 //'
-//' The Lucas-Lehmer primality test is a deterministic (the test outputs with
-//' absolute certainty the integer in question is prime) test for finding if a
-//' Mersenne number, \eqn{M_p}, is prime. The Lucas-Lehmer test proceeds as
-//' follows: The Mersenne number to test is denoted \eqn{M_p = 2^p - 1}.
-//' Starting with \eqn{s_0 \equiv 4}, the recurrence relation \eqn{s_p \equiv
-//' s^2_{p-1} - 2 \space (\text{mod} \space M_p)}, continues for \eqn{p-2}
-//' iterations and if \eqn{s \equiv 0 \space (\text{mod} \space M_p)} then the
-//' Mersenne number \eqn{M_p} is prime.
-//'
 //' @param p integer
 //' @return TRUE if integer is prime (and a Mersenne Number), FALSE otherwise
 //' @references Weisstein, Eric W. "Lucas-Lehmer Test." From MathWorld--A
-//'   Wolfram Web Resource. http://mathworld.wolfram.com/Lucas-LehmerTest.html
+//'   Wolfram Web Resource. 
+//'   http://mathworld.wolfram.com/Lucas-LehmerTest.html
+//'   
 //'   Weisstein, Eric W. "Mersenne Number." From MathWorld--A Wolfram Web
-//'   Resource. http://mathworld.wolfram.com/MersenneNumber.html Weisstein, Eric
-//'   W. "Primality Test." From MathWorld--A Wolfram Web Resource.
+//'   Resource. 
+//'   http://mathworld.wolfram.com/MersenneNumber.html
+//'   
+//'   Weisstein, Eric W. "Primality Test." From MathWorld--A Wolfram Web Resource.
 //'   http://mathworld.wolfram.com/PrimalityTest.html
 //' @export
 // [[Rcpp::export]]
