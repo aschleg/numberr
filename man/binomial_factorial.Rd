@@ -15,8 +15,7 @@ binomial_factorial(n, k)
 The binomial coefficient
 }
 \description{
-The binomial coefficient equation (in compact form) is defined as:
-\deqn{\binom{n}{k} = \frac{n!}{k!(n-k)!} \qquad 0 \leq k \leq n}
+Calculates the binomial coefficient using the factorial method.
 }
 \examples{
 binomial_factorial(4, 2)

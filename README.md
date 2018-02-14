@@ -16,6 +16,8 @@ install_github("aaron/numberr")
 
 ## Available Algorithms and Functions
 
+* Constants and Definitions
+  - Catalan's Constant
 * Integer Factorization
   - Trial factorization
   - Fermat

@@ -21,15 +21,8 @@ is not recommended over other algorithms.}
 The binomial coefficient
 }
 \description{
-The binomial coefficient equation (in compact form) is defined as:
-\deqn{\binom{n}{k} = \frac{n!}{k!(n-k)!} \qquad 0 \leq k \leq n} The
-multiplicative method for computing the binomial coefficient is more
-efficient than the compact form calculation and is defined as:
-\deqn{\binom{n}{k} = \frac{n(n-1)(n-2) \cdots (n-(k-1))}{k(k-1)(k-2) \cdots
-1} = \prod^k_{i=1} \frac{n + 1 - i}{i}} The recursive method of the binomial
-coefficient calculation is defined as: \deqn{\binom{n}{k} = \binom{n - 1}{n
-- k} + \binom{n - 1}{k} \qquad for n, k: 1 \leq k \leq n - 1} With boundary
-values: \deqn{\binom{n}{0} = \binom{n}{n} = 1}
+Calculates the binomial coefficient with several different algorithm methods
+available.
 }
 \examples{
 binomial_coefficient(5, 3)

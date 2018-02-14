@@ -15,10 +15,7 @@ binomial_multiplicative(n, k)
 The binomial coefficient
 }
 \description{
-The multiplicative method for computing the binomial coefficient is more
-efficient than the compact form calculation and is defined as:
-\deqn{\binom{n}{k} = \frac{n(n-1)(n-2) \cdots (n-(k-1))}{k(k-1)(k-2) \cdots
-1} = \prod^k_{i=1} \frac{n + 1 - i}{i}}
+Calculates the binomial coefficient using the multiplicative equation.
 }
 \examples{
 binomial_multiplicative(5, 3)

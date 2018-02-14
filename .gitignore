@@ -7,6 +7,7 @@ $ cat .gitignore
 *.so
 *.dll
 *.DS_Store
+*.pdf
 .Rbuildignore
 .Rhistory
 .Rproj.user
