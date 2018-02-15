@@ -752,11 +752,11 @@ fibonacci <- function(n) {
 #' three_n_one(5)
 #' @references 3x + 1 problem. (2017, May 13). In Wikipedia, The Free
 #' Encyclopedia. from
-#' https://en.wikipedia.org/w/index.php?title=3x_%2B_1_problem&oldid=780191927
+#' https://en.wikipedia.org/wiki/Collatz_conjecture
 #' Moler, C. (2011). Numerical computing with MATLAB (1st ed.). Philadelphia,
 #' Pa: Society for Industrial & Applied Mathematics.
 #' @export
-three_n_one <- function(n) {
-    .Call(`_numberr_three_n_one`, n)
+collatz <- function(n) {
+    .Call(`_numberr_collatz`, n)
 }
 

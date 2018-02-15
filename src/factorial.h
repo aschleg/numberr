@@ -5,8 +5,8 @@
 #ifndef __RAMANUJANFACTORIAL__
 #define __RAMANUJANFACTORIAL__
 
-inline float _ramanujan(int n) {
-  float f = sqrt(M_PI) * pow(n, n) * exp(-n) * pow((8.0 * pow(n, 3.0) + 4.0 * pow(n, 2.0) + n + 1.0 / 30.0), 1.0 / 6.0);
+inline double _ramanujan(int n) {
+  double f = sqrt(M_PI) * pow(n, n) * exp(-n) * pow((8.0 * pow(n, 3.0) + 4.0 * pow(n, 2.0) + n + 1.0 / 30.0), 1.0 / 6.0);
   return f;
 }
 
@@ -16,8 +16,8 @@ inline float _ramanujan(int n) {
 #ifndef __STIRLINGFACTORIAL__
 #define __STIRLINGFACTORIAL__
 
-inline float _stirling(int n) {
-  float f = sqrt((2.0 * n + 1.0 / 3.0) * M_PI) * pow(n, n) * exp(-n);
+inline double _stirling(int n) {
+  double f = sqrt((2.0 * n + 1.0 / 3.0) * M_PI) * pow(n, n) * exp(-n);
   return f;
 }
 
@@ -27,8 +27,8 @@ inline float _stirling(int n) {
 #ifndef __STIRLINGLNFACTORIAL__
 #define __STIRLINGLNFACTORIAL__
 
-inline float _stirlingln(int n) {
-  float f = n * log(n) - n + (1.0 / 6.0) * log(n * (1.0 + 4.0 * n * (1.0 + 2.0 * n))) + 0.5 * log(M_PI);
+inline double _stirlingln(int n) {
+  double f = n * log(n) - n + (1.0 / 6.0) * log(n * (1.0 + 4.0 * n * (1.0 + 2.0 * n))) + 0.5 * log(M_PI);
 
   return f;
 }

@@ -410,14 +410,14 @@ BEGIN_RCPP
     return rcpp_result_gen;
 END_RCPP
 }
-// three_n_one
-NumericVector three_n_one(int n);
-RcppExport SEXP _numberr_three_n_one(SEXP nSEXP) {
+// collatz
+NumericVector collatz(int n);
+RcppExport SEXP _numberr_collatz(SEXP nSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
     Rcpp::traits::input_parameter< int >::type n(nSEXP);
-    rcpp_result_gen = Rcpp::wrap(three_n_one(n));
+    rcpp_result_gen = Rcpp::wrap(collatz(n));
     return rcpp_result_gen;
 END_RCPP
 }
@@ -458,7 +458,7 @@ static const R_CallMethodDef CallEntries[] = {
     {"_numberr_cullen", (DL_FUNC) &_numberr_cullen, 1},
     {"_numberr_supercatalan", (DL_FUNC) &_numberr_supercatalan, 1},
     {"_numberr_fibonacci", (DL_FUNC) &_numberr_fibonacci, 1},
-    {"_numberr_three_n_one", (DL_FUNC) &_numberr_three_n_one, 1},
+    {"_numberr_collatz", (DL_FUNC) &_numberr_collatz, 1},
     {NULL, NULL, 0}
 };
 

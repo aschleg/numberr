@@ -33,7 +33,7 @@ using namespace Rcpp;
 //' @export
 // [[Rcpp::export]]
 NumericVector catalan(int n) {
-  std::vector<long int> x(n);
+  std::vector<int> x(n);
 
   x[0] = 1;
 
@@ -65,7 +65,7 @@ NumericVector catalan(int n) {
 //' @export
 // [[Rcpp::export]]
 NumericVector cullen(int n) {
-  std::vector<long int> x(n);
+  std::vector<int> x(n);
 
   float j = 1.0;
 
@@ -99,7 +99,7 @@ NumericVector cullen(int n) {
 //' @export
 // [[Rcpp::export]]
 NumericVector supercatalan(int n) {
-  std::vector<long int> x(n);
+  std::vector<int> x(n);
   x[0] = 1; x[1] = 1;
 
   float j = 3.0;
@@ -128,7 +128,7 @@ NumericVector supercatalan(int n) {
 //' @export
 // [[Rcpp::export]]
 NumericVector fibonacci(int n) {
-  std::vector<long int> x(n);
+  std::vector<int> x(n);
 
   x[0] = 1;
   x[1] = 1;
@@ -165,7 +165,7 @@ NumericVector fibonacci(int n) {
 //' @export
 // [[Rcpp::export]]
 NumericVector collatz(int n) {
-  std::vector<long int> x(n);
+  std::vector<int> x(n);
 
   if (n == 1) {
     x.resize(1);
